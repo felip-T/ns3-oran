@@ -33,6 +33,7 @@
 #define ORAN_DATA_REPOSITORY_SQLITE_H
 
 #include "oran-data-repository.h"
+#include "oran-report-sql.h"
 
 #include <ns3/traced-callback.h>
 
@@ -77,10 +78,6 @@ class OranDataRepositorySqlite : public OranDataRepository
      * Activate the data storage. If the database is not open,
      * this method will call OpenDb.
      */
-    // void CreateReportSave(Ptr<OranReportSql>) override;
-    // void CreateReportTable(Ptr<OranReportSql>) override;
-    void SaveSinr(uint64_t e2NodeId, double sinr, Time t) override;
-
     void Activate(void) override;
     /**
      * Deactivate the data storage. If the database is open,
@@ -92,26 +89,9 @@ class OranDataRepositorySqlite : public OranDataRepository
     bool IsNodeRegistered(uint64_t e2NodeId) override;
 
     uint64_t RegisterNode(OranNearRtRic::NodeType type, uint64_t id) override;
-    uint64_t RegisterNodeLteUe(uint64_t id, uint64_t imsi) override;
-    uint64_t RegisterNodeLteEnb(uint64_t id, uint16_t cellId) override;
     uint64_t DeregisterNode(uint64_t e2NodeId) override;
-    void SavePosition(uint64_t e2NodeId, Vector pos, Time t) override;
-    void SaveLteUeCellInfo(uint64_t e2NodeId, uint16_t cellId, uint16_t rnti, Time t) override;
-    void SaveAppLoss(uint64_t e2NodeId, double appLoss, Time t) override;
-
-    std::tuple<double, Time> GetSinr(uint64_t e2NodeId);
-    std::map<Time, Vector> GetNodePositions(uint64_t e2NodeId,
-                                            Time fromTime,
-                                            Time toTime,
-                                            uint64_t maxEntries = 1) override;
-    std::tuple<bool, uint16_t, uint16_t> GetLteUeCellInfo(uint64_t e2NodeId) override;
-    std::vector<uint64_t> GetLteUeE2NodeIds(void) override;
-    uint64_t GetLteUeE2NodeIdFromCellInfo(uint16_t cellId, uint16_t rnti) override;
-    std::tuple<bool, uint16_t> GetLteEnbCellInfo(uint64_t e2NodeId) override;
-    std::vector<uint64_t> GetLteEnbE2NodeIds(void) override;
+    void Save(Ptr<OranReport>) override;
     std::vector<std::tuple<uint64_t, Time>> GetLastRegistrationRequests(void) override;
-    double GetAppLoss(uint64_t e2NodeId) override;
-
     void LogCommandE2Terminator(Ptr<OranCommand> cmd) override;
     void LogCommandLm(std::string lm, Ptr<OranCommand> cmd) override;
     void LogActionLm(std::string lm, std::string logstr) override;
@@ -142,7 +122,6 @@ class OranDataRepositorySqlite : public OranDataRepository
         GET_LTE_UE_CELLINFO,               //!< Get the cell information associated with LTE UE
         GET_LTE_UE_E2NODEID_FROM_CELLINFO, //!< Get the E2 ID of a UE from the cell information
         GET_NODE_ALL_POSITIONS,            //!< The location of all nodes E2 nodes
-        GET_NODE_SINR,
         INSERT_LTE_ENB_NODE,               //!< Add an LTE eNB E2 node
         INSERT_LTE_UE_CELL,                //!< Add LTE UE cell information for an E2 node
         INSERT_LTE_UE_NODE,                //!< Add an LTE UE E2 node
@@ -153,14 +132,9 @@ class OranDataRepositorySqlite : public OranDataRepository
         LOG_CMM_ACTION,                    //!< Log a CM module action
         LOG_E2TERMINATOR_COMMAND,          //!< Log an E2 terminator command from the RIC
         LOG_LM_ACTION,                     //!< Log an LM action
-        LOG_LM_COMMAND,                     //!< Log an LM command
-        INSERT_SINR
+        LOG_LM_COMMAND                     //!< Log an LM command
     };
 
-    /**
-     * Enumeration with the type of SQL CREATE TABLE statements
-     * To be used as key for the map with the CREATE TABLE statements' strings
-     */
     enum CreateStatementType
     {
         INDEX_LTE_ENB_CELLID = 0, //!< Index for the table with LTE eNB based on Cell IDs
@@ -172,7 +146,6 @@ class OranDataRepositorySqlite : public OranDataRepository
         INDEX_LTE_UE_IMSI,        //!< Index for the table with LTE UE based on IMSI
         INDEX_LTE_UE_NODEID,      //!< Index for the table with LTE UE based on E2 Node ID
         INDEX_NODE,               //!< Index for the table with E2 Node Information
-        INDEX_NODE_SINR,
         INDEX_NODE_LOCATION,      //!< Index for the table with Node Locations
         INDEX_NODE_REGISTRATION,  //!< Index for the table with Node Registrations
         TABLE_CMM_ACTION,         //!< Table with logs of CMM actions
@@ -185,8 +158,7 @@ class OranDataRepositorySqlite : public OranDataRepository
         TABLE_NODE_LOCATION,      //!< Table with Node Locations
         TABLE_NODE_REGISTRATION,  //!< Table with Node Registrations
         TABLE_TERMINATOR_COMMAND, //!< Table with logs of E2 Terminator Commands
-        TABLE_APPLOSS_COMMAND,     //!< Table with logs of application loss Commands
-        TABLE_SINR
+        TABLE_APPLOSS_COMMAND     //!< Table with logs of application loss Commands
     };
 
     /**
@@ -256,7 +228,11 @@ class OranDataRepositorySqlite : public OranDataRepository
      */
     TracedCallback<std::string, std::string, int> m_queryRc;
 
-  protected:
+  private:
+
+    void AddTable(std::string stmt);
+    std::string CreateTableStmt(Ptr<OranReportSql>);
+
     /**
      * Ready the database schema. This method creates the required tables and indexes.
      * If the schema already exists, no change is made, allowing for reusing existing
@@ -293,7 +269,7 @@ class OranDataRepositorySqlite : public OranDataRepository
      *
      * \param string The string with the SQL CREATE statement to run
      */
-    void RunCreateStatement(std::string);
+    void RunCreateStatement(std::string string);
 
 }; // class OranDataRepositorySqlite
 

@@ -39,6 +39,7 @@
 #include <ns3/nstime.h>
 #include <ns3/object.h>
 #include <ns3/vector.h>
+#include <ns3/oran-report-sql.h>
 
 #include <map>
 #include <tuple>
@@ -78,6 +79,11 @@ class OranDataRepository : public Object
     /**
      * Activate the data storage.
      */
+    // virtual void CreateReportSave(Ptr<OranReportSql>);
+    // virtual void CreateReportTable(Ptr<OranReportSql>);
+
+    virtual void SaveSinr(uint64_t e2NodeId, double sinr, Time t) = 0;
+
     virtual void Activate(void);
     /**
      * Deactivate the data storage.

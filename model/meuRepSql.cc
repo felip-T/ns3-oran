@@ -276,37 +276,6 @@ OranDataRepositorySqlite::DeregisterNode(uint64_t e2NodeId)
 }
 
 void
-OranDataRepositorySqlite::SaveSinr(uint64_t e2NodeId, double sinr, Time t)
-{
-    NS_LOG_FUNCTION(this << e2NodeId << sinr << t);
-    if (m_active)
-    {
-        if (IsNodeRegistered(e2NodeId))
-        {
-            int rc;
-            sqlite3_stmt* stmt = nullptr;
-
-            sqlite3_prepare_v2(m_db,
-                               m_queryStmtsStrings[INSERT_SINR].c_str(),
-                               -1,
-                               &stmt,
-                               0);
-
-            sqlite3_bind_int64(stmt, 1, e2NodeId);
-            sqlite3_bind_double(stmt, 2, sinr);
-            sqlite3_bind_int64(stmt, 3, t.GetTimeStep());
-
-            rc = sqlite3_step(stmt);
-            CheckQueryReturnCode(
-                stmt,
-                rc,
-                FormatBoundArgsList(e2NodeId, sinr, t.GetTimeStep()));
-            sqlite3_finalize(stmt);
-        }
-    }
-}
-
-void
 OranDataRepositorySqlite::SavePosition(uint64_t e2NodeId, Vector pos, Time t)
 {
     NS_LOG_FUNCTION(this << e2NodeId << pos << t);
@@ -400,34 +369,6 @@ OranDataRepositorySqlite::SaveAppLoss(uint64_t e2NodeId, double appLoss, Time t)
             sqlite3_finalize(stmt);
         }
     }
-}
-
-std::tuple<double, Time> OranDataRepositorySqlite::GetSinr(uint64_t e2NodeId){
-    NS_LOG_FUNCTION(this << e2NodeId);
-    std::tuple<double, Time> sinr = std::make_tuple(0, Time(0));
-    if (m_active){
-        if (IsNodeRegistered(e2NodeId)){
-            int rc;
-            sqlite3_stmt* stmt = nullptr;
-
-            sqlite3_prepare_v2(m_db,
-                               m_queryStmtsStrings[GET_NODE_SINR].c_str(),
-                               -1,
-                               &stmt,
-                               0);
-            sqlite3_bind_int64(stmt, 1, e2NodeId);
-
-            while ((rc = sqlite3_step(stmt)) == SQLITE_ROW)
-            {
-                std::get<0>(sinr) = sqlite3_column_double(stmt, 0);
-                std::get<1>(sinr) = Time(sqlite3_column_int64(stmt, 1));
-            }
-
-            CheckQueryReturnCode(stmt, rc, FormatBoundArgsList(e2NodeId));
-            sqlite3_finalize(stmt);
-        }
-    }
-    return sinr;
 }
 
 std::map<Time, Vector>
@@ -960,9 +901,24 @@ OranDataRepositorySqlite::InitDb(void)
 
     // CMM Actions (Internal Log)
     RunCreateStatement(m_createStmtsStrings[TABLE_CMM_ACTION]);
+}
 
-    RunCreateStatement(m_createStmtsStrings[TABLE_SINR]);
-    RunCreateStatement(m_createStmtsStrings[INDEX_NODE_SINR]);
+std::string
+OranDataRepositorySqlite::CreateTableStmt(Ptr<OranReportSql> report)
+{
+    NS_LOG_FUNCTION(this);
+
+    std::string stmt = "CREATE TABLE IF NOT EXISTS " + report->GetTableName() + " (";
+
+    for (auto& col : report->GetTableInfo())
+    {
+        stmt += std::get<0>(col) + "\t" + std::get<1>(col) + "\t NOT NULL, ";
+    }
+    stmt +=
+
+    stmt += ");";
+
+    return stmt;
 }
 
 void
@@ -994,9 +950,6 @@ OranDataRepositorySqlite::InitStatements(void)
 
     m_createStmtsStrings[INDEX_NODE_LOCATION] = "CREATE INDEX IF NOT EXISTS "
                                                 "idx_nodelocation_nodeid ON nodelocation(nodeid);";
-
-    m_createStmtsStrings[INDEX_NODE_SINR] = "CREATE INDEX IF NOT EXISTS "
-                                             "idx_nodesinr_nodeid ON nodesinr(nodeid);";
 
     m_createStmtsStrings[INDEX_NODE_REGISTRATION] =
         "CREATE INDEX IF NOT EXISTS "
@@ -1082,14 +1035,6 @@ OranDataRepositorySqlite::InitStatements(void)
         "simulationtime INTEGER                           NOT NULL, "
         "FOREIGN KEY(nodeid) REFERENCES node(nodeid)              );";
 
-    m_createStmtsStrings[TABLE_SINR] =
-        "CREATE TABLE IF NOT EXISTS nodesinr ("
-        "entryid        INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "
-        "nodeid         INTEGER                           NOT NULL, "
-        "sinr           REAL                              NOT NULL, "
-        "simulationtime INTEGER                           NOT NULL, "
-        "FOREIGN KEY(nodeid) REFERENCES node(nodeid)              );";
-
     // Query Statements
     m_queryStmtsStrings[CHECK_NODE_REGISTERED] = "SELECT registered "
                                                  "FROM noderegistration "
@@ -1163,10 +1108,6 @@ OranDataRepositorySqlite::InitStatements(void)
         "INSERT INTO noderegistration "
         "(nodeid, registered, simulationtime) VALUES (?, ?, ?);";
 
-    m_queryStmtsStrings[INSERT_SINR] =
-        "INSERT INTO nodesinr "
-        "(nodeid, sinr, simulationtime) VALUES (?, ?, ?);";
-
     m_queryStmtsStrings[LOG_CMM_ACTION] =
         "INSERT INTO cmmaction "
         "(cmmname, simulationtime, description) VALUES (?, ?, ?);";
@@ -1180,12 +1121,6 @@ OranDataRepositorySqlite::InitStatements(void)
 
     m_queryStmtsStrings[LOG_LM_COMMAND] = "INSERT INTO lmcommand "
                                           "(lmname, simulationtime, cmdname) VALUES (?, ?, ?);";
-
-    m_queryStmtsStrings[GET_NODE_SINR] = "SELECT sinr, simulationtime "
-                                    "FROM nodesinr "
-                                    "WHERE nodeid = ? "
-                                    "ORDER BY simulationtime DESC "
-                                    "LIMIT 1;";
 }
 
 void
@@ -1205,11 +1140,4 @@ OranDataRepositorySqlite::RunCreateStatement(std::string statement)
     sqlite3_finalize(stmt);
 }
 
-// void OranDataRepositorySqlite::CreateReportTable(Ptr<OranReportSql> report)
-// {
-// }
-//
-// void OranDataRepositorySqlite::CreateReportSave(Ptr<OranReportSql> report)
-// {
-// }
 } // namespace ns3

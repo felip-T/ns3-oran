@@ -29,74 +29,61 @@
  * employees is not subject to copyright protection within the United States.
  */
 
-#include "oran-data-repository.h"
+#ifndef ORAN_DATA_REPOSITORY_H
+#define ORAN_DATA_REPOSITORY_H
 
-#include <ns3/log.h>
+#include "oran-command.h"
+#include "oran-near-rt-ric.h"
+#include "oran-report.h"
+
+#include <ns3/nstime.h>
+#include <ns3/object.h>
+#include <ns3/vector.h>
+
+#include <map>
+#include <tuple>
 
 namespace ns3
 {
-
-NS_LOG_COMPONENT_DEFINE("OranDataRepository");
-
-NS_OBJECT_ENSURE_REGISTERED(OranDataRepository);
-
-TypeId
-OranDataRepository::GetTypeId(void)
+class OranDataRepository : public Object
 {
-    static TypeId tid = TypeId("ns3::OranDataRepository").SetParent<Object>();
+  public:
+    static TypeId GetTypeId(void);
 
-    return tid;
-}
+    OranDataRepository(void);
 
-OranDataRepository::OranDataRepository(void)
-    : Object(),
-      m_active(false)
-{
-    NS_LOG_FUNCTION(this);
-}
+    ~OranDataRepository(void) override;
 
-OranDataRepository::~OranDataRepository(void)
-{
-    NS_LOG_FUNCTION(this);
-}
+    virtual void Activate(void);
 
-void
-OranDataRepository::Activate(void)
-{
-    NS_LOG_FUNCTION(this);
+    virtual void Deactivate(void);
 
-    m_active = true;
-}
+    virtual bool IsActive(void) const;
 
-void
-OranDataRepository::Deactivate(void)
-{
-    NS_LOG_FUNCTION(this);
+    virtual bool IsNodeRegistered(uint64_t e2NodeId) = 0;
 
-    m_active = false;
-}
+    virtual uint64_t RegisterNode(OranNearRtRic::NodeType type, uint64_t id) = 0;
 
-bool
-OranDataRepository::IsActive(void) const
-{
-    NS_LOG_FUNCTION(this);
+    virtual uint64_t DeregisterNode(uint64_t e2NodeId) = 0;
 
-    return m_active;
-}
+    virtual void Save(Ptr<OranReport> report) = 0;
 
-void
-OranDataRepository::DoDispose(void)
-{
-    NS_LOG_FUNCTION(this);
+    virtual std::vector<std::tuple<uint64_t, Time>> GetLastRegistrationRequests(void) = 0;
 
-    Object::DoDispose();
-}
+    virtual void LogCommandE2Terminator(Ptr<OranCommand> cmd) = 0;
 
-// void OranDataRepository::CreateReportTable(Ptr<OranReportSql> report)
-// {
-// }
-//
-// void OranDataRepository::CreateReportSave(Ptr<OranReportSql> report)
-// {
-// }
+    virtual void LogCommandLm(std::string lm, Ptr<OranCommand> cmd) = 0;
+
+    virtual void LogActionLm(std::string lm, std::string logstr) = 0;
+
+    virtual void LogActionCmm(std::string cmm, std::string logstr) = 0;
+
+  protected:
+    void DoDispose(void) override;
+
+    bool m_active;
+}; // class OranDataRepository
+
 } // namespace ns3
+
+#endif /* ORAN_DATA_REPOSITORY_H */

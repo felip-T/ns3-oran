@@ -41,6 +41,8 @@
 #include "oran-report-location.h"
 #include "oran-report-lte-ue-cell-info.h"
 #include "oran-report.h"
+#include "oran-mod-sqlite.h"
+#include "oran-report-sql.h"
 
 #include <ns3/abort.h>
 #include <ns3/log.h>
@@ -218,6 +220,12 @@ OranNearRtRicE2Terminator::ReceiveReport(Ptr<OranReport> report)
             m_data->SaveAppLoss(appLossRpt->GetReporterE2NodeId(),
                                 appLossRpt->GetLoss(),
                                 appLossRpt->GetTime());
+        }
+        else if (report->GetInstanceTypeId().GetParent() == TypeId::LookupByName("ns3::OranReportSql")){
+            if (m_data->GetInstanceTypeId() == TypeId::LookupByName("ns3::OranModSqlite")){
+                DynamicCast<OranModSqlite>(m_data)->CreateReportTable(DynamicCast<OranReportSql>(report));
+                DynamicCast<OranModSqlite>(m_data)->CreateReportSave(DynamicCast<OranReportSql>(report));
+            }
         }
 
         m_nearRtRic->NotifyReportReceived(report);
