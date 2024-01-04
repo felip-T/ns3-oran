@@ -122,6 +122,9 @@ build_lib(
     model/oran-query-trigger.cc
     model/oran-query-trigger-noop.cc
     model/oran-query-trigger-custom.cc
+    model/oran-report-sql.cc
+    model/oran-report-location-sql.cc
+    model/oran-mod-sqlite.cc
     helper/oran-helper.cc
     ${oran_onnxruntime_sources}
     ${oran_torch_sources}
@@ -158,6 +161,9 @@ build_lib(
     model/oran-report-trigger-location-change.h
     model/oran-query-trigger.h
     model/oran-query-trigger-custom.h
+    model/oran-report-sql.h
+    model/oran-report-location-sql.h
+    model/oran-mod-sqlite.h
     helper/oran-helper.h
     ${oran_onnxruntime_headers}
     ${oran_torch_headers}
