@@ -59,6 +59,8 @@ class OranNearRtRicE2Terminator;
 class OranE2NodeTerminator : public Object
 {
   public:
+    std::vector<Ptr<OranReporter>> GetReporters(void) const;
+
     /**
      * Gets the TypeId of the OranE2NodeTerminator class.
      *

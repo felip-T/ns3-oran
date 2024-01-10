@@ -15,6 +15,8 @@ public:
     void CreateReportTable(Ptr<OranReportSql>);
     void CreateReportSave(Ptr<OranReportSql>);
     std::vector<std::tuple<std::string, std::string>> GetLastReport(const std::string&);
+    std::vector<std::tuple<std::string, std::string>> GetLastReport(const std::string&, uint64_t nodeId);
+    std::vector<std::tuple<std::string, std::string>> GetCustomQuery(const std::string&);
 
 protected:
     static std::string ParseReportTableInfo(Ptr<OranReportSql>);

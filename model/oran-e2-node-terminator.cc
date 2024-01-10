@@ -384,5 +384,12 @@ OranE2NodeTerminator::GetNetDeviceIndex(void) const
 
     return m_netDeviceIndex;
 }
+std::vector<Ptr<OranReporter>>
+OranE2NodeTerminator::GetReporters(void) const
+{
+    NS_LOG_FUNCTION(this);
+
+    return m_reporters;
+}
 
 } // namespace ns3

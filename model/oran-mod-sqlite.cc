@@ -34,7 +34,6 @@ OranModSqlite::CreateReportTable(Ptr<OranReportSql> report)
 {
     NS_LOG_FUNCTION(this << report);
     std::string stmt = ParseReportTableInfo(report);
-    std::cout << stmt << std::endl;
     RunCreateStatement(stmt);
 }
 
@@ -120,7 +119,65 @@ OranModSqlite::GetLastReport(const std::string& table)
         int rc;
         sqlite3_stmt* stmt = nullptr;
         std::string query = "SELECT * FROM " + table + " ORDER BY entryid DESC LIMIT 1;";
-        std::cout << query << std::endl;
+        sqlite3_prepare_v2(m_db,
+                           query.c_str(),
+                           -1,
+                           &stmt,
+                           0);
+        while ((rc = sqlite3_step(stmt)) == SQLITE_ROW)
+        {
+            for (int i = 0; i < sqlite3_column_count(stmt); i++)
+            {
+                std::string colName = sqlite3_column_name(stmt, i);
+                std::string colVal = (const char*)sqlite3_column_text(stmt, i);
+                repData.emplace_back(colName, colVal);
+            }
+        }
+        CheckQueryReturnCode(stmt, rc);
+        sqlite3_finalize(stmt);
+    }
+    return repData;
+}
+
+std::vector<std::tuple<std::string, std::string>>
+OranModSqlite::GetLastReport(const std::string& table, uint64_t nodeId)
+{
+    NS_LOG_FUNCTION(this);
+    std::vector<std::tuple<std::string, std::string>> repData;
+    if (m_active)
+    {
+        int rc;
+        sqlite3_stmt* stmt = nullptr;
+        std::string query = "SELECT * FROM " + table + " WHERE nodeid = " + std::to_string(nodeId) + " ORDER BY time DESC LIMIT 1;";
+        sqlite3_prepare_v2(m_db,
+                           query.c_str(),
+                           -1,
+                           &stmt,
+                           0);
+        while ((rc = sqlite3_step(stmt)) == SQLITE_ROW)
+        {
+            for (int i = 0; i < sqlite3_column_count(stmt); i++)
+            {
+                std::string colName = sqlite3_column_name(stmt, i);
+                std::string colVal = (const char*)sqlite3_column_text(stmt, i);
+                repData.emplace_back(colName, colVal);
+            }
+        }
+        CheckQueryReturnCode(stmt, rc);
+        sqlite3_finalize(stmt);
+    }
+    return repData;
+}
+
+std::vector<std::tuple<std::string, std::string>>
+OranModSqlite::GetCustomQuery(const std::string& query)
+{
+    NS_LOG_FUNCTION(this);
+    std::vector<std::tuple<std::string, std::string>> repData;
+    if (m_active)
+    {
+        int rc;
+        sqlite3_stmt* stmt = nullptr;
         sqlite3_prepare_v2(m_db,
                            query.c_str(),
                            -1,
