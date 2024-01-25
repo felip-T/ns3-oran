@@ -14,14 +14,17 @@ public:
     ~OranModSqlite () override;
     void CreateReportTable(Ptr<OranReportSql>);
     void CreateReportSave(Ptr<OranReportSql>);
-    std::vector<std::tuple<std::string, std::string>> GetLastReport(const std::string&);
-    std::vector<std::tuple<std::string, std::string>> GetLastReport(const std::string&, uint64_t nodeId);
-    std::vector<std::tuple<std::string, std::string>> GetCustomQuery(const std::string&);
+    std::unordered_map<std::string, std::string> GetLastReport(const std::string&);
+    std::unordered_map<std::string, std::string> GetLastReport(const std::string&, uint64_t nodeId);
+    std::unordered_map<std::string, std::string> GetSecondLastReport(const std::string&, uint64_t nodeId);
+    std::unordered_map<std::string, std::string> GetCustomQuery(const std::string&);
 
 protected:
     static std::string ParseReportTableInfo(Ptr<OranReportSql>);
     static std::string CreateReportSaveQuery(Ptr<OranReportSql>);
     static std::vector<std::tuple<std::string, std::string>> ParseReport(Ptr<OranReportSql>);
+
+    std::unordered_map<std::string, bool> m_reportTableCreated;
 };
 }
 

@@ -33,8 +33,11 @@ void
 OranModSqlite::CreateReportTable(Ptr<OranReportSql> report)
 {
     NS_LOG_FUNCTION(this << report);
-    std::string stmt = ParseReportTableInfo(report);
-    RunCreateStatement(stmt);
+    if (!m_reportTableCreated[report->GetTableName()]){
+        std::string stmt = ParseReportTableInfo(report);
+        RunCreateStatement(stmt);
+        m_reportTableCreated[report->GetTableName()] = true;
+    }
 }
 
 std::string
@@ -109,11 +112,11 @@ OranModSqlite::ParseReport(Ptr<OranReportSql> report)
     return repData;
 }
 
-std::vector<std::tuple<std::string, std::string>>
+std::unordered_map<std::string, std::string>
 OranModSqlite::GetLastReport(const std::string& table)
 {
     NS_LOG_FUNCTION(this);
-    std::vector<std::tuple<std::string, std::string>> repData;
+    std::unordered_map<std::string, std::string> repData;
     if (m_active)
     {
         int rc;
@@ -130,7 +133,7 @@ OranModSqlite::GetLastReport(const std::string& table)
             {
                 std::string colName = sqlite3_column_name(stmt, i);
                 std::string colVal = (const char*)sqlite3_column_text(stmt, i);
-                repData.emplace_back(colName, colVal);
+                repData[colName] = colVal;
             }
         }
         CheckQueryReturnCode(stmt, rc);
@@ -139,11 +142,11 @@ OranModSqlite::GetLastReport(const std::string& table)
     return repData;
 }
 
-std::vector<std::tuple<std::string, std::string>>
+std::unordered_map<std::string, std::string>
 OranModSqlite::GetLastReport(const std::string& table, uint64_t nodeId)
 {
     NS_LOG_FUNCTION(this);
-    std::vector<std::tuple<std::string, std::string>> repData;
+    std::unordered_map<std::string, std::string> repData;
     if (m_active)
     {
         int rc;
@@ -160,7 +163,7 @@ OranModSqlite::GetLastReport(const std::string& table, uint64_t nodeId)
             {
                 std::string colName = sqlite3_column_name(stmt, i);
                 std::string colVal = (const char*)sqlite3_column_text(stmt, i);
-                repData.emplace_back(colName, colVal);
+                repData[colName] = colVal;
             }
         }
         CheckQueryReturnCode(stmt, rc);
@@ -169,11 +172,11 @@ OranModSqlite::GetLastReport(const std::string& table, uint64_t nodeId)
     return repData;
 }
 
-std::vector<std::tuple<std::string, std::string>>
+std::unordered_map<std::string, std::string>
 OranModSqlite::GetCustomQuery(const std::string& query)
 {
     NS_LOG_FUNCTION(this);
-    std::vector<std::tuple<std::string, std::string>> repData;
+    std::unordered_map<std::string, std::string> repData;
     if (m_active)
     {
         int rc;
@@ -189,7 +192,7 @@ OranModSqlite::GetCustomQuery(const std::string& query)
             {
                 std::string colName = sqlite3_column_name(stmt, i);
                 std::string colVal = (const char*)sqlite3_column_text(stmt, i);
-                repData.emplace_back(colName, colVal);
+                repData[colName] = colVal;
             }
         }
         CheckQueryReturnCode(stmt, rc);
