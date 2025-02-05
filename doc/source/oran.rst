@@ -7,3 +7,4 @@ O-RAN Module Documentation
    oran-architecture.rst
    oran-usage.rst
    oran-examples-and-test.rst
+   oran-adaptative-sqlite.rst

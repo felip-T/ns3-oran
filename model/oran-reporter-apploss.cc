@@ -52,7 +52,12 @@ OranReporterAppLoss::GetTypeId(void)
 {
     static TypeId tid = TypeId("ns3::OranReporterAppLoss")
                             .SetParent<OranReporter>()
-                            .AddConstructor<OranReporterAppLoss>();
+                            .AddConstructor<OranReporterAppLoss>()
+			    .AddTraceSource("AppLoss",
+					    "AppLoss since last report",
+					    MakeTraceSourceAccessor(&OranReporterAppLoss::m_appLoss),
+					    "ns3::TracedValueCallback::Double");
+
 
     return tid;
 }
@@ -84,6 +89,10 @@ OranReporterAppLoss::AddRx(Ptr<const Packet> p, const Address& from)
     NS_LOG_FUNCTION(this << p << from);
 
     m_rx++;
+    if (m_rx <= m_tx && m_tx > 0)
+    {
+        m_appLoss = static_cast<double>(m_tx - m_rx) / static_cast<double>(m_tx);
+    }
 }
 
 std::vector<Ptr<OranReport>>

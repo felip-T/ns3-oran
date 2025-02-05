@@ -1,0 +1,193 @@
+\hypertarget{classns3_1_1OranNearRtRicE2Terminator}{}\doxysection{ns3\+::Oran\+Near\+Rt\+Ric\+E2\+Terminator Class Reference}
+\label{classns3_1_1OranNearRtRicE2Terminator}\index{ns3::OranNearRtRicE2Terminator@{ns3::OranNearRtRicE2Terminator}}
+
+
+{\ttfamily \#include $<$oran-\/near-\/rt-\/ric-\/e2terminator.\+h$>$}
+
+
+
+Inheritance diagram for ns3\+::Oran\+Near\+Rt\+Ric\+E2\+Terminator\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classns3_1_1OranNearRtRicE2Terminator__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ns3\+::Oran\+Near\+Rt\+Ric\+E2\+Terminator\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classns3_1_1OranNearRtRicE2Terminator__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1OranNearRtRicE2Terminator_aa081d7683f387e63629597ffaba4ddc0}{Oran\+Near\+Rt\+Ric\+E2\+Terminator}} (void)
+\item 
+\mbox{\hyperlink{classns3_1_1OranNearRtRicE2Terminator_adc5e60a6594cf1187b46cc88a48773f0}{$\sim$\+Oran\+Near\+Rt\+Ric\+E2\+Terminator}} (void) override
+\item 
+virtual void \mbox{\hyperlink{classns3_1_1OranNearRtRicE2Terminator_af1f35bd4f93795520ef6ab47da3d6301}{Activate}} (void)
+\item 
+virtual void \mbox{\hyperlink{classns3_1_1OranNearRtRicE2Terminator_a12db32ce1d821dbc41902181f7cb5b08}{Deactivate}} (void)
+\item 
+bool \mbox{\hyperlink{classns3_1_1OranNearRtRicE2Terminator_a21b2d280cb989846a32c608a2bcf2e1d}{Is\+Active}} (void) const
+\item 
+void \mbox{\hyperlink{classns3_1_1OranNearRtRicE2Terminator_a8454c7fa2346b59d269b537d8a602819}{Receive\+Registration\+Request}} (\mbox{\hyperlink{classns3_1_1OranNearRtRic_a3902b000e88d7cfcb5e18e128c4f67f6}{Oran\+Near\+Rt\+Ric\+::\+Node\+Type}} type, uint64\+\_\+t id, Ptr$<$ \mbox{\hyperlink{classns3_1_1OranE2NodeTerminator}{Oran\+E2\+Node\+Terminator}} $>$ terminator)
+\item 
+void \mbox{\hyperlink{classns3_1_1OranNearRtRicE2Terminator_aa95644b47e9ae892348b95d5d8ccdeba}{Receive\+Deregistration\+Request}} (uint64\+\_\+t e2\+Node\+Id)
+\item 
+void \mbox{\hyperlink{classns3_1_1OranNearRtRicE2Terminator_a2c437103e802f01b00096b2a6bcb9562}{Receive\+Report}} (Ptr$<$ \mbox{\hyperlink{classns3_1_1OranReport}{Oran\+Report}} $>$ report)
+\item 
+void \mbox{\hyperlink{classns3_1_1OranNearRtRicE2Terminator_af262bff78be27ed48291a6e7a5654b1a}{Send\+Command}} (Ptr$<$ \mbox{\hyperlink{classns3_1_1OranCommand}{Oran\+Command}} $>$ command)
+\item 
+void \mbox{\hyperlink{classns3_1_1OranNearRtRicE2Terminator_a865c176c67ca7151630d1b979a2f084e}{Process\+Commands}} (std\+::vector$<$ Ptr$<$ \mbox{\hyperlink{classns3_1_1OranCommand}{Oran\+Command}} $>$$>$ commands)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Type\+Id \mbox{\hyperlink{classns3_1_1OranNearRtRicE2Terminator_a341ad46ab6687a75a1bf3ae380ba9f07}{Get\+Type\+Id}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classns3_1_1OranNearRtRicE2Terminator_a959d34f31bb0a0b4b8a4af44fac81008}{Do\+Dispose}} (void) override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The E2 Terminator of the Near-\/\+RT RIC. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classns3_1_1OranNearRtRicE2Terminator_aa081d7683f387e63629597ffaba4ddc0}\label{classns3_1_1OranNearRtRicE2Terminator_aa081d7683f387e63629597ffaba4ddc0}} 
+\index{ns3::OranNearRtRicE2Terminator@{ns3::OranNearRtRicE2Terminator}!OranNearRtRicE2Terminator@{OranNearRtRicE2Terminator}}
+\index{OranNearRtRicE2Terminator@{OranNearRtRicE2Terminator}!ns3::OranNearRtRicE2Terminator@{ns3::OranNearRtRicE2Terminator}}
+\doxysubsubsection{\texorpdfstring{OranNearRtRicE2Terminator()}{OranNearRtRicE2Terminator()}}
+{\footnotesize\ttfamily ns3\+::\+Oran\+Near\+Rt\+Ric\+E2\+Terminator\+::\+Oran\+Near\+Rt\+Ric\+E2\+Terminator (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Constructor of the \mbox{\hyperlink{classns3_1_1OranNearRtRicE2Terminator}{Oran\+Near\+Rt\+Ric\+E2\+Terminator}} class. \mbox{\Hypertarget{classns3_1_1OranNearRtRicE2Terminator_adc5e60a6594cf1187b46cc88a48773f0}\label{classns3_1_1OranNearRtRicE2Terminator_adc5e60a6594cf1187b46cc88a48773f0}} 
+\index{ns3::OranNearRtRicE2Terminator@{ns3::OranNearRtRicE2Terminator}!````~OranNearRtRicE2Terminator@{$\sim$OranNearRtRicE2Terminator}}
+\index{````~OranNearRtRicE2Terminator@{$\sim$OranNearRtRicE2Terminator}!ns3::OranNearRtRicE2Terminator@{ns3::OranNearRtRicE2Terminator}}
+\doxysubsubsection{\texorpdfstring{$\sim$OranNearRtRicE2Terminator()}{~OranNearRtRicE2Terminator()}}
+{\footnotesize\ttfamily ns3\+::\+Oran\+Near\+Rt\+Ric\+E2\+Terminator\+::$\sim$\+Oran\+Near\+Rt\+Ric\+E2\+Terminator (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+Destructor of the \mbox{\hyperlink{classns3_1_1OranNearRtRicE2Terminator}{Oran\+Near\+Rt\+Ric\+E2\+Terminator}} class. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classns3_1_1OranNearRtRicE2Terminator_af1f35bd4f93795520ef6ab47da3d6301}\label{classns3_1_1OranNearRtRicE2Terminator_af1f35bd4f93795520ef6ab47da3d6301}} 
+\index{ns3::OranNearRtRicE2Terminator@{ns3::OranNearRtRicE2Terminator}!Activate@{Activate}}
+\index{Activate@{Activate}!ns3::OranNearRtRicE2Terminator@{ns3::OranNearRtRicE2Terminator}}
+\doxysubsubsection{\texorpdfstring{Activate()}{Activate()}}
+{\footnotesize\ttfamily void ns3\+::\+Oran\+Near\+Rt\+Ric\+E2\+Terminator\+::\+Activate (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Activate the E2 Terminator. \mbox{\Hypertarget{classns3_1_1OranNearRtRicE2Terminator_a12db32ce1d821dbc41902181f7cb5b08}\label{classns3_1_1OranNearRtRicE2Terminator_a12db32ce1d821dbc41902181f7cb5b08}} 
+\index{ns3::OranNearRtRicE2Terminator@{ns3::OranNearRtRicE2Terminator}!Deactivate@{Deactivate}}
+\index{Deactivate@{Deactivate}!ns3::OranNearRtRicE2Terminator@{ns3::OranNearRtRicE2Terminator}}
+\doxysubsubsection{\texorpdfstring{Deactivate()}{Deactivate()}}
+{\footnotesize\ttfamily void ns3\+::\+Oran\+Near\+Rt\+Ric\+E2\+Terminator\+::\+Deactivate (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Deactivate the E2 Terminator. \mbox{\Hypertarget{classns3_1_1OranNearRtRicE2Terminator_a959d34f31bb0a0b4b8a4af44fac81008}\label{classns3_1_1OranNearRtRicE2Terminator_a959d34f31bb0a0b4b8a4af44fac81008}} 
+\index{ns3::OranNearRtRicE2Terminator@{ns3::OranNearRtRicE2Terminator}!DoDispose@{DoDispose}}
+\index{DoDispose@{DoDispose}!ns3::OranNearRtRicE2Terminator@{ns3::OranNearRtRicE2Terminator}}
+\doxysubsubsection{\texorpdfstring{DoDispose()}{DoDispose()}}
+{\footnotesize\ttfamily void ns3\+::\+Oran\+Near\+Rt\+Ric\+E2\+Terminator\+::\+Do\+Dispose (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+Dispose of the object. \mbox{\Hypertarget{classns3_1_1OranNearRtRicE2Terminator_a341ad46ab6687a75a1bf3ae380ba9f07}\label{classns3_1_1OranNearRtRicE2Terminator_a341ad46ab6687a75a1bf3ae380ba9f07}} 
+\index{ns3::OranNearRtRicE2Terminator@{ns3::OranNearRtRicE2Terminator}!GetTypeId@{GetTypeId}}
+\index{GetTypeId@{GetTypeId}!ns3::OranNearRtRicE2Terminator@{ns3::OranNearRtRicE2Terminator}}
+\doxysubsubsection{\texorpdfstring{GetTypeId()}{GetTypeId()}}
+{\footnotesize\ttfamily Type\+Id ns3\+::\+Oran\+Near\+Rt\+Ric\+E2\+Terminator\+::\+Get\+Type\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Get the Type\+Id of the Oran\+Near\+Rt\+Ric\+E2 class.
+
+\begin{DoxyReturn}{Returns}
+The Type\+Id. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classns3_1_1OranNearRtRicE2Terminator_a21b2d280cb989846a32c608a2bcf2e1d}\label{classns3_1_1OranNearRtRicE2Terminator_a21b2d280cb989846a32c608a2bcf2e1d}} 
+\index{ns3::OranNearRtRicE2Terminator@{ns3::OranNearRtRicE2Terminator}!IsActive@{IsActive}}
+\index{IsActive@{IsActive}!ns3::OranNearRtRicE2Terminator@{ns3::OranNearRtRicE2Terminator}}
+\doxysubsubsection{\texorpdfstring{IsActive()}{IsActive()}}
+{\footnotesize\ttfamily bool ns3\+::\+Oran\+Near\+Rt\+Ric\+E2\+Terminator\+::\+Is\+Active (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Get the active status of this E2 Terminator.
+
+\begin{DoxyReturn}{Returns}
+True if this E2 Terminator is active; otherwise, false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classns3_1_1OranNearRtRicE2Terminator_a865c176c67ca7151630d1b979a2f084e}\label{classns3_1_1OranNearRtRicE2Terminator_a865c176c67ca7151630d1b979a2f084e}} 
+\index{ns3::OranNearRtRicE2Terminator@{ns3::OranNearRtRicE2Terminator}!ProcessCommands@{ProcessCommands}}
+\index{ProcessCommands@{ProcessCommands}!ns3::OranNearRtRicE2Terminator@{ns3::OranNearRtRicE2Terminator}}
+\doxysubsubsection{\texorpdfstring{ProcessCommands()}{ProcessCommands()}}
+{\footnotesize\ttfamily void ns3\+::\+Oran\+Near\+Rt\+Ric\+E2\+Terminator\+::\+Process\+Commands (\begin{DoxyParamCaption}\item[{std\+::vector$<$ Ptr$<$ \mbox{\hyperlink{classns3_1_1OranCommand}{Oran\+Command}} $>$$>$}]{commands }\end{DoxyParamCaption})}
+
+Send multiple commands to the corresponding E2 Node Terminators.
+
+
+\begin{DoxyParams}{Parameters}
+{\em commands} & A vector with the Commands to send. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classns3_1_1OranNearRtRicE2Terminator_aa95644b47e9ae892348b95d5d8ccdeba}\label{classns3_1_1OranNearRtRicE2Terminator_aa95644b47e9ae892348b95d5d8ccdeba}} 
+\index{ns3::OranNearRtRicE2Terminator@{ns3::OranNearRtRicE2Terminator}!ReceiveDeregistrationRequest@{ReceiveDeregistrationRequest}}
+\index{ReceiveDeregistrationRequest@{ReceiveDeregistrationRequest}!ns3::OranNearRtRicE2Terminator@{ns3::OranNearRtRicE2Terminator}}
+\doxysubsubsection{\texorpdfstring{ReceiveDeregistrationRequest()}{ReceiveDeregistrationRequest()}}
+{\footnotesize\ttfamily void ns3\+::\+Oran\+Near\+Rt\+Ric\+E2\+Terminator\+::\+Receive\+Deregistration\+Request (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{e2\+Node\+Id }\end{DoxyParamCaption})}
+
+Receive a deregistration request. This method logs the deregistration in the data repository, and removes the node E2 Terminator from the map.
+
+
+\begin{DoxyParams}{Parameters}
+{\em e2\+Node\+Id} & The E2\+Node\+Id to deregister. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classns3_1_1OranNearRtRicE2Terminator_a8454c7fa2346b59d269b537d8a602819}\label{classns3_1_1OranNearRtRicE2Terminator_a8454c7fa2346b59d269b537d8a602819}} 
+\index{ns3::OranNearRtRicE2Terminator@{ns3::OranNearRtRicE2Terminator}!ReceiveRegistrationRequest@{ReceiveRegistrationRequest}}
+\index{ReceiveRegistrationRequest@{ReceiveRegistrationRequest}!ns3::OranNearRtRicE2Terminator@{ns3::OranNearRtRicE2Terminator}}
+\doxysubsubsection{\texorpdfstring{ReceiveRegistrationRequest()}{ReceiveRegistrationRequest()}}
+{\footnotesize\ttfamily void ns3\+::\+Oran\+Near\+Rt\+Ric\+E2\+Terminator\+::\+Receive\+Registration\+Request (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classns3_1_1OranNearRtRic_a3902b000e88d7cfcb5e18e128c4f67f6}{Oran\+Near\+Rt\+Ric\+::\+Node\+Type}}}]{type,  }\item[{uint64\+\_\+t}]{id,  }\item[{Ptr$<$ \mbox{\hyperlink{classns3_1_1OranE2NodeTerminator}{Oran\+E2\+Node\+Terminator}} $>$}]{terminator }\end{DoxyParamCaption})}
+
+Receive a registration request. This method stores the Node type and ID in the Data Repository (which returns the assigned E2 Node ID), adds the node E2 Terminator to the map (so that it knows where to send future commands), and \textquotesingle{}sends\textquotesingle{} the registration response.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of node \\
+\hline
+{\em id} & The unique ID for the node \\
+\hline
+{\em terminator} & the Node E2 Terminator \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classns3_1_1OranNearRtRicE2Terminator_a2c437103e802f01b00096b2a6bcb9562}\label{classns3_1_1OranNearRtRicE2Terminator_a2c437103e802f01b00096b2a6bcb9562}} 
+\index{ns3::OranNearRtRicE2Terminator@{ns3::OranNearRtRicE2Terminator}!ReceiveReport@{ReceiveReport}}
+\index{ReceiveReport@{ReceiveReport}!ns3::OranNearRtRicE2Terminator@{ns3::OranNearRtRicE2Terminator}}
+\doxysubsubsection{\texorpdfstring{ReceiveReport()}{ReceiveReport()}}
+{\footnotesize\ttfamily void ns3\+::\+Oran\+Near\+Rt\+Ric\+E2\+Terminator\+::\+Receive\+Report (\begin{DoxyParamCaption}\item[{Ptr$<$ \mbox{\hyperlink{classns3_1_1OranReport}{Oran\+Report}} $>$}]{report }\end{DoxyParamCaption})}
+
+Receive a Report and log the report in the Data Repository.
+
+
+\begin{DoxyParams}{Parameters}
+{\em report} & The Report from the Reporter. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classns3_1_1OranNearRtRicE2Terminator_af262bff78be27ed48291a6e7a5654b1a}\label{classns3_1_1OranNearRtRicE2Terminator_af262bff78be27ed48291a6e7a5654b1a}} 
+\index{ns3::OranNearRtRicE2Terminator@{ns3::OranNearRtRicE2Terminator}!SendCommand@{SendCommand}}
+\index{SendCommand@{SendCommand}!ns3::OranNearRtRicE2Terminator@{ns3::OranNearRtRicE2Terminator}}
+\doxysubsubsection{\texorpdfstring{SendCommand()}{SendCommand()}}
+{\footnotesize\ttfamily void ns3\+::\+Oran\+Near\+Rt\+Ric\+E2\+Terminator\+::\+Send\+Command (\begin{DoxyParamCaption}\item[{Ptr$<$ \mbox{\hyperlink{classns3_1_1OranCommand}{Oran\+Command}} $>$}]{command }\end{DoxyParamCaption})}
+
+Send a Command to an E2 Node Terminator. The Command will be transmitted directly to the target Terminator using the map of registered Terminators with the Target E2 Node indicated in the Command.
+
+
+\begin{DoxyParams}{Parameters}
+{\em command} & The Command to send. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/felipe/code/tcc/oran/model/oran-\/near-\/rt-\/ric-\/e2terminator.\+h\item 
+/home/felipe/code/tcc/oran/model/oran-\/near-\/rt-\/ric-\/e2terminator.\+cc\end{DoxyCompactItemize}

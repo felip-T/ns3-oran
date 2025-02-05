@@ -1,0 +1,109 @@
+\hypertarget{classns3_1_1OranLmLte2LteTorchHandover}{}\doxysection{ns3\+::Oran\+Lm\+Lte2\+Lte\+Torch\+Handover Class Reference}
+\label{classns3_1_1OranLmLte2LteTorchHandover}\index{ns3::OranLmLte2LteTorchHandover@{ns3::OranLmLte2LteTorchHandover}}
+
+
+{\ttfamily \#include $<$oran-\/lm-\/lte-\/2-\/lte-\/torch-\/handover.\+h$>$}
+
+
+
+Inheritance diagram for ns3\+::Oran\+Lm\+Lte2\+Lte\+Torch\+Handover\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{classns3_1_1OranLmLte2LteTorchHandover__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ns3\+::Oran\+Lm\+Lte2\+Lte\+Torch\+Handover\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=251pt]{classns3_1_1OranLmLte2LteTorchHandover__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structns3_1_1OranLmLte2LteTorchHandover_1_1EnbInfo}{Enb\+Info}}
+\item 
+struct \mbox{\hyperlink{structns3_1_1OranLmLte2LteTorchHandover_1_1UeInfo}{Ue\+Info}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1OranLmLte2LteTorchHandover_a2af3504632df80cf46463a096e8e1b19}{Oran\+Lm\+Lte2\+Lte\+Torch\+Handover}} (void)
+\item 
+\mbox{\hyperlink{classns3_1_1OranLmLte2LteTorchHandover_ac0de4f1e480502260bee2ecedae1eb11}{$\sim$\+Oran\+Lm\+Lte2\+Lte\+Torch\+Handover}} (void) override
+\item 
+std\+::vector$<$ Ptr$<$ \mbox{\hyperlink{classns3_1_1OranCommand}{Oran\+Command}} $>$ $>$ \mbox{\hyperlink{classns3_1_1OranLmLte2LteTorchHandover_a894f3b50a4d7a56fabfeb36bb3e4a508}{Run}} (void) override
+\item 
+void \mbox{\hyperlink{classns3_1_1OranLmLte2LteTorchHandover_a0f42b08330c3b6006ed8163a3df1f327}{Set\+Torch\+Model\+Path}} (const std\+::string \&torch\+Model\+Path)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Type\+Id \mbox{\hyperlink{classns3_1_1OranLmLte2LteTorchHandover_a2e1ea51867e968f1cf3feedfba884fa3}{Get\+Type\+Id}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Logic Module for the Near-\/\+RT RIC that issues Commands to handover from an LTE cell to another based on a Py\+Torch ML model. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classns3_1_1OranLmLte2LteTorchHandover_a2af3504632df80cf46463a096e8e1b19}\label{classns3_1_1OranLmLte2LteTorchHandover_a2af3504632df80cf46463a096e8e1b19}} 
+\index{ns3::OranLmLte2LteTorchHandover@{ns3::OranLmLte2LteTorchHandover}!OranLmLte2LteTorchHandover@{OranLmLte2LteTorchHandover}}
+\index{OranLmLte2LteTorchHandover@{OranLmLte2LteTorchHandover}!ns3::OranLmLte2LteTorchHandover@{ns3::OranLmLte2LteTorchHandover}}
+\doxysubsubsection{\texorpdfstring{OranLmLte2LteTorchHandover()}{OranLmLte2LteTorchHandover()}}
+{\footnotesize\ttfamily ns3\+::\+Oran\+Lm\+Lte2\+Lte\+Torch\+Handover\+::\+Oran\+Lm\+Lte2\+Lte\+Torch\+Handover (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Constructor of the \mbox{\hyperlink{classns3_1_1OranLmLte2LteTorchHandover}{Oran\+Lm\+Lte2\+Lte\+Torch\+Handover}} class. \mbox{\Hypertarget{classns3_1_1OranLmLte2LteTorchHandover_ac0de4f1e480502260bee2ecedae1eb11}\label{classns3_1_1OranLmLte2LteTorchHandover_ac0de4f1e480502260bee2ecedae1eb11}} 
+\index{ns3::OranLmLte2LteTorchHandover@{ns3::OranLmLte2LteTorchHandover}!````~OranLmLte2LteTorchHandover@{$\sim$OranLmLte2LteTorchHandover}}
+\index{````~OranLmLte2LteTorchHandover@{$\sim$OranLmLte2LteTorchHandover}!ns3::OranLmLte2LteTorchHandover@{ns3::OranLmLte2LteTorchHandover}}
+\doxysubsubsection{\texorpdfstring{$\sim$OranLmLte2LteTorchHandover()}{~OranLmLte2LteTorchHandover()}}
+{\footnotesize\ttfamily ns3\+::\+Oran\+Lm\+Lte2\+Lte\+Torch\+Handover\+::$\sim$\+Oran\+Lm\+Lte2\+Lte\+Torch\+Handover (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+Destructor of the \mbox{\hyperlink{classns3_1_1OranLmLte2LteTorchHandover}{Oran\+Lm\+Lte2\+Lte\+Torch\+Handover}} class. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classns3_1_1OranLmLte2LteTorchHandover_a2e1ea51867e968f1cf3feedfba884fa3}\label{classns3_1_1OranLmLte2LteTorchHandover_a2e1ea51867e968f1cf3feedfba884fa3}} 
+\index{ns3::OranLmLte2LteTorchHandover@{ns3::OranLmLte2LteTorchHandover}!GetTypeId@{GetTypeId}}
+\index{GetTypeId@{GetTypeId}!ns3::OranLmLte2LteTorchHandover@{ns3::OranLmLte2LteTorchHandover}}
+\doxysubsubsection{\texorpdfstring{GetTypeId()}{GetTypeId()}}
+{\footnotesize\ttfamily Type\+Id ns3\+::\+Oran\+Lm\+Lte2\+Lte\+Torch\+Handover\+::\+Get\+Type\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets the Type\+Id of the \mbox{\hyperlink{classns3_1_1OranLmLte2LteTorchHandover}{Oran\+Lm\+Lte2\+Lte\+Torch\+Handover}} class.
+
+\begin{DoxyReturn}{Returns}
+The Type\+Id. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classns3_1_1OranLmLte2LteTorchHandover_a894f3b50a4d7a56fabfeb36bb3e4a508}\label{classns3_1_1OranLmLte2LteTorchHandover_a894f3b50a4d7a56fabfeb36bb3e4a508}} 
+\index{ns3::OranLmLte2LteTorchHandover@{ns3::OranLmLte2LteTorchHandover}!Run@{Run}}
+\index{Run@{Run}!ns3::OranLmLte2LteTorchHandover@{ns3::OranLmLte2LteTorchHandover}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily std\+::vector$<$ Ptr$<$ \mbox{\hyperlink{classns3_1_1OranCommand}{Oran\+Command}} $>$ $>$ ns3\+::\+Oran\+Lm\+Lte2\+Lte\+Torch\+Handover\+::\+Run (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Runs the logic specific for this Logic Module. This will retrieve the location of all LTE UEs and e\+NBs and the application loss for all UEs, calculate the distance between all e\+NBs for each UE, pass these as inputs to the Py\+Torch ML model, and then generate zero or more handover Commands based on the ML model output that is generated.
+
+\begin{DoxyReturn}{Returns}
+A vector with the handover commands generated by this Logic Module. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classns3_1_1OranLm_ad12046f9b8036f0b5e0c59434504660a}{ns3\+::\+Oran\+Lm}}.
+
+\mbox{\Hypertarget{classns3_1_1OranLmLte2LteTorchHandover_a0f42b08330c3b6006ed8163a3df1f327}\label{classns3_1_1OranLmLte2LteTorchHandover_a0f42b08330c3b6006ed8163a3df1f327}} 
+\index{ns3::OranLmLte2LteTorchHandover@{ns3::OranLmLte2LteTorchHandover}!SetTorchModelPath@{SetTorchModelPath}}
+\index{SetTorchModelPath@{SetTorchModelPath}!ns3::OranLmLte2LteTorchHandover@{ns3::OranLmLte2LteTorchHandover}}
+\doxysubsubsection{\texorpdfstring{SetTorchModelPath()}{SetTorchModelPath()}}
+{\footnotesize\ttfamily void ns3\+::\+Oran\+Lm\+Lte2\+Lte\+Torch\+Handover\+::\+Set\+Torch\+Model\+Path (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{torch\+Model\+Path }\end{DoxyParamCaption})}
+
+Sets the path of the trainined Py\+Torch ML model.
+
+\textbackslash{}parm troch\+Model\+Path the file path of the Py\+Torch ML model. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/felipe/code/tcc/oran/model/oran-\/lm-\/lte-\/2-\/lte-\/torch-\/handover.\+h\item 
+/home/felipe/code/tcc/oran/model/oran-\/lm-\/lte-\/2-\/lte-\/torch-\/handover.\+cc\end{DoxyCompactItemize}

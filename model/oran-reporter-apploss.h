@@ -34,6 +34,8 @@
 
 #include "oran-report.h"
 #include "oran-reporter.h"
+#include "ns3/traced-value.h"
+#include "ns3/trace-source-accessor.h"
 
 #include <ns3/ptr.h>
 
@@ -98,6 +100,7 @@ class OranReporterAppLoss : public OranReporter
      * The number of recived packets.
      */
     uint64_t m_rx;
+    TracedValue<double> m_appLoss;
 };
 
 } // namespace ns3

@@ -1,0 +1,158 @@
+\hypertarget{classns3_1_1OranReportTrigger}{}\doxysection{ns3\+::Oran\+Report\+Trigger Class Reference}
+\label{classns3_1_1OranReportTrigger}\index{ns3::OranReportTrigger@{ns3::OranReportTrigger}}
+
+
+{\ttfamily \#include $<$oran-\/report-\/trigger.\+h$>$}
+
+
+
+Inheritance diagram for ns3\+::Oran\+Report\+Trigger\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns3_1_1OranReportTrigger__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ns3\+::Oran\+Report\+Trigger\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{classns3_1_1OranReportTrigger__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1OranReportTrigger_a7a50dc22b0f4060b1d8d19a927b4ba4c}{$\sim$\+Oran\+Report\+Trigger}} (void) override
+\item 
+virtual void \mbox{\hyperlink{classns3_1_1OranReportTrigger_ad4a5247cd63267a082f012077ed6820c}{Activate}} (Ptr$<$ \mbox{\hyperlink{classns3_1_1OranReporter}{Oran\+Reporter}} $>$ reporter)
+\item 
+virtual void \mbox{\hyperlink{classns3_1_1OranReportTrigger_a0f7d4efa29bc78a2ca498b53344f35a4}{Deactivate}} (void)
+\item 
+virtual void \mbox{\hyperlink{classns3_1_1OranReportTrigger_a71b0816285e33519984c8a34325445a8}{Notify\+Registration\+Complete}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Type\+Id \mbox{\hyperlink{classns3_1_1OranReportTrigger_a02a882f833c6c378427c4f698f87d4e0}{Get\+Type\+Id}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1OranReportTrigger_a1b4d904792f65ebaa8dace599185af9b}{Oran\+Report\+Trigger}} (void)
+\item 
+void \mbox{\hyperlink{classns3_1_1OranReportTrigger_a2c2e2c94264f8527717c8a1187017f78}{Do\+Dispose}} (void) override
+\item 
+virtual void \mbox{\hyperlink{classns3_1_1OranReportTrigger_abc999d39cb46088ae094e0009531a41b}{Trigger\+Report}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classns3_1_1OranReportTrigger_a4c78a57b6044261360dbdb6e4e412eab}{m\+\_\+active}}
+\item 
+Ptr$<$ \mbox{\hyperlink{classns3_1_1OranReporter}{Oran\+Reporter}} $>$ \mbox{\hyperlink{classns3_1_1OranReportTrigger_a3a2db91cddf67c51e223dcd0a0e1c0aa}{m\+\_\+reporter}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for triggering the generation of a Report.
+
+This class cannot be instantiated. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classns3_1_1OranReportTrigger_a7a50dc22b0f4060b1d8d19a927b4ba4c}\label{classns3_1_1OranReportTrigger_a7a50dc22b0f4060b1d8d19a927b4ba4c}} 
+\index{ns3::OranReportTrigger@{ns3::OranReportTrigger}!````~OranReportTrigger@{$\sim$OranReportTrigger}}
+\index{````~OranReportTrigger@{$\sim$OranReportTrigger}!ns3::OranReportTrigger@{ns3::OranReportTrigger}}
+\doxysubsubsection{\texorpdfstring{$\sim$OranReportTrigger()}{~OranReportTrigger()}}
+{\footnotesize\ttfamily ns3\+::\+Oran\+Report\+Trigger\+::$\sim$\+Oran\+Report\+Trigger (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+Destructor of the \mbox{\hyperlink{classns3_1_1OranReportTrigger}{Oran\+Report\+Trigger}} class. \mbox{\Hypertarget{classns3_1_1OranReportTrigger_a1b4d904792f65ebaa8dace599185af9b}\label{classns3_1_1OranReportTrigger_a1b4d904792f65ebaa8dace599185af9b}} 
+\index{ns3::OranReportTrigger@{ns3::OranReportTrigger}!OranReportTrigger@{OranReportTrigger}}
+\index{OranReportTrigger@{OranReportTrigger}!ns3::OranReportTrigger@{ns3::OranReportTrigger}}
+\doxysubsubsection{\texorpdfstring{OranReportTrigger()}{OranReportTrigger()}}
+{\footnotesize\ttfamily ns3\+::\+Oran\+Report\+Trigger\+::\+Oran\+Report\+Trigger (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Constructor of the \mbox{\hyperlink{classns3_1_1OranReportTrigger}{Oran\+Report\+Trigger}} class. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classns3_1_1OranReportTrigger_ad4a5247cd63267a082f012077ed6820c}\label{classns3_1_1OranReportTrigger_ad4a5247cd63267a082f012077ed6820c}} 
+\index{ns3::OranReportTrigger@{ns3::OranReportTrigger}!Activate@{Activate}}
+\index{Activate@{Activate}!ns3::OranReportTrigger@{ns3::OranReportTrigger}}
+\doxysubsubsection{\texorpdfstring{Activate()}{Activate()}}
+{\footnotesize\ttfamily void ns3\+::\+Oran\+Report\+Trigger\+::\+Activate (\begin{DoxyParamCaption}\item[{Ptr$<$ \mbox{\hyperlink{classns3_1_1OranReporter}{Oran\+Reporter}} $>$}]{reporter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Activates this trigger for and links it to the given reporter. 
+\begin{DoxyParams}{Parameters}
+{\em reporter} & The reporter to link to. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classns3_1_1OranReportTriggerPeriodic_a4f983998b8eae6f49ce7a34cf5d34d16}{ns3\+::\+Oran\+Report\+Trigger\+Periodic}}, \mbox{\hyperlink{classns3_1_1OranReportTriggerLteUeHandover_a9cd772e95a08211f48ab3346df87d436}{ns3\+::\+Oran\+Report\+Trigger\+Lte\+Ue\+Handover}}, and \mbox{\hyperlink{classns3_1_1OranReportTriggerLocationChange_a3394306e6124f8b7ddedf5466bea90f5}{ns3\+::\+Oran\+Report\+Trigger\+Location\+Change}}.
+
+\mbox{\Hypertarget{classns3_1_1OranReportTrigger_a0f7d4efa29bc78a2ca498b53344f35a4}\label{classns3_1_1OranReportTrigger_a0f7d4efa29bc78a2ca498b53344f35a4}} 
+\index{ns3::OranReportTrigger@{ns3::OranReportTrigger}!Deactivate@{Deactivate}}
+\index{Deactivate@{Deactivate}!ns3::OranReportTrigger@{ns3::OranReportTrigger}}
+\doxysubsubsection{\texorpdfstring{Deactivate()}{Deactivate()}}
+{\footnotesize\ttfamily void ns3\+::\+Oran\+Report\+Trigger\+::\+Deactivate (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Deactivates this trigger and unlinks it from the current reporter. 
+
+Reimplemented in \mbox{\hyperlink{classns3_1_1OranReportTriggerPeriodic_af1f11e835c84e323a630159152f60c01}{ns3\+::\+Oran\+Report\+Trigger\+Periodic}}, \mbox{\hyperlink{classns3_1_1OranReportTriggerLteUeHandover_a47ccf7a2fd7e834253258fff46be30ae}{ns3\+::\+Oran\+Report\+Trigger\+Lte\+Ue\+Handover}}, and \mbox{\hyperlink{classns3_1_1OranReportTriggerLocationChange_acc4d860d2864ca358ab9843a3d2ac608}{ns3\+::\+Oran\+Report\+Trigger\+Location\+Change}}.
+
+\mbox{\Hypertarget{classns3_1_1OranReportTrigger_a2c2e2c94264f8527717c8a1187017f78}\label{classns3_1_1OranReportTrigger_a2c2e2c94264f8527717c8a1187017f78}} 
+\index{ns3::OranReportTrigger@{ns3::OranReportTrigger}!DoDispose@{DoDispose}}
+\index{DoDispose@{DoDispose}!ns3::OranReportTrigger@{ns3::OranReportTrigger}}
+\doxysubsubsection{\texorpdfstring{DoDispose()}{DoDispose()}}
+{\footnotesize\ttfamily void ns3\+::\+Oran\+Report\+Trigger\+::\+Do\+Dispose (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}}
+
+Dispose of the Report. \mbox{\Hypertarget{classns3_1_1OranReportTrigger_a02a882f833c6c378427c4f698f87d4e0}\label{classns3_1_1OranReportTrigger_a02a882f833c6c378427c4f698f87d4e0}} 
+\index{ns3::OranReportTrigger@{ns3::OranReportTrigger}!GetTypeId@{GetTypeId}}
+\index{GetTypeId@{GetTypeId}!ns3::OranReportTrigger@{ns3::OranReportTrigger}}
+\doxysubsubsection{\texorpdfstring{GetTypeId()}{GetTypeId()}}
+{\footnotesize\ttfamily Type\+Id ns3\+::\+Oran\+Report\+Trigger\+::\+Get\+Type\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Get the Type\+Id of the \mbox{\hyperlink{classns3_1_1OranReportTrigger}{Oran\+Report\+Trigger}} class.
+
+\begin{DoxyReturn}{Returns}
+The Type\+Id. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classns3_1_1OranReportTrigger_a71b0816285e33519984c8a34325445a8}\label{classns3_1_1OranReportTrigger_a71b0816285e33519984c8a34325445a8}} 
+\index{ns3::OranReportTrigger@{ns3::OranReportTrigger}!NotifyRegistrationComplete@{NotifyRegistrationComplete}}
+\index{NotifyRegistrationComplete@{NotifyRegistrationComplete}!ns3::OranReportTrigger@{ns3::OranReportTrigger}}
+\doxysubsubsection{\texorpdfstring{NotifyRegistrationComplete()}{NotifyRegistrationComplete()}}
+{\footnotesize\ttfamily void ns3\+::\+Oran\+Report\+Trigger\+::\+Notify\+Registration\+Complete (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Notifies the trigger that initial registartion has completed successfully. \mbox{\Hypertarget{classns3_1_1OranReportTrigger_abc999d39cb46088ae094e0009531a41b}\label{classns3_1_1OranReportTrigger_abc999d39cb46088ae094e0009531a41b}} 
+\index{ns3::OranReportTrigger@{ns3::OranReportTrigger}!TriggerReport@{TriggerReport}}
+\index{TriggerReport@{TriggerReport}!ns3::OranReportTrigger@{ns3::OranReportTrigger}}
+\doxysubsubsection{\texorpdfstring{TriggerReport()}{TriggerReport()}}
+{\footnotesize\ttfamily void ns3\+::\+Oran\+Report\+Trigger\+::\+Trigger\+Report (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Triggers a report. 
+
+Reimplemented in \mbox{\hyperlink{classns3_1_1OranReportTriggerPeriodic_a4d5177336c9c0cb02f183121df0bf1ed}{ns3\+::\+Oran\+Report\+Trigger\+Periodic}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classns3_1_1OranReportTrigger_a4c78a57b6044261360dbdb6e4e412eab}\label{classns3_1_1OranReportTrigger_a4c78a57b6044261360dbdb6e4e412eab}} 
+\index{ns3::OranReportTrigger@{ns3::OranReportTrigger}!m\_active@{m\_active}}
+\index{m\_active@{m\_active}!ns3::OranReportTrigger@{ns3::OranReportTrigger}}
+\doxysubsubsection{\texorpdfstring{m\_active}{m\_active}}
+{\footnotesize\ttfamily bool ns3\+::\+Oran\+Report\+Trigger\+::m\+\_\+active\hspace{0.3cm}{\ttfamily [protected]}}
+
+Flag to indicate if the trigger is active. \mbox{\Hypertarget{classns3_1_1OranReportTrigger_a3a2db91cddf67c51e223dcd0a0e1c0aa}\label{classns3_1_1OranReportTrigger_a3a2db91cddf67c51e223dcd0a0e1c0aa}} 
+\index{ns3::OranReportTrigger@{ns3::OranReportTrigger}!m\_reporter@{m\_reporter}}
+\index{m\_reporter@{m\_reporter}!ns3::OranReportTrigger@{ns3::OranReportTrigger}}
+\doxysubsubsection{\texorpdfstring{m\_reporter}{m\_reporter}}
+{\footnotesize\ttfamily Ptr$<$\mbox{\hyperlink{classns3_1_1OranReporter}{Oran\+Reporter}}$>$ ns3\+::\+Oran\+Report\+Trigger\+::m\+\_\+reporter\hspace{0.3cm}{\ttfamily [protected]}}
+
+The reporter to trigger reports for. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/felipe/code/tcc/oran/model/oran-\/report-\/trigger.\+h\item 
+/home/felipe/code/tcc/oran/model/oran-\/report-\/trigger.\+cc\end{DoxyCompactItemize}

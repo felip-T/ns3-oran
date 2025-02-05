@@ -1,0 +1,445 @@
+\hypertarget{classns3_1_1OranNearRtRic}{}\doxysection{ns3\+::Oran\+Near\+Rt\+Ric Class Reference}
+\label{classns3_1_1OranNearRtRic}\index{ns3::OranNearRtRic@{ns3::OranNearRtRic}}
+
+
+{\ttfamily \#include $<$oran-\/near-\/rt-\/ric.\+h$>$}
+
+
+
+Inheritance diagram for ns3\+::Oran\+Near\+Rt\+Ric\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classns3_1_1OranNearRtRic__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ns3\+::Oran\+Near\+Rt\+Ric\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classns3_1_1OranNearRtRic__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classns3_1_1OranNearRtRic_a3902b000e88d7cfcb5e18e128c4f67f6}{Node\+Type}} \{ \mbox{\hyperlink{classns3_1_1OranNearRtRic_a3902b000e88d7cfcb5e18e128c4f67f6a1b9dea00dbf6acb1e8acef9e0815edc5}{WIRED}} = 0
+, \mbox{\hyperlink{classns3_1_1OranNearRtRic_a3902b000e88d7cfcb5e18e128c4f67f6a7237c0b3d6a99ff907785617f33b6d15}{LTEUE}}
+, \mbox{\hyperlink{classns3_1_1OranNearRtRic_a3902b000e88d7cfcb5e18e128c4f67f6a19584a0849e2622b722d5766a738120d}{LTEENB}}
+ \}
+\item 
+enum \mbox{\hyperlink{classns3_1_1OranNearRtRic_a18024a9a10387735ca46587a236ce45a}{Add\+Lm\+Result}} \{ \mbox{\hyperlink{classns3_1_1OranNearRtRic_a18024a9a10387735ca46587a236ce45aa1fec5e030ddf55590c0edb032be7daf4}{ADDLM\+\_\+\+OK}} = 0
+, \mbox{\hyperlink{classns3_1_1OranNearRtRic_a18024a9a10387735ca46587a236ce45aa4b82d4ba16b64f610b480e93f5e160c6}{ADDLM\+\_\+\+ERR\+\_\+\+NAME\+\_\+\+EXISTS}}
+ \}
+\item 
+enum \mbox{\hyperlink{classns3_1_1OranNearRtRic_a538558452a0948c0398483d8baa2a448}{Remove\+Lm\+Result}} \{ \mbox{\hyperlink{classns3_1_1OranNearRtRic_a538558452a0948c0398483d8baa2a448a8c2bd910686e4e2d92c4047c6eee9e83}{DELLM\+\_\+\+OK}} = 0
+, \mbox{\hyperlink{classns3_1_1OranNearRtRic_a538558452a0948c0398483d8baa2a448ab2490adec325c21945b4933ae46bf70f}{DELLM\+\_\+\+ERR\+\_\+\+NAME\+\_\+\+INVALID}}
+ \}
+\item 
+enum \mbox{\hyperlink{classns3_1_1OranNearRtRic_a7561a67c760b86558bc1c75a7af13959}{Late\+Command\+Policy}} \{ \mbox{\hyperlink{classns3_1_1OranNearRtRic_a7561a67c760b86558bc1c75a7af13959ad3496f93c863cedf0d29543dbed52cf7}{DROP}} = 0
+, \mbox{\hyperlink{classns3_1_1OranNearRtRic_a7561a67c760b86558bc1c75a7af13959abbbaa305c4d2765bfcf2f6c9774700f4}{SAVE}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1OranNearRtRic_a5a042ef1763cabd841cb5ce60181506d}{Oran\+Near\+Rt\+Ric}} (void)
+\item 
+\mbox{\hyperlink{classns3_1_1OranNearRtRic_add7d037822da70029777d45aa4bf525f}{$\sim$\+Oran\+Near\+Rt\+Ric}} (void) override
+\item 
+void \mbox{\hyperlink{classns3_1_1OranNearRtRic_a1c7b89739c90b362bc847f070334705a}{Activate}} (void)
+\item 
+void \mbox{\hyperlink{classns3_1_1OranNearRtRic_a19ccbaeb5990a79b451d8d4f265faa6b}{Deactivate}} (void)
+\item 
+bool \mbox{\hyperlink{classns3_1_1OranNearRtRic_ae50a19db7e92fcb740dfc31976e3d111}{Is\+Active}} (void) const
+\item 
+void \mbox{\hyperlink{classns3_1_1OranNearRtRic_a15e6df9e8ccbf68493cfd32ea6f69599}{Start}} (void)
+\item 
+void \mbox{\hyperlink{classns3_1_1OranNearRtRic_a64c1e67e6c7bd266b00b63f97a4cb06d}{Stop}} (void)
+\item 
+Ptr$<$ \mbox{\hyperlink{classns3_1_1OranNearRtRicE2Terminator}{Oran\+Near\+Rt\+Ric\+E2\+Terminator}} $>$ \mbox{\hyperlink{classns3_1_1OranNearRtRic_ad510cd5f4d7c8ffd37ac15008468b4c1}{Get\+E2\+Terminator}} (void) const
+\item 
+Ptr$<$ \mbox{\hyperlink{classns3_1_1OranLm}{Oran\+Lm}} $>$ \mbox{\hyperlink{classns3_1_1OranNearRtRic_ab0885a20caed2065fcad493fdcb6381f}{Get\+Default\+Logic\+Module}} (void) const
+\item 
+void \mbox{\hyperlink{classns3_1_1OranNearRtRic_a075ee1540d5d9a1c73c3d7d50eb72fa1}{Set\+Default\+Logic\+Module}} (Ptr$<$ \mbox{\hyperlink{classns3_1_1OranLm}{Oran\+Lm}} $>$ new\+Default\+Lm)
+\item 
+Ptr$<$ \mbox{\hyperlink{classns3_1_1OranLm}{Oran\+Lm}} $>$ \mbox{\hyperlink{classns3_1_1OranNearRtRic_a70df10ec0540efedc08b6f641f35dea5}{Get\+Additional\+Logic\+Module}} (std\+::string name) const
+\item 
+\mbox{\hyperlink{classns3_1_1OranNearRtRic_a18024a9a10387735ca46587a236ce45a}{Oran\+Near\+Rt\+Ric\+::\+Add\+Lm\+Result}} \mbox{\hyperlink{classns3_1_1OranNearRtRic_a49d9b9b5ea4fa3bafdab142b23469e3c}{Add\+Logic\+Module}} (Ptr$<$ \mbox{\hyperlink{classns3_1_1OranLm}{Oran\+Lm}} $>$ new\+Lm)
+\item 
+\mbox{\hyperlink{classns3_1_1OranNearRtRic_a538558452a0948c0398483d8baa2a448}{Oran\+Near\+Rt\+Ric\+::\+Remove\+Lm\+Result}} \mbox{\hyperlink{classns3_1_1OranNearRtRic_aeed38096421a9c54edac88539d6da51b}{Remove\+Logic\+Module}} (std\+::string name)
+\item 
+bool \mbox{\hyperlink{classns3_1_1OranNearRtRic_a9d5d96a732e4d2d4b916926ab18fdd82}{Add\+Query\+Trigger}} (std\+::string name, Ptr$<$ \mbox{\hyperlink{classns3_1_1OranQueryTrigger}{Oran\+Query\+Trigger}} $>$ trigger)
+\item 
+bool \mbox{\hyperlink{classns3_1_1OranNearRtRic_afa55ca7732a2d9744ef1695e0538ce7e}{Remove\+Query\+Trigger}} (std\+::string name)
+\item 
+Ptr$<$ \mbox{\hyperlink{classns3_1_1OranDataRepository}{Oran\+Data\+Repository}} $>$ \mbox{\hyperlink{classns3_1_1OranNearRtRic_a90ccfe941deaea4435138ef43a952311}{Data}} (void) const
+\item 
+Ptr$<$ \mbox{\hyperlink{classns3_1_1OranCmm}{Oran\+Cmm}} $>$ \mbox{\hyperlink{classns3_1_1OranNearRtRic_ad54285d2243b6f8ab10632c9235caf82}{Get\+Cmm}} (void) const
+\item 
+void \mbox{\hyperlink{classns3_1_1OranNearRtRic_a026a91d658aa2ad4ab3fa28071c8c84b}{Set\+Cmm}} (Ptr$<$ \mbox{\hyperlink{classns3_1_1OranCmm}{Oran\+Cmm}} $>$ new\+Cmm)
+\item 
+void \mbox{\hyperlink{classns3_1_1OranNearRtRic_a2e494ffaee3bb233672a6d4c9473a6d6}{Notify\+Lm\+Finished}} (Time lm\+Query\+Cycle, std\+::vector$<$ Ptr$<$ \mbox{\hyperlink{classns3_1_1OranCommand}{Oran\+Command}} $>$$>$ commands, Ptr$<$ \mbox{\hyperlink{classns3_1_1OranLm}{Oran\+Lm}} $>$ lm)
+\item 
+void \mbox{\hyperlink{classns3_1_1OranNearRtRic_a3c3f8665cc91ad6200bfc30024069485}{Notify\+Report\+Received}} (Ptr$<$ \mbox{\hyperlink{classns3_1_1OranReport}{Oran\+Report}} $>$ report)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Type\+Id \mbox{\hyperlink{classns3_1_1OranNearRtRic_af9216e9f27c6edbd64935b3ce6dfba88}{Get\+Type\+Id}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classns3_1_1OranNearRtRic_a0da0269a5d0630a640005549368f518b}{Do\+Dispose}} (void) override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Model for the Near-\/\+RT RIC
+
+The Near-\/\+RT RAN Intelligent Controller (RIC). This model houses the implementation of the Data Storage Module, Default Logic Module, optional Additional Logic Modules, the Conflict Mitigation Module, and the E2 Terminator.
+
+Communication with the E2 Terminators in the nodes is done over virtual interfactes, with the E2 Terminator in the RIC keeping pointers to all the Terminators of registered nodes, and each Node E2 Terminator having a pointer to the RIC they report to.
+
+The Near-\/\+RT RIC can be activated or deactivated, and this status is propagated to all the components.
+
+The RIC is responsible for periodically querying all the Logic Modules deployed, and sending the Commands that they generate to the target nodes.
+
+A default Logic Module must always be deployed. This default LM can be replaced dynamically during the simulation, but it cannot be removed without replacement. Similarly, an instance of the Conflict Mitigation Module must always be present.
+
+Additional Logic Modules can be added and removed during the simulation. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classns3_1_1OranNearRtRic_a18024a9a10387735ca46587a236ce45a}\label{classns3_1_1OranNearRtRic_a18024a9a10387735ca46587a236ce45a}} 
+\index{ns3::OranNearRtRic@{ns3::OranNearRtRic}!AddLmResult@{AddLmResult}}
+\index{AddLmResult@{AddLmResult}!ns3::OranNearRtRic@{ns3::OranNearRtRic}}
+\doxysubsubsection{\texorpdfstring{AddLmResult}{AddLmResult}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classns3_1_1OranNearRtRic_a18024a9a10387735ca46587a236ce45a}{ns3\+::\+Oran\+Near\+Rt\+Ric\+::\+Add\+Lm\+Result}}}
+
+Enumeration with the results of the operation to add an additional Logic Module. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADDLM\_OK@{ADDLM\_OK}!ns3::OranNearRtRic@{ns3::OranNearRtRic}}\index{ns3::OranNearRtRic@{ns3::OranNearRtRic}!ADDLM\_OK@{ADDLM\_OK}}}\mbox{\Hypertarget{classns3_1_1OranNearRtRic_a18024a9a10387735ca46587a236ce45aa1fec5e030ddf55590c0edb032be7daf4}\label{classns3_1_1OranNearRtRic_a18024a9a10387735ca46587a236ce45aa1fec5e030ddf55590c0edb032be7daf4}} 
+ADDLM\+\_\+\+OK&Operation successful. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADDLM\_ERR\_NAME\_EXISTS@{ADDLM\_ERR\_NAME\_EXISTS}!ns3::OranNearRtRic@{ns3::OranNearRtRic}}\index{ns3::OranNearRtRic@{ns3::OranNearRtRic}!ADDLM\_ERR\_NAME\_EXISTS@{ADDLM\_ERR\_NAME\_EXISTS}}}\mbox{\Hypertarget{classns3_1_1OranNearRtRic_a18024a9a10387735ca46587a236ce45aa4b82d4ba16b64f610b480e93f5e160c6}\label{classns3_1_1OranNearRtRic_a18024a9a10387735ca46587a236ce45aa4b82d4ba16b64f610b480e93f5e160c6}} 
+ADDLM\+\_\+\+ERR\+\_\+\+NAME\+\_\+\+EXISTS&LM Name already exists. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classns3_1_1OranNearRtRic_a7561a67c760b86558bc1c75a7af13959}\label{classns3_1_1OranNearRtRic_a7561a67c760b86558bc1c75a7af13959}} 
+\index{ns3::OranNearRtRic@{ns3::OranNearRtRic}!LateCommandPolicy@{LateCommandPolicy}}
+\index{LateCommandPolicy@{LateCommandPolicy}!ns3::OranNearRtRic@{ns3::OranNearRtRic}}
+\doxysubsubsection{\texorpdfstring{LateCommandPolicy}{LateCommandPolicy}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classns3_1_1OranNearRtRic_a7561a67c760b86558bc1c75a7af13959}{ns3\+::\+Oran\+Near\+Rt\+Ric\+::\+Late\+Command\+Policy}}}
+
+Enumeration with policy types for handling commands that are received from Logic Modules after the maximum wait time. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DROP@{DROP}!ns3::OranNearRtRic@{ns3::OranNearRtRic}}\index{ns3::OranNearRtRic@{ns3::OranNearRtRic}!DROP@{DROP}}}\mbox{\Hypertarget{classns3_1_1OranNearRtRic_a7561a67c760b86558bc1c75a7af13959ad3496f93c863cedf0d29543dbed52cf7}\label{classns3_1_1OranNearRtRic_a7561a67c760b86558bc1c75a7af13959ad3496f93c863cedf0d29543dbed52cf7}} 
+DROP&Drop the commands. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SAVE@{SAVE}!ns3::OranNearRtRic@{ns3::OranNearRtRic}}\index{ns3::OranNearRtRic@{ns3::OranNearRtRic}!SAVE@{SAVE}}}\mbox{\Hypertarget{classns3_1_1OranNearRtRic_a7561a67c760b86558bc1c75a7af13959abbbaa305c4d2765bfcf2f6c9774700f4}\label{classns3_1_1OranNearRtRic_a7561a67c760b86558bc1c75a7af13959abbbaa305c4d2765bfcf2f6c9774700f4}} 
+SAVE&Saves the commands for the next cycle. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classns3_1_1OranNearRtRic_a3902b000e88d7cfcb5e18e128c4f67f6}\label{classns3_1_1OranNearRtRic_a3902b000e88d7cfcb5e18e128c4f67f6}} 
+\index{ns3::OranNearRtRic@{ns3::OranNearRtRic}!NodeType@{NodeType}}
+\index{NodeType@{NodeType}!ns3::OranNearRtRic@{ns3::OranNearRtRic}}
+\doxysubsubsection{\texorpdfstring{NodeType}{NodeType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classns3_1_1OranNearRtRic_a3902b000e88d7cfcb5e18e128c4f67f6}{ns3\+::\+Oran\+Near\+Rt\+Ric\+::\+Node\+Type}}}
+
+Enumeration with the types of nodes \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WIRED@{WIRED}!ns3::OranNearRtRic@{ns3::OranNearRtRic}}\index{ns3::OranNearRtRic@{ns3::OranNearRtRic}!WIRED@{WIRED}}}\mbox{\Hypertarget{classns3_1_1OranNearRtRic_a3902b000e88d7cfcb5e18e128c4f67f6a1b9dea00dbf6acb1e8acef9e0815edc5}\label{classns3_1_1OranNearRtRic_a3902b000e88d7cfcb5e18e128c4f67f6a1b9dea00dbf6acb1e8acef9e0815edc5}} 
+WIRED&Wired node, identified by simulation Node ID. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LTEUE@{LTEUE}!ns3::OranNearRtRic@{ns3::OranNearRtRic}}\index{ns3::OranNearRtRic@{ns3::OranNearRtRic}!LTEUE@{LTEUE}}}\mbox{\Hypertarget{classns3_1_1OranNearRtRic_a3902b000e88d7cfcb5e18e128c4f67f6a7237c0b3d6a99ff907785617f33b6d15}\label{classns3_1_1OranNearRtRic_a3902b000e88d7cfcb5e18e128c4f67f6a7237c0b3d6a99ff907785617f33b6d15}} 
+LTEUE&LTE UE, identified by IMSI. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LTEENB@{LTEENB}!ns3::OranNearRtRic@{ns3::OranNearRtRic}}\index{ns3::OranNearRtRic@{ns3::OranNearRtRic}!LTEENB@{LTEENB}}}\mbox{\Hypertarget{classns3_1_1OranNearRtRic_a3902b000e88d7cfcb5e18e128c4f67f6a19584a0849e2622b722d5766a738120d}\label{classns3_1_1OranNearRtRic_a3902b000e88d7cfcb5e18e128c4f67f6a19584a0849e2622b722d5766a738120d}} 
+LTEENB&LTE ENB, identified by cell ID. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classns3_1_1OranNearRtRic_a538558452a0948c0398483d8baa2a448}\label{classns3_1_1OranNearRtRic_a538558452a0948c0398483d8baa2a448}} 
+\index{ns3::OranNearRtRic@{ns3::OranNearRtRic}!RemoveLmResult@{RemoveLmResult}}
+\index{RemoveLmResult@{RemoveLmResult}!ns3::OranNearRtRic@{ns3::OranNearRtRic}}
+\doxysubsubsection{\texorpdfstring{RemoveLmResult}{RemoveLmResult}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classns3_1_1OranNearRtRic_a538558452a0948c0398483d8baa2a448}{ns3\+::\+Oran\+Near\+Rt\+Ric\+::\+Remove\+Lm\+Result}}}
+
+Enumeration with the results of the operation to remove an additional Logic Module. \begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DELLM\_OK@{DELLM\_OK}!ns3::OranNearRtRic@{ns3::OranNearRtRic}}\index{ns3::OranNearRtRic@{ns3::OranNearRtRic}!DELLM\_OK@{DELLM\_OK}}}\mbox{\Hypertarget{classns3_1_1OranNearRtRic_a538558452a0948c0398483d8baa2a448a8c2bd910686e4e2d92c4047c6eee9e83}\label{classns3_1_1OranNearRtRic_a538558452a0948c0398483d8baa2a448a8c2bd910686e4e2d92c4047c6eee9e83}} 
+DELLM\+\_\+\+OK&Operation successful. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DELLM\_ERR\_NAME\_INVALID@{DELLM\_ERR\_NAME\_INVALID}!ns3::OranNearRtRic@{ns3::OranNearRtRic}}\index{ns3::OranNearRtRic@{ns3::OranNearRtRic}!DELLM\_ERR\_NAME\_INVALID@{DELLM\_ERR\_NAME\_INVALID}}}\mbox{\Hypertarget{classns3_1_1OranNearRtRic_a538558452a0948c0398483d8baa2a448ab2490adec325c21945b4933ae46bf70f}\label{classns3_1_1OranNearRtRic_a538558452a0948c0398483d8baa2a448ab2490adec325c21945b4933ae46bf70f}} 
+DELLM\+\_\+\+ERR\+\_\+\+NAME\+\_\+\+INVALID&Provided name does not exist. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classns3_1_1OranNearRtRic_a5a042ef1763cabd841cb5ce60181506d}\label{classns3_1_1OranNearRtRic_a5a042ef1763cabd841cb5ce60181506d}} 
+\index{ns3::OranNearRtRic@{ns3::OranNearRtRic}!OranNearRtRic@{OranNearRtRic}}
+\index{OranNearRtRic@{OranNearRtRic}!ns3::OranNearRtRic@{ns3::OranNearRtRic}}
+\doxysubsubsection{\texorpdfstring{OranNearRtRic()}{OranNearRtRic()}}
+{\footnotesize\ttfamily ns3\+::\+Oran\+Near\+Rt\+Ric\+::\+Oran\+Near\+Rt\+Ric (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Constructor of the \mbox{\hyperlink{classns3_1_1OranNearRtRic}{Oran\+Near\+Rt\+Ric}} class. \mbox{\Hypertarget{classns3_1_1OranNearRtRic_add7d037822da70029777d45aa4bf525f}\label{classns3_1_1OranNearRtRic_add7d037822da70029777d45aa4bf525f}} 
+\index{ns3::OranNearRtRic@{ns3::OranNearRtRic}!````~OranNearRtRic@{$\sim$OranNearRtRic}}
+\index{````~OranNearRtRic@{$\sim$OranNearRtRic}!ns3::OranNearRtRic@{ns3::OranNearRtRic}}
+\doxysubsubsection{\texorpdfstring{$\sim$OranNearRtRic()}{~OranNearRtRic()}}
+{\footnotesize\ttfamily ns3\+::\+Oran\+Near\+Rt\+Ric\+::$\sim$\+Oran\+Near\+Rt\+Ric (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+Destructor of the \mbox{\hyperlink{classns3_1_1OranNearRtRic}{Oran\+Near\+Rt\+Ric}} class. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classns3_1_1OranNearRtRic_a1c7b89739c90b362bc847f070334705a}\label{classns3_1_1OranNearRtRic_a1c7b89739c90b362bc847f070334705a}} 
+\index{ns3::OranNearRtRic@{ns3::OranNearRtRic}!Activate@{Activate}}
+\index{Activate@{Activate}!ns3::OranNearRtRic@{ns3::OranNearRtRic}}
+\doxysubsubsection{\texorpdfstring{Activate()}{Activate()}}
+{\footnotesize\ttfamily void ns3\+::\+Oran\+Near\+Rt\+Ric\+::\+Activate (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Activate the RIC.
+
+This method will propagate and activate the E2 Terminator, the Data Repository, and the Logic Modules. \mbox{\Hypertarget{classns3_1_1OranNearRtRic_a49d9b9b5ea4fa3bafdab142b23469e3c}\label{classns3_1_1OranNearRtRic_a49d9b9b5ea4fa3bafdab142b23469e3c}} 
+\index{ns3::OranNearRtRic@{ns3::OranNearRtRic}!AddLogicModule@{AddLogicModule}}
+\index{AddLogicModule@{AddLogicModule}!ns3::OranNearRtRic@{ns3::OranNearRtRic}}
+\doxysubsubsection{\texorpdfstring{AddLogicModule()}{AddLogicModule()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1OranNearRtRic_a18024a9a10387735ca46587a236ce45a}{Oran\+Near\+Rt\+Ric\+::\+Add\+Lm\+Result}} ns3\+::\+Oran\+Near\+Rt\+Ric\+::\+Add\+Logic\+Module (\begin{DoxyParamCaption}\item[{Ptr$<$ \mbox{\hyperlink{classns3_1_1OranLm}{Oran\+Lm}} $>$}]{new\+Lm }\end{DoxyParamCaption})}
+
+Add an additional logic module.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Lm} & The new logic module.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of adding the Logic Module 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classns3_1_1OranNearRtRic_a9d5d96a732e4d2d4b916926ab18fdd82}\label{classns3_1_1OranNearRtRic_a9d5d96a732e4d2d4b916926ab18fdd82}} 
+\index{ns3::OranNearRtRic@{ns3::OranNearRtRic}!AddQueryTrigger@{AddQueryTrigger}}
+\index{AddQueryTrigger@{AddQueryTrigger}!ns3::OranNearRtRic@{ns3::OranNearRtRic}}
+\doxysubsubsection{\texorpdfstring{AddQueryTrigger()}{AddQueryTrigger()}}
+{\footnotesize\ttfamily bool ns3\+::\+Oran\+Near\+Rt\+Ric\+::\+Add\+Query\+Trigger (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{Ptr$<$ \mbox{\hyperlink{classns3_1_1OranQueryTrigger}{Oran\+Query\+Trigger}} $>$}]{trigger }\end{DoxyParamCaption})}
+
+Add an LM query trigger.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the trigger. \\
+\hline
+{\em trigger} & The trigger to add.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True, if the trigger was added successfully; otherwise, false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classns3_1_1OranNearRtRic_a90ccfe941deaea4435138ef43a952311}\label{classns3_1_1OranNearRtRic_a90ccfe941deaea4435138ef43a952311}} 
+\index{ns3::OranNearRtRic@{ns3::OranNearRtRic}!Data@{Data}}
+\index{Data@{Data}!ns3::OranNearRtRic@{ns3::OranNearRtRic}}
+\doxysubsubsection{\texorpdfstring{Data()}{Data()}}
+{\footnotesize\ttfamily Ptr$<$ \mbox{\hyperlink{classns3_1_1OranDataRepository}{Oran\+Data\+Repository}} $>$ ns3\+::\+Oran\+Near\+Rt\+Ric\+::\+Data (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Get a pointer to the Data Repository instance.
+
+\begin{DoxyReturn}{Returns}
+A pointer to the Data Repository instance. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classns3_1_1OranNearRtRic_a19ccbaeb5990a79b451d8d4f265faa6b}\label{classns3_1_1OranNearRtRic_a19ccbaeb5990a79b451d8d4f265faa6b}} 
+\index{ns3::OranNearRtRic@{ns3::OranNearRtRic}!Deactivate@{Deactivate}}
+\index{Deactivate@{Deactivate}!ns3::OranNearRtRic@{ns3::OranNearRtRic}}
+\doxysubsubsection{\texorpdfstring{Deactivate()}{Deactivate()}}
+{\footnotesize\ttfamily void ns3\+::\+Oran\+Near\+Rt\+Ric\+::\+Deactivate (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Deactivate the RIC.
+
+This method will propagate and deactivate the E2 Terminator, the Data Repository, and the Logic Modules. \mbox{\Hypertarget{classns3_1_1OranNearRtRic_a0da0269a5d0630a640005549368f518b}\label{classns3_1_1OranNearRtRic_a0da0269a5d0630a640005549368f518b}} 
+\index{ns3::OranNearRtRic@{ns3::OranNearRtRic}!DoDispose@{DoDispose}}
+\index{DoDispose@{DoDispose}!ns3::OranNearRtRic@{ns3::OranNearRtRic}}
+\doxysubsubsection{\texorpdfstring{DoDispose()}{DoDispose()}}
+{\footnotesize\ttfamily void ns3\+::\+Oran\+Near\+Rt\+Ric\+::\+Do\+Dispose (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Dispose of the object. \mbox{\Hypertarget{classns3_1_1OranNearRtRic_a70df10ec0540efedc08b6f641f35dea5}\label{classns3_1_1OranNearRtRic_a70df10ec0540efedc08b6f641f35dea5}} 
+\index{ns3::OranNearRtRic@{ns3::OranNearRtRic}!GetAdditionalLogicModule@{GetAdditionalLogicModule}}
+\index{GetAdditionalLogicModule@{GetAdditionalLogicModule}!ns3::OranNearRtRic@{ns3::OranNearRtRic}}
+\doxysubsubsection{\texorpdfstring{GetAdditionalLogicModule()}{GetAdditionalLogicModule()}}
+{\footnotesize\ttfamily Ptr$<$ \mbox{\hyperlink{classns3_1_1OranLm}{Oran\+Lm}} $>$ ns3\+::\+Oran\+Near\+Rt\+Ric\+::\+Get\+Additional\+Logic\+Module (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption}) const}
+
+Get an additional Logic Modules by name. If there is no additional Logic Module with that name, return a null pointer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the additional Logic Module we want to retrieve.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the additional Logic Module with the name provided. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classns3_1_1OranNearRtRic_ad54285d2243b6f8ab10632c9235caf82}\label{classns3_1_1OranNearRtRic_ad54285d2243b6f8ab10632c9235caf82}} 
+\index{ns3::OranNearRtRic@{ns3::OranNearRtRic}!GetCmm@{GetCmm}}
+\index{GetCmm@{GetCmm}!ns3::OranNearRtRic@{ns3::OranNearRtRic}}
+\doxysubsubsection{\texorpdfstring{GetCmm()}{GetCmm()}}
+{\footnotesize\ttfamily Ptr$<$ \mbox{\hyperlink{classns3_1_1OranCmm}{Oran\+Cmm}} $>$ ns3\+::\+Oran\+Near\+Rt\+Ric\+::\+Get\+Cmm (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Get the Conflict Mitigation Module.
+
+\begin{DoxyReturn}{Returns}
+The Conflict Mitigation Module. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classns3_1_1OranNearRtRic_ab0885a20caed2065fcad493fdcb6381f}\label{classns3_1_1OranNearRtRic_ab0885a20caed2065fcad493fdcb6381f}} 
+\index{ns3::OranNearRtRic@{ns3::OranNearRtRic}!GetDefaultLogicModule@{GetDefaultLogicModule}}
+\index{GetDefaultLogicModule@{GetDefaultLogicModule}!ns3::OranNearRtRic@{ns3::OranNearRtRic}}
+\doxysubsubsection{\texorpdfstring{GetDefaultLogicModule()}{GetDefaultLogicModule()}}
+{\footnotesize\ttfamily Ptr$<$ \mbox{\hyperlink{classns3_1_1OranLm}{Oran\+Lm}} $>$ ns3\+::\+Oran\+Near\+Rt\+Ric\+::\+Get\+Default\+Logic\+Module (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Get the Default Logic Module.
+
+\begin{DoxyReturn}{Returns}
+The Default Logic Module. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classns3_1_1OranNearRtRic_ad510cd5f4d7c8ffd37ac15008468b4c1}\label{classns3_1_1OranNearRtRic_ad510cd5f4d7c8ffd37ac15008468b4c1}} 
+\index{ns3::OranNearRtRic@{ns3::OranNearRtRic}!GetE2Terminator@{GetE2Terminator}}
+\index{GetE2Terminator@{GetE2Terminator}!ns3::OranNearRtRic@{ns3::OranNearRtRic}}
+\doxysubsubsection{\texorpdfstring{GetE2Terminator()}{GetE2Terminator()}}
+{\footnotesize\ttfamily Ptr$<$ \mbox{\hyperlink{classns3_1_1OranNearRtRicE2Terminator}{Oran\+Near\+Rt\+Ric\+E2\+Terminator}} $>$ ns3\+::\+Oran\+Near\+Rt\+Ric\+::\+Get\+E2\+Terminator (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Get the E2 Terminator.
+
+\begin{DoxyReturn}{Returns}
+The E2 Terminator in the Near-\/\+RT RIC. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classns3_1_1OranNearRtRic_af9216e9f27c6edbd64935b3ce6dfba88}\label{classns3_1_1OranNearRtRic_af9216e9f27c6edbd64935b3ce6dfba88}} 
+\index{ns3::OranNearRtRic@{ns3::OranNearRtRic}!GetTypeId@{GetTypeId}}
+\index{GetTypeId@{GetTypeId}!ns3::OranNearRtRic@{ns3::OranNearRtRic}}
+\doxysubsubsection{\texorpdfstring{GetTypeId()}{GetTypeId()}}
+{\footnotesize\ttfamily Type\+Id ns3\+::\+Oran\+Near\+Rt\+Ric\+::\+Get\+Type\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Get the Type\+Id of the \mbox{\hyperlink{classns3_1_1OranNearRtRic}{Oran\+Near\+Rt\+Ric}} class.
+
+\begin{DoxyReturn}{Returns}
+The Type\+Id. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classns3_1_1OranNearRtRic_ae50a19db7e92fcb740dfc31976e3d111}\label{classns3_1_1OranNearRtRic_ae50a19db7e92fcb740dfc31976e3d111}} 
+\index{ns3::OranNearRtRic@{ns3::OranNearRtRic}!IsActive@{IsActive}}
+\index{IsActive@{IsActive}!ns3::OranNearRtRic@{ns3::OranNearRtRic}}
+\doxysubsubsection{\texorpdfstring{IsActive()}{IsActive()}}
+{\footnotesize\ttfamily bool ns3\+::\+Oran\+Near\+Rt\+Ric\+::\+Is\+Active (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Get the active status of the RIC.
+
+\begin{DoxyReturn}{Returns}
+True if the RIC is active. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classns3_1_1OranNearRtRic_a2e494ffaee3bb233672a6d4c9473a6d6}\label{classns3_1_1OranNearRtRic_a2e494ffaee3bb233672a6d4c9473a6d6}} 
+\index{ns3::OranNearRtRic@{ns3::OranNearRtRic}!NotifyLmFinished@{NotifyLmFinished}}
+\index{NotifyLmFinished@{NotifyLmFinished}!ns3::OranNearRtRic@{ns3::OranNearRtRic}}
+\doxysubsubsection{\texorpdfstring{NotifyLmFinished()}{NotifyLmFinished()}}
+{\footnotesize\ttfamily void ns3\+::\+Oran\+Near\+Rt\+Ric\+::\+Notify\+Lm\+Finished (\begin{DoxyParamCaption}\item[{Time}]{lm\+Query\+Cycle,  }\item[{std\+::vector$<$ Ptr$<$ \mbox{\hyperlink{classns3_1_1OranCommand}{Oran\+Command}} $>$$>$}]{commands,  }\item[{Ptr$<$ \mbox{\hyperlink{classns3_1_1OranLm}{Oran\+Lm}} $>$}]{lm }\end{DoxyParamCaption})}
+
+Notifies the Near-\/\+RT RIC that a Logic Module has finished running.
+
+
+\begin{DoxyParams}{Parameters}
+{\em lm\+Query\+Cycle} & The lm\+Query\+Cycle that the commands were generated for. \\
+\hline
+{\em commands} & The commands that were generated. \\
+\hline
+{\em lm} & The Logic Module that generated the commands. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classns3_1_1OranNearRtRic_a3c3f8665cc91ad6200bfc30024069485}\label{classns3_1_1OranNearRtRic_a3c3f8665cc91ad6200bfc30024069485}} 
+\index{ns3::OranNearRtRic@{ns3::OranNearRtRic}!NotifyReportReceived@{NotifyReportReceived}}
+\index{NotifyReportReceived@{NotifyReportReceived}!ns3::OranNearRtRic@{ns3::OranNearRtRic}}
+\doxysubsubsection{\texorpdfstring{NotifyReportReceived()}{NotifyReportReceived()}}
+{\footnotesize\ttfamily void ns3\+::\+Oran\+Near\+Rt\+Ric\+::\+Notify\+Report\+Received (\begin{DoxyParamCaption}\item[{Ptr$<$ \mbox{\hyperlink{classns3_1_1OranReport}{Oran\+Report}} $>$}]{report }\end{DoxyParamCaption})}
+
+Notifies the Near-\/\+RT RIC that a report was received.
+
+
+\begin{DoxyParams}{Parameters}
+{\em report} & The report that was received. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classns3_1_1OranNearRtRic_aeed38096421a9c54edac88539d6da51b}\label{classns3_1_1OranNearRtRic_aeed38096421a9c54edac88539d6da51b}} 
+\index{ns3::OranNearRtRic@{ns3::OranNearRtRic}!RemoveLogicModule@{RemoveLogicModule}}
+\index{RemoveLogicModule@{RemoveLogicModule}!ns3::OranNearRtRic@{ns3::OranNearRtRic}}
+\doxysubsubsection{\texorpdfstring{RemoveLogicModule()}{RemoveLogicModule()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classns3_1_1OranNearRtRic_a538558452a0948c0398483d8baa2a448}{Oran\+Near\+Rt\+Ric\+::\+Remove\+Lm\+Result}} ns3\+::\+Oran\+Near\+Rt\+Ric\+::\+Remove\+Logic\+Module (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+Remove an additional logic module.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & A string with the name of the logic module to remove\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The result of removing the Logic Module 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classns3_1_1OranNearRtRic_afa55ca7732a2d9744ef1695e0538ce7e}\label{classns3_1_1OranNearRtRic_afa55ca7732a2d9744ef1695e0538ce7e}} 
+\index{ns3::OranNearRtRic@{ns3::OranNearRtRic}!RemoveQueryTrigger@{RemoveQueryTrigger}}
+\index{RemoveQueryTrigger@{RemoveQueryTrigger}!ns3::OranNearRtRic@{ns3::OranNearRtRic}}
+\doxysubsubsection{\texorpdfstring{RemoveQueryTrigger()}{RemoveQueryTrigger()}}
+{\footnotesize\ttfamily bool ns3\+::\+Oran\+Near\+Rt\+Ric\+::\+Remove\+Query\+Trigger (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+Removes an LM query trigger.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the trigger.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True, if the trigger was removed successfully; otherwise, false. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classns3_1_1OranNearRtRic_a026a91d658aa2ad4ab3fa28071c8c84b}\label{classns3_1_1OranNearRtRic_a026a91d658aa2ad4ab3fa28071c8c84b}} 
+\index{ns3::OranNearRtRic@{ns3::OranNearRtRic}!SetCmm@{SetCmm}}
+\index{SetCmm@{SetCmm}!ns3::OranNearRtRic@{ns3::OranNearRtRic}}
+\doxysubsubsection{\texorpdfstring{SetCmm()}{SetCmm()}}
+{\footnotesize\ttfamily void ns3\+::\+Oran\+Near\+Rt\+Ric\+::\+Set\+Cmm (\begin{DoxyParamCaption}\item[{Ptr$<$ \mbox{\hyperlink{classns3_1_1OranCmm}{Oran\+Cmm}} $>$}]{new\+Cmm }\end{DoxyParamCaption})}
+
+Set the Conflict Mitigation Module.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Cmm} & The Conflict Mitigation Module to use. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classns3_1_1OranNearRtRic_a075ee1540d5d9a1c73c3d7d50eb72fa1}\label{classns3_1_1OranNearRtRic_a075ee1540d5d9a1c73c3d7d50eb72fa1}} 
+\index{ns3::OranNearRtRic@{ns3::OranNearRtRic}!SetDefaultLogicModule@{SetDefaultLogicModule}}
+\index{SetDefaultLogicModule@{SetDefaultLogicModule}!ns3::OranNearRtRic@{ns3::OranNearRtRic}}
+\doxysubsubsection{\texorpdfstring{SetDefaultLogicModule()}{SetDefaultLogicModule()}}
+{\footnotesize\ttfamily void ns3\+::\+Oran\+Near\+Rt\+Ric\+::\+Set\+Default\+Logic\+Module (\begin{DoxyParamCaption}\item[{Ptr$<$ \mbox{\hyperlink{classns3_1_1OranLm}{Oran\+Lm}} $>$}]{new\+Default\+Lm }\end{DoxyParamCaption})}
+
+Set the Default Logic Module.
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Default\+Lm} & The Logic Module to set as default. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classns3_1_1OranNearRtRic_a15e6df9e8ccbf68493cfd32ea6f69599}\label{classns3_1_1OranNearRtRic_a15e6df9e8ccbf68493cfd32ea6f69599}} 
+\index{ns3::OranNearRtRic@{ns3::OranNearRtRic}!Start@{Start}}
+\index{Start@{Start}!ns3::OranNearRtRic@{ns3::OranNearRtRic}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void ns3\+::\+Oran\+Near\+Rt\+Ric\+::\+Start (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Activate and start periodically querying the LMs. \mbox{\Hypertarget{classns3_1_1OranNearRtRic_a64c1e67e6c7bd266b00b63f97a4cb06d}\label{classns3_1_1OranNearRtRic_a64c1e67e6c7bd266b00b63f97a4cb06d}} 
+\index{ns3::OranNearRtRic@{ns3::OranNearRtRic}!Stop@{Stop}}
+\index{Stop@{Stop}!ns3::OranNearRtRic@{ns3::OranNearRtRic}}
+\doxysubsubsection{\texorpdfstring{Stop()}{Stop()}}
+{\footnotesize\ttfamily void ns3\+::\+Oran\+Near\+Rt\+Ric\+::\+Stop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Deactivate and stop periodically querying the LMs. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/felipe/code/tcc/oran/model/oran-\/near-\/rt-\/ric.\+h\item 
+/home/felipe/code/tcc/oran/model/oran-\/near-\/rt-\/ric.\+cc\end{DoxyCompactItemize}

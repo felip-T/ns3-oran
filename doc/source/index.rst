@@ -12,3 +12,4 @@ ns-3 O-RAN module documentation
    oran-architecture.rst
    oran-usage.rst
    oran-examples-and-test.rst
+   oran-adaptative-sqlite.rst

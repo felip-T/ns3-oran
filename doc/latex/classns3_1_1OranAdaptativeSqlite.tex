@@ -1,0 +1,186 @@
+\hypertarget{classns3_1_1OranAdaptativeSqlite}{}\doxysection{ns3\+::Oran\+Adaptative\+Sqlite Class Reference}
+\label{classns3_1_1OranAdaptativeSqlite}\index{ns3::OranAdaptativeSqlite@{ns3::OranAdaptativeSqlite}}
+
+
+The \mbox{\hyperlink{classns3_1_1OranAdaptativeSqlite}{Oran\+Adaptative\+Sqlite}} class is a new implementation of the database for the Near-\/\+Rt RIC.  
+
+
+
+
+{\ttfamily \#include $<$oran-\/adaptative-\/sqlite.\+h$>$}
+
+
+
+Inheritance diagram for ns3\+::Oran\+Adaptative\+Sqlite\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classns3_1_1OranAdaptativeSqlite__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ns3\+::Oran\+Adaptative\+Sqlite\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classns3_1_1OranAdaptativeSqlite__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classns3_1_1OranAdaptativeSqlite_aad862183e0430166e9d6409ce26539b0}\label{classns3_1_1OranAdaptativeSqlite_aad862183e0430166e9d6409ce26539b0}} 
+\mbox{\hyperlink{classns3_1_1OranAdaptativeSqlite_aad862183e0430166e9d6409ce26539b0}{Oran\+Adaptative\+Sqlite}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classns3_1_1OranAdaptativeSqlite_ac686061018d6af31ba277f6f53b12eb6}\label{classns3_1_1OranAdaptativeSqlite_ac686061018d6af31ba277f6f53b12eb6}} 
+\mbox{\hyperlink{classns3_1_1OranAdaptativeSqlite_ac686061018d6af31ba277f6f53b12eb6}{$\sim$\+Oran\+Adaptative\+Sqlite}} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::string $>$ \mbox{\hyperlink{classns3_1_1OranAdaptativeSqlite_ab297eaf5ea0bd7ee1a854bf6dfe0608a}{Get\+Last\+Report}} (const std\+::string \&)
+\begin{DoxyCompactList}\small\item\em Returns the last report of a given type. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::string $>$ \mbox{\hyperlink{classns3_1_1OranAdaptativeSqlite_ac50f921775a9b2398e66f77f908a0c26}{Get\+Last\+Report}} (const std\+::string \&, uint64\+\_\+t node\+Id)
+\begin{DoxyCompactList}\small\item\em Returns the last report of a given type for a given node ID. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::string $>$ \mbox{\hyperlink{classns3_1_1OranAdaptativeSqlite_afaa2d931dec30087a9d0ee7da15b1e96}{Get\+Second\+Last\+Report}} (const std\+::string \&, uint64\+\_\+t node\+Id)
+\begin{DoxyCompactList}\small\item\em Returns the second last report of a gicen type for a given node ID. \end{DoxyCompactList}\item 
+std\+::unordered\+\_\+map$<$ std\+::string, std\+::string $>$ \mbox{\hyperlink{classns3_1_1OranAdaptativeSqlite_a0e6649ab042a4273c433c7e9ca8b84a3}{Get\+Custom\+Query}} (const std\+::string \&)
+\begin{DoxyCompactList}\small\item\em Returns the custom query result. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Type\+Id \mbox{\hyperlink{classns3_1_1OranAdaptativeSqlite_abcac43384960fe49dfb2a5b89fc9430a}{Get\+Type\+Id}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classns3_1_1OranAdaptativeSqlite_a7c5c1d98a866bc0cac04da685acbcefd}\label{classns3_1_1OranAdaptativeSqlite_a7c5c1d98a866bc0cac04da685acbcefd}} 
+void {\bfseries Create\+Report\+Table} (Ptr$<$ \mbox{\hyperlink{classns3_1_1OranReportSqlite}{Oran\+Report\+Sqlite}} $>$)
+\item 
+\mbox{\Hypertarget{classns3_1_1OranAdaptativeSqlite_a9a44289cd95bab6753d0141acc41573f}\label{classns3_1_1OranAdaptativeSqlite_a9a44289cd95bab6753d0141acc41573f}} 
+void {\bfseries Create\+Report\+Save} (Ptr$<$ \mbox{\hyperlink{classns3_1_1OranReportSqlite}{Oran\+Report\+Sqlite}} $>$)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classns3_1_1OranAdaptativeSqlite_a1d0f62891da2c7c19a85339aa709f263}\label{classns3_1_1OranAdaptativeSqlite_a1d0f62891da2c7c19a85339aa709f263}} 
+static std\+::string {\bfseries Parse\+Report\+Table\+Info} (Ptr$<$ \mbox{\hyperlink{classns3_1_1OranReportSqlite}{Oran\+Report\+Sqlite}} $>$)
+\item 
+\mbox{\Hypertarget{classns3_1_1OranAdaptativeSqlite_ad7c395a2b8ab896979fc7c2b562fc08f}\label{classns3_1_1OranAdaptativeSqlite_ad7c395a2b8ab896979fc7c2b562fc08f}} 
+static std\+::string {\bfseries Create\+Report\+Save\+Query} (Ptr$<$ \mbox{\hyperlink{classns3_1_1OranReportSqlite}{Oran\+Report\+Sqlite}} $>$)
+\item 
+\mbox{\Hypertarget{classns3_1_1OranAdaptativeSqlite_ae51b13a62b06dbbbc6cc3452dcae69f7}\label{classns3_1_1OranAdaptativeSqlite_ae51b13a62b06dbbbc6cc3452dcae69f7}} 
+static std\+::vector$<$ std\+::tuple$<$ std\+::string, std\+::string $>$ $>$ {\bfseries Parse\+Report} (Ptr$<$ \mbox{\hyperlink{classns3_1_1OranReportSqlite}{Oran\+Report\+Sqlite}} $>$)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classns3_1_1OranAdaptativeSqlite_a33cb6208e72e2d40f20962fe155e36c9}\label{classns3_1_1OranAdaptativeSqlite_a33cb6208e72e2d40f20962fe155e36c9}} 
+std\+::unordered\+\_\+map$<$ std\+::string, bool $>$ {\bfseries m\+\_\+report\+Table\+Created}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classns3_1_1OranAdaptativeSqlite_a9ed556d32fa8133d9f33b699e8204a29}\label{classns3_1_1OranAdaptativeSqlite_a9ed556d32fa8133d9f33b699e8204a29}} 
+class {\bfseries Oran\+Near\+Rt\+Ric\+E2\+Terminator}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classns3_1_1OranAdaptativeSqlite}{Oran\+Adaptative\+Sqlite}} class is a new implementation of the database for the Near-\/\+Rt RIC. 
+
+This database is accepts custom reports that inherit from \mbox{\hyperlink{classns3_1_1OranReportSqlite}{Oran\+Report\+Sqlite}}. The tables of this database are created dinamically based on the report information. Therefore, the user can define reports with arbitrary information. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classns3_1_1OranAdaptativeSqlite_a0e6649ab042a4273c433c7e9ca8b84a3}\label{classns3_1_1OranAdaptativeSqlite_a0e6649ab042a4273c433c7e9ca8b84a3}} 
+\index{ns3::OranAdaptativeSqlite@{ns3::OranAdaptativeSqlite}!GetCustomQuery@{GetCustomQuery}}
+\index{GetCustomQuery@{GetCustomQuery}!ns3::OranAdaptativeSqlite@{ns3::OranAdaptativeSqlite}}
+\doxysubsubsection{\texorpdfstring{GetCustomQuery()}{GetCustomQuery()}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ std\+::string, std\+::string $>$ ns3\+::\+Oran\+Adaptative\+Sqlite\+::\+Get\+Custom\+Query (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{query }\end{DoxyParamCaption})}
+
+
+
+Returns the custom query result. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em query} & A string with a SQL query. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A map with keys as column names and values as column values. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classns3_1_1OranAdaptativeSqlite_ab297eaf5ea0bd7ee1a854bf6dfe0608a}\label{classns3_1_1OranAdaptativeSqlite_ab297eaf5ea0bd7ee1a854bf6dfe0608a}} 
+\index{ns3::OranAdaptativeSqlite@{ns3::OranAdaptativeSqlite}!GetLastReport@{GetLastReport}}
+\index{GetLastReport@{GetLastReport}!ns3::OranAdaptativeSqlite@{ns3::OranAdaptativeSqlite}}
+\doxysubsubsection{\texorpdfstring{GetLastReport()}{GetLastReport()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ std\+::string, std\+::string $>$ ns3\+::\+Oran\+Adaptative\+Sqlite\+::\+Get\+Last\+Report (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{table }\end{DoxyParamCaption})}
+
+
+
+Returns the last report of a given type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & A string with a table name. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A map with keys as column names and values as column values. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classns3_1_1OranAdaptativeSqlite_ac50f921775a9b2398e66f77f908a0c26}\label{classns3_1_1OranAdaptativeSqlite_ac50f921775a9b2398e66f77f908a0c26}} 
+\index{ns3::OranAdaptativeSqlite@{ns3::OranAdaptativeSqlite}!GetLastReport@{GetLastReport}}
+\index{GetLastReport@{GetLastReport}!ns3::OranAdaptativeSqlite@{ns3::OranAdaptativeSqlite}}
+\doxysubsubsection{\texorpdfstring{GetLastReport()}{GetLastReport()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$ std\+::string, std\+::string $>$ ns3\+::\+Oran\+Adaptative\+Sqlite\+::\+Get\+Last\+Report (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{table,  }\item[{uint64\+\_\+t}]{node\+Id }\end{DoxyParamCaption})}
+
+
+
+Returns the last report of a given type for a given node ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & A string with a table name. \\
+\hline
+{\em node\+Id} & The node ID. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A map with keys as column names and values as column values. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classns3_1_1OranAdaptativeSqlite_afaa2d931dec30087a9d0ee7da15b1e96}\label{classns3_1_1OranAdaptativeSqlite_afaa2d931dec30087a9d0ee7da15b1e96}} 
+\index{ns3::OranAdaptativeSqlite@{ns3::OranAdaptativeSqlite}!GetSecondLastReport@{GetSecondLastReport}}
+\index{GetSecondLastReport@{GetSecondLastReport}!ns3::OranAdaptativeSqlite@{ns3::OranAdaptativeSqlite}}
+\doxysubsubsection{\texorpdfstring{GetSecondLastReport()}{GetSecondLastReport()}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$std\+::string, std\+::string$>$ ns3\+::\+Oran\+Adaptative\+Sqlite\+::\+Get\+Second\+Last\+Report (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{,  }\item[{uint64\+\_\+t}]{node\+Id }\end{DoxyParamCaption})}
+
+
+
+Returns the second last report of a gicen type for a given node ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & A string with a table name. \\
+\hline
+{\em node\+Id} & The node ID. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A map with keys as column names and values as column values. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classns3_1_1OranAdaptativeSqlite_abcac43384960fe49dfb2a5b89fc9430a}\label{classns3_1_1OranAdaptativeSqlite_abcac43384960fe49dfb2a5b89fc9430a}} 
+\index{ns3::OranAdaptativeSqlite@{ns3::OranAdaptativeSqlite}!GetTypeId@{GetTypeId}}
+\index{GetTypeId@{GetTypeId}!ns3::OranAdaptativeSqlite@{ns3::OranAdaptativeSqlite}}
+\doxysubsubsection{\texorpdfstring{GetTypeId()}{GetTypeId()}}
+{\footnotesize\ttfamily Type\+Id ns3\+::\+Oran\+Adaptative\+Sqlite\+::\+Get\+Type\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Register this type. \begin{DoxyReturn}{Returns}
+The object Type\+Id. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/felipe/code/tcc/oran/model/\mbox{\hyperlink{oran-adaptative-sqlite_8h}{oran-\/adaptative-\/sqlite.\+h}}\item 
+/home/felipe/code/tcc/oran/model/oran-\/adaptative-\/sqlite.\+cc\end{DoxyCompactItemize}

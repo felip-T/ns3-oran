@@ -77,8 +77,8 @@ class OranDataRepositorySqlite : public OranDataRepository
      * Activate the data storage. If the database is not open,
      * this method will call OpenDb.
      */
-    // void CreateReportSave(Ptr<OranReportSql>) override;
-    // void CreateReportTable(Ptr<OranReportSql>) override;
+    // void CreateReportSave(Ptr<OranReportSqlite>) override;
+    // void CreateReportTable(Ptr<OranReportSqlite>) override;
     void SaveSinr(uint64_t e2NodeId, double sinr, Time t) override;
 
     void Activate(void) override;

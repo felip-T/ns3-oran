@@ -1205,11 +1205,11 @@ OranDataRepositorySqlite::RunCreateStatement(std::string statement)
     sqlite3_finalize(stmt);
 }
 
-// void OranDataRepositorySqlite::CreateReportTable(Ptr<OranReportSql> report)
+// void OranDataRepositorySqlite::CreateReportTable(Ptr<OranReportSqlite> report)
 // {
 // }
 //
-// void OranDataRepositorySqlite::CreateReportSave(Ptr<OranReportSql> report)
+// void OranDataRepositorySqlite::CreateReportSave(Ptr<OranReportSqlite> report)
 // {
 // }
 } // namespace ns3

@@ -1,0 +1,95 @@
+\hypertarget{classns3_1_1OranReporterLocation}{}\doxysection{ns3\+::Oran\+Reporter\+Location Class Reference}
+\label{classns3_1_1OranReporterLocation}\index{ns3::OranReporterLocation@{ns3::OranReporterLocation}}
+
+
+{\ttfamily \#include $<$oran-\/reporter-\/location.\+h$>$}
+
+
+
+Inheritance diagram for ns3\+::Oran\+Reporter\+Location\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classns3_1_1OranReporterLocation__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ns3\+::Oran\+Reporter\+Location\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{classns3_1_1OranReporterLocation__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1OranReporterLocation_aaa0fd60082d9fcd7a5c1befd72d7a702}{Oran\+Reporter\+Location}} (void)
+\item 
+\mbox{\hyperlink{classns3_1_1OranReporterLocation_a4b0cbb6a48f8f61055f0e4e3732d855b}{$\sim$\+Oran\+Reporter\+Location}} (void) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Type\+Id \mbox{\hyperlink{classns3_1_1OranReporterLocation_a7d332b19a88a633be72112db3f38ae82}{Get\+Type\+Id}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ Ptr$<$ \mbox{\hyperlink{classns3_1_1OranReport}{Oran\+Report}} $>$ $>$ \mbox{\hyperlink{classns3_1_1OranReporterLocation_a2d76118c1db4805e1f4d6a74886dd54e}{Generate\+Reports}} (void) override
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A Reporter that captures the position of the node. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classns3_1_1OranReporterLocation_aaa0fd60082d9fcd7a5c1befd72d7a702}\label{classns3_1_1OranReporterLocation_aaa0fd60082d9fcd7a5c1befd72d7a702}} 
+\index{ns3::OranReporterLocation@{ns3::OranReporterLocation}!OranReporterLocation@{OranReporterLocation}}
+\index{OranReporterLocation@{OranReporterLocation}!ns3::OranReporterLocation@{ns3::OranReporterLocation}}
+\doxysubsubsection{\texorpdfstring{OranReporterLocation()}{OranReporterLocation()}}
+{\footnotesize\ttfamily ns3\+::\+Oran\+Reporter\+Location\+::\+Oran\+Reporter\+Location (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Constructor of the \mbox{\hyperlink{classns3_1_1OranReporterLocation}{Oran\+Reporter\+Location}} class. \mbox{\Hypertarget{classns3_1_1OranReporterLocation_a4b0cbb6a48f8f61055f0e4e3732d855b}\label{classns3_1_1OranReporterLocation_a4b0cbb6a48f8f61055f0e4e3732d855b}} 
+\index{ns3::OranReporterLocation@{ns3::OranReporterLocation}!````~OranReporterLocation@{$\sim$OranReporterLocation}}
+\index{````~OranReporterLocation@{$\sim$OranReporterLocation}!ns3::OranReporterLocation@{ns3::OranReporterLocation}}
+\doxysubsubsection{\texorpdfstring{$\sim$OranReporterLocation()}{~OranReporterLocation()}}
+{\footnotesize\ttfamily ns3\+::\+Oran\+Reporter\+Location\+::$\sim$\+Oran\+Reporter\+Location (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+Destructor of the \mbox{\hyperlink{classns3_1_1OranReporterLocation}{Oran\+Reporter\+Location}} class. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classns3_1_1OranReporterLocation_a2d76118c1db4805e1f4d6a74886dd54e}\label{classns3_1_1OranReporterLocation_a2d76118c1db4805e1f4d6a74886dd54e}} 
+\index{ns3::OranReporterLocation@{ns3::OranReporterLocation}!GenerateReports@{GenerateReports}}
+\index{GenerateReports@{GenerateReports}!ns3::OranReporterLocation@{ns3::OranReporterLocation}}
+\doxysubsubsection{\texorpdfstring{GenerateReports()}{GenerateReports()}}
+{\footnotesize\ttfamily std\+::vector$<$ Ptr$<$ \mbox{\hyperlink{classns3_1_1OranReport}{Oran\+Report}} $>$ $>$ ns3\+::\+Oran\+Reporter\+Location\+::\+Generate\+Reports (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Capture the position of the node and instantiate an \mbox{\hyperlink{classns3_1_1OranReportLocation}{Oran\+Report\+Location}}.
+
+\begin{DoxyReturn}{Returns}
+The generated Report. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classns3_1_1OranReporter_abbb0d56c3e2498a42c412718160c46d5}{ns3\+::\+Oran\+Reporter}}.
+
+\mbox{\Hypertarget{classns3_1_1OranReporterLocation_a7d332b19a88a633be72112db3f38ae82}\label{classns3_1_1OranReporterLocation_a7d332b19a88a633be72112db3f38ae82}} 
+\index{ns3::OranReporterLocation@{ns3::OranReporterLocation}!GetTypeId@{GetTypeId}}
+\index{GetTypeId@{GetTypeId}!ns3::OranReporterLocation@{ns3::OranReporterLocation}}
+\doxysubsubsection{\texorpdfstring{GetTypeId()}{GetTypeId()}}
+{\footnotesize\ttfamily Type\+Id ns3\+::\+Oran\+Reporter\+Location\+::\+Get\+Type\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Get the Type\+Id of the \mbox{\hyperlink{classns3_1_1OranReporterLocation}{Oran\+Reporter\+Location}} class.
+
+\begin{DoxyReturn}{Returns}
+The Type\+Id. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/felipe/code/tcc/oran/model/oran-\/reporter-\/location.\+h\item 
+/home/felipe/code/tcc/oran/model/oran-\/reporter-\/location.\+cc\end{DoxyCompactItemize}

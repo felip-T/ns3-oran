@@ -1,0 +1,104 @@
+\hypertarget{classns3_1_1OranCommand}{}\doxysection{ns3\+::Oran\+Command Class Reference}
+\label{classns3_1_1OranCommand}\index{ns3::OranCommand@{ns3::OranCommand}}
+
+
+{\ttfamily \#include $<$oran-\/command.\+h$>$}
+
+
+
+Inheritance diagram for ns3\+::Oran\+Command\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{classns3_1_1OranCommand__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ns3\+::Oran\+Command\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classns3_1_1OranCommand__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1OranCommand_a33ca115bf9f2bfc00da1db138e8373a3}{Oran\+Command}} (void)
+\item 
+\mbox{\hyperlink{classns3_1_1OranCommand_a8476ec8bc4c120c20ec4b99b331e8eaf}{$\sim$\+Oran\+Command}} (void) override
+\item 
+virtual std\+::string \mbox{\hyperlink{classns3_1_1OranCommand_a23cb0a3a23db74284f53d91660a7ca75}{To\+String}} (void) const
+\item 
+uint64\+\_\+t \mbox{\hyperlink{classns3_1_1OranCommand_ac9ff64cf090af377b5b98df95d556773}{Get\+Target\+E2\+Node\+Id}} (void) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Type\+Id \mbox{\hyperlink{classns3_1_1OranCommand_a7af97bc45b24bea2b8133adde4f5b269}{Get\+Type\+Id}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class of a Command. This class provides the implementation of the Get\+Target\+E2\+Node\+Id method for all the Commands. This base class can be instantiated, but the Command issued lacks any meaning and will be silently ignored by the E2 Node Terminators. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classns3_1_1OranCommand_a33ca115bf9f2bfc00da1db138e8373a3}\label{classns3_1_1OranCommand_a33ca115bf9f2bfc00da1db138e8373a3}} 
+\index{ns3::OranCommand@{ns3::OranCommand}!OranCommand@{OranCommand}}
+\index{OranCommand@{OranCommand}!ns3::OranCommand@{ns3::OranCommand}}
+\doxysubsubsection{\texorpdfstring{OranCommand()}{OranCommand()}}
+{\footnotesize\ttfamily ns3\+::\+Oran\+Command\+::\+Oran\+Command (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Creates an instance of the \mbox{\hyperlink{classns3_1_1OranCommand}{Oran\+Command}} class. \mbox{\Hypertarget{classns3_1_1OranCommand_a8476ec8bc4c120c20ec4b99b331e8eaf}\label{classns3_1_1OranCommand_a8476ec8bc4c120c20ec4b99b331e8eaf}} 
+\index{ns3::OranCommand@{ns3::OranCommand}!````~OranCommand@{$\sim$OranCommand}}
+\index{````~OranCommand@{$\sim$OranCommand}!ns3::OranCommand@{ns3::OranCommand}}
+\doxysubsubsection{\texorpdfstring{$\sim$OranCommand()}{~OranCommand()}}
+{\footnotesize\ttfamily ns3\+::\+Oran\+Command\+::$\sim$\+Oran\+Command (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+The destructor of the \mbox{\hyperlink{classns3_1_1OranCommand}{Oran\+Command}} class. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classns3_1_1OranCommand_ac9ff64cf090af377b5b98df95d556773}\label{classns3_1_1OranCommand_ac9ff64cf090af377b5b98df95d556773}} 
+\index{ns3::OranCommand@{ns3::OranCommand}!GetTargetE2NodeId@{GetTargetE2NodeId}}
+\index{GetTargetE2NodeId@{GetTargetE2NodeId}!ns3::OranCommand@{ns3::OranCommand}}
+\doxysubsubsection{\texorpdfstring{GetTargetE2NodeId()}{GetTargetE2NodeId()}}
+{\footnotesize\ttfamily uint64\+\_\+t ns3\+::\+Oran\+Command\+::\+Get\+Target\+E2\+Node\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Get the target E2 Node ID.
+
+\begin{DoxyReturn}{Returns}
+The target E2 Node Id. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classns3_1_1OranCommand_a7af97bc45b24bea2b8133adde4f5b269}\label{classns3_1_1OranCommand_a7af97bc45b24bea2b8133adde4f5b269}} 
+\index{ns3::OranCommand@{ns3::OranCommand}!GetTypeId@{GetTypeId}}
+\index{GetTypeId@{GetTypeId}!ns3::OranCommand@{ns3::OranCommand}}
+\doxysubsubsection{\texorpdfstring{GetTypeId()}{GetTypeId()}}
+{\footnotesize\ttfamily Type\+Id ns3\+::\+Oran\+Command\+::\+Get\+Type\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Gets the Type\+Id of the \mbox{\hyperlink{classns3_1_1OranCommand}{Oran\+Command}} class.
+
+\begin{DoxyReturn}{Returns}
+The Type\+Id. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classns3_1_1OranCommand_a23cb0a3a23db74284f53d91660a7ca75}\label{classns3_1_1OranCommand_a23cb0a3a23db74284f53d91660a7ca75}} 
+\index{ns3::OranCommand@{ns3::OranCommand}!ToString@{ToString}}
+\index{ToString@{ToString}!ns3::OranCommand@{ns3::OranCommand}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily std\+::string ns3\+::\+Oran\+Command\+::\+To\+String (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get a string representation of this command.
+
+\begin{DoxyReturn}{Returns}
+A string representation of this command. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classns3_1_1OranCommandLte2LteHandover_ab88cd09a74a986651d93fe792c3a8a2b}{ns3\+::\+Oran\+Command\+Lte2\+Lte\+Handover}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/felipe/code/tcc/oran/model/oran-\/command.\+h\item 
+/home/felipe/code/tcc/oran/model/oran-\/command.\+cc\end{DoxyCompactItemize}

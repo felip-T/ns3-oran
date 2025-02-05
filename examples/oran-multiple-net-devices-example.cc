@@ -63,8 +63,6 @@ TraceEnbRx(std::string context, uint16_t rnti, uint8_t lcid, uint32_t bytes, uin
 void
 NotifyHandoverEndOkEnb(std::string context, uint64_t imsi, uint16_t cellid, uint16_t rnti)
 {
-    std::cout << Simulator::Now().GetSeconds() << " s:" << context << " eNB CellId " << cellid
-              << ": completed handover of UE with IMSI " << imsi << " RNTI " << rnti << std::endl;
 
     Config::Disconnect("NodeList/*/DeviceList/*/$ns3::LteNetDevice/$ns3::LteEnbNetDevice/LteEnbRrc/"
                        "UeMap/*/DataRadioBearerMap/*/LteRlc/RxPDU",

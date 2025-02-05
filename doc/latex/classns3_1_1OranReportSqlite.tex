@@ -1,0 +1,128 @@
+\hypertarget{classns3_1_1OranReportSqlite}{}\doxysection{ns3\+::Oran\+Report\+Sqlite Class Reference}
+\label{classns3_1_1OranReportSqlite}\index{ns3::OranReportSqlite@{ns3::OranReportSqlite}}
+
+
+The \mbox{\hyperlink{classns3_1_1OranReportSqlite}{Oran\+Report\+Sqlite}} class is a base class for all custom reports to be used with the \mbox{\hyperlink{classns3_1_1OranAdaptativeSqlite}{Oran\+Adaptative\+Sqlite}} database.  
+
+
+
+
+{\ttfamily \#include $<$oran-\/report-\/sqlite.\+h$>$}
+
+
+
+Inheritance diagram for ns3\+::Oran\+Report\+Sqlite\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{classns3_1_1OranReportSqlite__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ns3\+::Oran\+Report\+Sqlite\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{classns3_1_1OranReportSqlite__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classns3_1_1OranReportSqlite_a43a49ade26ffb4da84da1e8c8c6c4446}\label{classns3_1_1OranReportSqlite_a43a49ade26ffb4da84da1e8c8c6c4446}} 
+\mbox{\hyperlink{classns3_1_1OranReportSqlite_a43a49ade26ffb4da84da1e8c8c6c4446}{Oran\+Report\+Sqlite}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classns3_1_1OranReportSqlite_a9413b5dfcd83a46ade8e7d78d056bf85}\label{classns3_1_1OranReportSqlite_a9413b5dfcd83a46ade8e7d78d056bf85}} 
+\mbox{\hyperlink{classns3_1_1OranReportSqlite_a9413b5dfcd83a46ade8e7d78d056bf85}{$\sim$\+Oran\+Report\+Sqlite}} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual std\+::vector$<$ std\+::tuple$<$ std\+::string, std\+::string $>$ $>$ \mbox{\hyperlink{classns3_1_1OranReportSqlite_a483ed7f9f82b61d586134a0e6d8bd865}{Get\+Table\+Info}} ()
+\begin{DoxyCompactList}\small\item\em Get the table information, used by \mbox{\hyperlink{classns3_1_1OranAdaptativeSqlite}{Oran\+Adaptative\+Sqlite}} to parse the report data. \end{DoxyCompactList}\item 
+virtual std\+::string \mbox{\hyperlink{classns3_1_1OranReportSqlite_a2bd9f510dccb9145df59c705d7015414}{Get\+Table\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Returns the table name used by \mbox{\hyperlink{classns3_1_1OranAdaptativeSqlite}{Oran\+Adaptative\+Sqlite}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Type\+Id \mbox{\hyperlink{classns3_1_1OranReportSqlite_a5d73462c5c557436a40f630b6281c7e9}{Get\+Type\+Id}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classns3_1_1OranReportSqlite_a854761965e618418cae3ee15b2d627fe}\label{classns3_1_1OranReportSqlite_a854761965e618418cae3ee15b2d627fe}} 
+std\+::vector$<$ std\+::tuple$<$ std\+::string, std\+::string $>$ $>$ \mbox{\hyperlink{classns3_1_1OranReportSqlite_a854761965e618418cae3ee15b2d627fe}{m\+\_\+table\+Info}}
+\begin{DoxyCompactList}\small\item\em The table information that can be initialized in constructor and returned by \mbox{\hyperlink{classns3_1_1OranReportSqlite_a483ed7f9f82b61d586134a0e6d8bd865}{Get\+Table\+Info}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{classns3_1_1OranReportSqlite}{Oran\+Report\+Sqlite}} class is a base class for all custom reports to be used with the \mbox{\hyperlink{classns3_1_1OranAdaptativeSqlite}{Oran\+Adaptative\+Sqlite}} database. 
+
+It is expected that the user\textquotesingle{}s custom report inherits from this class and implements the Get\+Table\+Info and Get\+Table\+Name virtual methods, as well as the To\+String method, inherited from \mbox{\hyperlink{classns3_1_1OranReport}{Oran\+Report}} base class. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classns3_1_1OranReportSqlite_a483ed7f9f82b61d586134a0e6d8bd865}\label{classns3_1_1OranReportSqlite_a483ed7f9f82b61d586134a0e6d8bd865}} 
+\index{ns3::OranReportSqlite@{ns3::OranReportSqlite}!GetTableInfo@{GetTableInfo}}
+\index{GetTableInfo@{GetTableInfo}!ns3::OranReportSqlite@{ns3::OranReportSqlite}}
+\doxysubsubsection{\texorpdfstring{GetTableInfo()}{GetTableInfo()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::tuple$<$ std\+::string, std\+::string $>$ $>$ ns3\+::\+Oran\+Report\+Sqlite\+::\+Get\+Table\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Get the table information, used by \mbox{\hyperlink{classns3_1_1OranAdaptativeSqlite}{Oran\+Adaptative\+Sqlite}} to parse the report data. 
+
+This function should return a vector of tuples, where each tuple contains the SQlite column name followed by the column data type.
+
+As an example, the following code snippet shows how to implement this method for a custom report that has a table with two columns, a \char`\"{}\+TEXT\char`\"{} containing the node IPV4 address and an \char`\"{}\+INTEGER\char`\"{} containing the current connected cell\+Id\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{std::vector<std::tuple<std::string, std::string>> \mbox{\hyperlink{classns3_1_1OranReportSqlite_a483ed7f9f82b61d586134a0e6d8bd865}{GetTableInfo}}()\{}
+\DoxyCodeLine{    std::vector<std::tuple<std::string, std::string>> tableInfo;}
+\DoxyCodeLine{    tableInfo.emplace\_back(std::make\_tuple(\textcolor{stringliteral}{"{}ipv4"{}}, \textcolor{stringliteral}{"{}TEXT"{}}));}
+\DoxyCodeLine{    tableInfo.emplace\_back(std::make\_tuple(\textcolor{stringliteral}{"{}cellId"{}}, \textcolor{stringliteral}{"{}INTEGER"{}}));}
+\DoxyCodeLine{    \textcolor{keywordflow}{return} tableInfo;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Vector of tuples with the table information. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classns3_1_1OranReportLocationSql_a8a19529a0fc3fdd6495bf4a3ff0a6328}{ns3\+::\+Oran\+Report\+Location\+Sql}}.
+
+\mbox{\Hypertarget{classns3_1_1OranReportSqlite_a2bd9f510dccb9145df59c705d7015414}\label{classns3_1_1OranReportSqlite_a2bd9f510dccb9145df59c705d7015414}} 
+\index{ns3::OranReportSqlite@{ns3::OranReportSqlite}!GetTableName@{GetTableName}}
+\index{GetTableName@{GetTableName}!ns3::OranReportSqlite@{ns3::OranReportSqlite}}
+\doxysubsubsection{\texorpdfstring{GetTableName()}{GetTableName()}}
+{\footnotesize\ttfamily virtual std\+::string ns3\+::\+Oran\+Report\+Sqlite\+::\+Get\+Table\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Returns the table name used by \mbox{\hyperlink{classns3_1_1OranAdaptativeSqlite}{Oran\+Adaptative\+Sqlite}}. 
+
+This method should return the name of the table that will be created by \mbox{\hyperlink{classns3_1_1OranAdaptativeSqlite}{Oran\+Adaptative\+Sqlite}} to store reports of this kind.
+
+\begin{DoxyReturn}{Returns}
+The table name. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classns3_1_1OranReportLocationSql_a8e64cb165fdd5f25f328cb4c87ea2720}{ns3\+::\+Oran\+Report\+Location\+Sql}}.
+
+\mbox{\Hypertarget{classns3_1_1OranReportSqlite_a5d73462c5c557436a40f630b6281c7e9}\label{classns3_1_1OranReportSqlite_a5d73462c5c557436a40f630b6281c7e9}} 
+\index{ns3::OranReportSqlite@{ns3::OranReportSqlite}!GetTypeId@{GetTypeId}}
+\index{GetTypeId@{GetTypeId}!ns3::OranReportSqlite@{ns3::OranReportSqlite}}
+\doxysubsubsection{\texorpdfstring{GetTypeId()}{GetTypeId()}}
+{\footnotesize\ttfamily Type\+Id ns3\+::\+Oran\+Report\+Sqlite\+::\+Get\+Type\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Register this type. \begin{DoxyReturn}{Returns}
+The object Type\+Id. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/felipe/code/tcc/oran/model/\mbox{\hyperlink{oran-report-sqlite_8h}{oran-\/report-\/sqlite.\+h}}\item 
+/home/felipe/code/tcc/oran/model/oran-\/report-\/sqlite.\+cc\end{DoxyCompactItemize}

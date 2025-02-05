@@ -1,0 +1,119 @@
+\hypertarget{classns3_1_1OranReport}{}\doxysection{ns3\+::Oran\+Report Class Reference}
+\label{classns3_1_1OranReport}\index{ns3::OranReport@{ns3::OranReport}}
+
+
+{\ttfamily \#include $<$oran-\/report.\+h$>$}
+
+
+
+Inheritance diagram for ns3\+::Oran\+Report\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classns3_1_1OranReport__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for ns3\+::Oran\+Report\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classns3_1_1OranReport__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classns3_1_1OranReport_ab7d1c1c22b312565b6e9e703757b5bf5}{Oran\+Report}} (void)
+\item 
+\mbox{\hyperlink{classns3_1_1OranReport_aef89f45957bec3b4cdb986de737beb2b}{$\sim$\+Oran\+Report}} (void) override
+\item 
+virtual std\+::string \mbox{\hyperlink{classns3_1_1OranReport_a96dcdd040936a0dca4446f44b9776e5d}{To\+String}} (void) const
+\item 
+uint64\+\_\+t \mbox{\hyperlink{classns3_1_1OranReport_a62d2295b393645bbd3c47ae2e51671a5}{Get\+Reporter\+E2\+Node\+Id}} (void) const
+\item 
+Time \mbox{\hyperlink{classns3_1_1OranReport_a0649b13b1226c7c87aabe2ae6d00c749}{Get\+Time}} (void) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Type\+Id \mbox{\hyperlink{classns3_1_1OranReport_a4106f33510238c3cc1900afc9a826b66}{Get\+Type\+Id}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for the Reports sent by the nodes to the Near-\/\+RT RIC to report on the state of the network.
+
+This class can be instantiated but should not be used, as it does not contain useful information. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classns3_1_1OranReport_ab7d1c1c22b312565b6e9e703757b5bf5}\label{classns3_1_1OranReport_ab7d1c1c22b312565b6e9e703757b5bf5}} 
+\index{ns3::OranReport@{ns3::OranReport}!OranReport@{OranReport}}
+\index{OranReport@{OranReport}!ns3::OranReport@{ns3::OranReport}}
+\doxysubsubsection{\texorpdfstring{OranReport()}{OranReport()}}
+{\footnotesize\ttfamily ns3\+::\+Oran\+Report\+::\+Oran\+Report (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Constructor of the \mbox{\hyperlink{classns3_1_1OranReport}{Oran\+Report}} class. \mbox{\Hypertarget{classns3_1_1OranReport_aef89f45957bec3b4cdb986de737beb2b}\label{classns3_1_1OranReport_aef89f45957bec3b4cdb986de737beb2b}} 
+\index{ns3::OranReport@{ns3::OranReport}!````~OranReport@{$\sim$OranReport}}
+\index{````~OranReport@{$\sim$OranReport}!ns3::OranReport@{ns3::OranReport}}
+\doxysubsubsection{\texorpdfstring{$\sim$OranReport()}{~OranReport()}}
+{\footnotesize\ttfamily ns3\+::\+Oran\+Report\+::$\sim$\+Oran\+Report (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+Destructor of the \mbox{\hyperlink{classns3_1_1OranReport}{Oran\+Report}} class. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classns3_1_1OranReport_a62d2295b393645bbd3c47ae2e51671a5}\label{classns3_1_1OranReport_a62d2295b393645bbd3c47ae2e51671a5}} 
+\index{ns3::OranReport@{ns3::OranReport}!GetReporterE2NodeId@{GetReporterE2NodeId}}
+\index{GetReporterE2NodeId@{GetReporterE2NodeId}!ns3::OranReport@{ns3::OranReport}}
+\doxysubsubsection{\texorpdfstring{GetReporterE2NodeId()}{GetReporterE2NodeId()}}
+{\footnotesize\ttfamily uint64\+\_\+t ns3\+::\+Oran\+Report\+::\+Get\+Reporter\+E2\+Node\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Get the E2 Node ID of the reporter.
+
+\begin{DoxyReturn}{Returns}
+The E2 Node ID of the reporter. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classns3_1_1OranReport_a0649b13b1226c7c87aabe2ae6d00c749}\label{classns3_1_1OranReport_a0649b13b1226c7c87aabe2ae6d00c749}} 
+\index{ns3::OranReport@{ns3::OranReport}!GetTime@{GetTime}}
+\index{GetTime@{GetTime}!ns3::OranReport@{ns3::OranReport}}
+\doxysubsubsection{\texorpdfstring{GetTime()}{GetTime()}}
+{\footnotesize\ttfamily Time ns3\+::\+Oran\+Report\+::\+Get\+Time (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+Get the Time at which the Report was generated.
+
+\begin{DoxyReturn}{Returns}
+The Time at which the Report was generated. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classns3_1_1OranReport_a4106f33510238c3cc1900afc9a826b66}\label{classns3_1_1OranReport_a4106f33510238c3cc1900afc9a826b66}} 
+\index{ns3::OranReport@{ns3::OranReport}!GetTypeId@{GetTypeId}}
+\index{GetTypeId@{GetTypeId}!ns3::OranReport@{ns3::OranReport}}
+\doxysubsubsection{\texorpdfstring{GetTypeId()}{GetTypeId()}}
+{\footnotesize\ttfamily Type\+Id ns3\+::\+Oran\+Report\+::\+Get\+Type\+Id (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Get the Type\+Id of the \mbox{\hyperlink{classns3_1_1OranReport}{Oran\+Report}} class.
+
+\begin{DoxyReturn}{Returns}
+The Type\+Id. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classns3_1_1OranReport_a96dcdd040936a0dca4446f44b9776e5d}\label{classns3_1_1OranReport_a96dcdd040936a0dca4446f44b9776e5d}} 
+\index{ns3::OranReport@{ns3::OranReport}!ToString@{ToString}}
+\index{ToString@{ToString}!ns3::OranReport@{ns3::OranReport}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily std\+::string ns3\+::\+Oran\+Report\+::\+To\+String (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Get a string representation of this Report.
+
+\begin{DoxyReturn}{Returns}
+A string representation of this Report. 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classns3_1_1OranReportLteUeCellInfo_ab02072abc666df3644c6c5d3e91c26ec}{ns3\+::\+Oran\+Report\+Lte\+Ue\+Cell\+Info}}, \mbox{\hyperlink{classns3_1_1OranReportLocation_aa40810018764f6435e647d9df41228c0}{ns3\+::\+Oran\+Report\+Location}}, \mbox{\hyperlink{classns3_1_1OranReportLocationSql_a635836c243692644e03de7ea5708bd28}{ns3\+::\+Oran\+Report\+Location\+Sql}}, and \mbox{\hyperlink{classns3_1_1OranReportAppLoss_a1f2c2d4360546c942e677ba7fa6a89dd}{ns3\+::\+Oran\+Report\+App\+Loss}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/felipe/code/tcc/oran/model/oran-\/report.\+h\item 
+/home/felipe/code/tcc/oran/model/oran-\/report.\+cc\end{DoxyCompactItemize}

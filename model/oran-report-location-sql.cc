@@ -17,7 +17,7 @@ TypeId
 OranReportLocationSql::GetTypeId(void)
 {
     static TypeId tid = TypeId("ns3::OranReportLocationSql")
-                            .SetParent<OranReportSql>()
+                            .SetParent<OranReportSqlite>()
                             .AddConstructor<OranReportLocationSql>()
                             .AddAttribute("Location",
                                           "The location of the node.",
@@ -29,7 +29,7 @@ OranReportLocationSql::GetTypeId(void)
 }
 
 OranReportLocationSql::OranReportLocationSql(void)
-    : OranReportSql()
+    : OranReportSqlite()
 {
     m_tableInfo.emplace_back("x", "REAL");
     m_tableInfo.emplace_back("y", "REAL");
