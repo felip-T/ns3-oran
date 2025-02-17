@@ -1,7 +1,0 @@
-<map id="ns3::OranReportTrigger" name="ns3::OranReportTrigger">
-<area shape="rect" id="node1" title=" " alt="" coords="113,78,272,105"/>
-<area shape="rect" id="node3" href="$classns3_1_1OranReportTriggerLocationChange.html" title=" " alt="" coords="320,5,527,47"/>
-<area shape="rect" id="node4" href="$classns3_1_1OranReportTriggerLteUeHandover.html" title=" " alt="" coords="335,71,511,112"/>
-<area shape="rect" id="node5" href="$classns3_1_1OranReportTriggerPeriodic.html" title=" " alt="" coords="321,137,526,163"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,78,65,105"/>
-</map>

@@ -29,67 +29,59 @@
  * employees is not subject to copyright protection within the United States.
  */
 
-#include "oran-data-repository.h"
+#ifndef ORAN_E2_NODE_TERMINATOR_NR_UE_H
+#define ORAN_E2_NODE_TERMINATOR_NR_UE_H
 
-#include <ns3/log.h>
+#include "oran-e2-node-terminator.h"
+
+#include <ns3/nr-module.h>
 
 namespace ns3
 {
 
-NS_LOG_COMPONENT_DEFINE("OranDataRepository");
-
-NS_OBJECT_ENSURE_REGISTERED(OranDataRepository);
-
-TypeId
-OranDataRepository::GetTypeId(void)
+/**
+ * \ingroup oran
+ *
+ * E2 Node Terminator for LTE UEs. This Terminator does not process any Commands.
+ */
+class OranE2NodeTerminatorNrUe : public OranE2NodeTerminator
 {
-    static TypeId tid = TypeId("ns3::OranDataRepository").SetParent<Object>();
-
-    return tid;
-}
-
-OranDataRepository::OranDataRepository(void)
-    : Object(),
-      m_active(false)
-{
-    NS_LOG_FUNCTION(this);
-}
-
-OranDataRepository::~OranDataRepository(void)
-{
-    NS_LOG_FUNCTION(this);
-}
-
-void
-OranDataRepository::Activate(void)
-{
-    NS_LOG_FUNCTION(this);
-
-    m_active = true;
-}
-
-void
-OranDataRepository::Deactivate(void)
-{
-    NS_LOG_FUNCTION(this);
-
-    m_active = false;
-}
-
-bool
-OranDataRepository::IsActive(void) const
-{
-    NS_LOG_FUNCTION(this);
-
-    return m_active;
-}
-
-void
-OranDataRepository::DoDispose(void)
-{
-    NS_LOG_FUNCTION(this);
-
-    Object::DoDispose();
-}
+  public:
+    /**
+     * Get the TypeId of the OranE2NodeTerminatorNrUe class.
+     *
+     * \return The TypeId.
+     */
+    static TypeId GetTypeId(void);
+    /**
+     * Constructor of the OranE2NodeTerminatorNrUe class.
+     */
+    OranE2NodeTerminatorNrUe(void);
+    /**
+     * Destructor of the OranE2NodeTerminatorNrUe class.
+     */
+    ~OranE2NodeTerminatorNrUe(void) override;
+    /**
+     * Get the E2 Node Type. For this Terminator, this method always returns
+     * the LTE UE node type
+     *
+     * \return the E2 Node Type.
+     */
+    OranNearRtRic::NodeType GetNodeType(void) const override;
+    /**
+     * Receive a Command. All Commands are silently ignored.
+     *
+     * \param command The received command.
+     */
+    void ReceiveCommand(Ptr<OranCommand> command) override;
+    /**
+     * Get the NetDevice of the LTE UE.
+     *
+     * \return The net device.
+     */
+    virtual Ptr<NrUeNetDevice> GetNetDevice(void) const;
+}; // class OranE2NodeTerminatorNrUe
 
 } // namespace ns3
+
+#endif /* ORAN_E2_NODE_TERMINATOR_LTE_UE_H */

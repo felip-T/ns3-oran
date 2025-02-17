@@ -44,6 +44,7 @@
 #include "oran-adaptative-sqlite.h"
 #include "oran-report-sqlite.h"
 
+#include <ns3/nr-module.h>
 #include <ns3/abort.h>
 #include <ns3/log.h>
 #include <ns3/lte-enb-net-device.h>
@@ -153,6 +154,11 @@ OranNearRtRicE2Terminator::ReceiveRegistrationRequest(OranNearRtRic::NodeType ty
                 id,
                 terminator->GetObject<OranE2NodeTerminatorLteEnb>()->GetNetDevice()->GetCellId());
             break;
+        case OranNearRtRic::NodeType::NRUE:
+            e2NodeId = m_data->RegisterNodeLteUe(id,
+                                                 terminator->GetObject<OranE2NodeTerminatorNrUe>()
+                                                     ->GetNetDevice()
+                                                     ->GetImsi());
         default:
             e2NodeId = m_data->RegisterNode(type, id);
             break;

@@ -29,67 +29,72 @@
  * employees is not subject to copyright protection within the United States.
  */
 
-#include "oran-data-repository.h"
+#include "oran-e2-node-terminator-nr-ue.h"
 
+#include <ns3/abort.h>
 #include <ns3/log.h>
+#include <ns3/node.h>
+#include <ns3/pointer.h>
+#include <ns3/string.h>
 
 namespace ns3
 {
 
-NS_LOG_COMPONENT_DEFINE("OranDataRepository");
+NS_LOG_COMPONENT_DEFINE("OranE2NodeTerminatorNrUe");
 
-NS_OBJECT_ENSURE_REGISTERED(OranDataRepository);
+NS_OBJECT_ENSURE_REGISTERED(OranE2NodeTerminatorNrUe);
 
 TypeId
-OranDataRepository::GetTypeId(void)
+OranE2NodeTerminatorNrUe::GetTypeId(void)
 {
-    static TypeId tid = TypeId("ns3::OranDataRepository").SetParent<Object>();
+    static TypeId tid = TypeId("ns3::OranE2NodeTerminatorNrUe")
+                            .SetParent<OranE2NodeTerminator>()
+                            .AddConstructor<OranE2NodeTerminatorNrUe>();
 
     return tid;
 }
 
-OranDataRepository::OranDataRepository(void)
-    : Object(),
-      m_active(false)
+OranE2NodeTerminatorNrUe::OranE2NodeTerminatorNrUe(void)
+    : OranE2NodeTerminator()
 {
     NS_LOG_FUNCTION(this);
 }
 
-OranDataRepository::~OranDataRepository(void)
+OranE2NodeTerminatorNrUe::~OranE2NodeTerminatorNrUe(void)
 {
     NS_LOG_FUNCTION(this);
 }
 
-void
-OranDataRepository::Activate(void)
+OranNearRtRic::NodeType
+OranE2NodeTerminatorNrUe::GetNodeType(void) const
 {
     NS_LOG_FUNCTION(this);
 
-    m_active = true;
-}
-
-void
-OranDataRepository::Deactivate(void)
-{
-    NS_LOG_FUNCTION(this);
-
-    m_active = false;
-}
-
-bool
-OranDataRepository::IsActive(void) const
-{
-    NS_LOG_FUNCTION(this);
-
-    return m_active;
+    return OranNearRtRic::NRUE;
 }
 
 void
-OranDataRepository::DoDispose(void)
+OranE2NodeTerminatorNrUe::ReceiveCommand(Ptr<OranCommand> command)
+{
+    NS_LOG_FUNCTION(this << command);
+
+    if (m_active)
+    {
+        // No supported commands yet.
+    }
+}
+
+Ptr<NrUeNetDevice>
+OranE2NodeTerminatorNrUe::GetNetDevice(void) const
 {
     NS_LOG_FUNCTION(this);
 
-    Object::DoDispose();
+    Ptr<NrUeNetDevice> nrUeNetDev =
+        GetNode()->GetDevice(GetNetDeviceIndex())->GetObject<NrUeNetDevice>();
+
+    NS_ABORT_MSG_IF(nrUeNetDev == nullptr, "Unable to find appropriate network device");
+
+    return nrUeNetDev;
 }
 
 } // namespace ns3

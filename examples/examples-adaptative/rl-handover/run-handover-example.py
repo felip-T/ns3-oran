@@ -33,8 +33,8 @@ if not os.path.exists(save_dir):
 if not os.path.exists(log_dir):
     os.makedirs(log_dir)
 
-target = "rl-handover"
-ns3Path = "/home/"
+target = "rl-handover-example"
+ns3Path = "/ns-3-dev"
 env = gym.make("ns3ai_gym_env/Ns3-v0", targetName=target, ns3Path=ns3Path)
 env = Monitor(env, log_dir, allow_early_resets=False)
 

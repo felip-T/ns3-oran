@@ -1,7 +1,0 @@
-<map id="ns3::OranE2NodeTerminator" name="ns3::OranE2NodeTerminator">
-<area shape="rect" id="node1" title=" " alt="" coords="113,78,300,105"/>
-<area shape="rect" id="node3" href="$classns3_1_1OranE2NodeTerminatorLteEnb.html" title=" " alt="" coords="348,5,535,47"/>
-<area shape="rect" id="node4" href="$classns3_1_1OranE2NodeTerminatorLteUe.html" title=" " alt="" coords="348,71,535,112"/>
-<area shape="rect" id="node5" href="$classns3_1_1OranE2NodeTerminatorWired.html" title=" " alt="" coords="348,136,535,177"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,78,65,105"/>
-</map>

@@ -107,7 +107,7 @@ int main(){
 		Ptr<OranReporterUeIpv4> ipv4Reporter = CreateObject<OranReporterUeIpv4>();
 		ipv4Reporter->SetAttribute("Terminator", PointerValue(lteUeTerminator));
 
-		lteUeTerminator->AddReporter(locationreporter);
+		lteUeTerminator->AddReporter(locationReporter);
 		lteUeTerminator->AddReporter(ipv4Reporter);
 
 		lteUeTerminator->SetAttribute("NearRtRic", PointerValue(nearRtRic));
@@ -121,10 +121,10 @@ int main(){
 	}
 
 	nearRtRic->Data()->TraceConnectWithoutContext("QueryRc", MakeCallback(&QueryRcSink));
-	auto func = [&]() -> void{
-		std::cout << std::endl << 
-		ueNodes.Get(0)->GetObject<Ipv4>()->GetAddress(1,0).GetLocal() << std::endl << std::endl;};
-	Simulator::Schedule(Seconds(3), func);
+	// auto func = [&]() -> void{
+	// 	std::cout << std::endl << 
+	// 	ueNodes.Get(0)->GetObject<Ipv4>()->GetAddress(1,0).GetLocal() << std::endl << std::endl;};
+	// Simulator::Schedule(Seconds(3), func);
 
 	Simulator::Stop(simTime);
 	Simulator::Run();

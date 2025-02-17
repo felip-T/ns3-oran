@@ -1,8 +1,0 @@
-<map id="ns3::OranLm" name="ns3::OranLm">
-<area shape="rect" id="node1" title=" " alt="" coords="113,97,211,123"/>
-<area shape="rect" id="node3" href="$classns3_1_1OranLmLte2LteDistanceHandover.html" title=" " alt="" coords="277,5,469,47"/>
-<area shape="rect" id="node4" href="$classns3_1_1OranLmLte2LteOnnxHandover.html" title=" " alt="" coords="259,71,486,98"/>
-<area shape="rect" id="node5" href="$classns3_1_1OranLmLte2LteTorchHandover.html" title=" " alt="" coords="259,122,487,149"/>
-<area shape="rect" id="node6" href="$classns3_1_1OranLmNoop.html" title=" " alt="" coords="309,173,437,199"/>
-<area shape="rect" id="node2" title=" " alt="" coords="5,97,65,123"/>
-</map>

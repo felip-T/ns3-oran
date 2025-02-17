@@ -1,7 +1,0 @@
-<map id="ns3::OranCmm" name="ns3::OranCmm">
-<area shape="rect" id="node1" title=" " alt="" coords="212,80,323,107"/>
-<area shape="rect" id="node3" href="$classns3_1_1OranCmmHandover.html" title=" " alt="" coords="5,162,172,189"/>
-<area shape="rect" id="node4" href="$classns3_1_1OranCmmNoop.html" title=" " alt="" coords="196,162,339,189"/>
-<area shape="rect" id="node5" href="$classns3_1_1OranCmmSingleCommandPerNode.html" title=" " alt="" coords="363,155,569,196"/>
-<area shape="rect" id="node2" title=" " alt="" coords="237,5,297,32"/>
-</map>

@@ -244,6 +244,30 @@ OranDataRepositorySqlite::RegisterNodeLteEnb(uint64_t id, uint16_t cellId)
 }
 
 uint64_t
+OranDataRepositorySqlite::RegisterNodeNrUe(uint64_t id, uint64_t imsi)
+{
+    NS_LOG_FUNCTION(this);
+    uint64_t e2NodeId = 0;
+
+    if (m_active)
+    {
+        int rc;
+        sqlite3_stmt* stmt = nullptr;
+        e2NodeId = RegisterNode(OranNearRtRic::NodeType::NRUE, id);
+
+        sqlite3_prepare_v2(m_db, m_queryStmtsStrings[INSERT_NR_UE_NODE].c_str(), -1, &stmt, 0);
+
+        sqlite3_bind_int64(stmt, 1, id);
+        sqlite3_bind_int64(stmt, 2, imsi);
+
+        rc = sqlite3_step(stmt);
+        CheckQueryReturnCode(stmt, rc, FormatBoundArgsList(id, imsi));
+        sqlite3_finalize(stmt);
+    }
+    return e2NodeId;
+}
+
+uint64_t
 OranDataRepositorySqlite::DeregisterNode(uint64_t e2NodeId)
 {
     NS_LOG_FUNCTION(this << e2NodeId);
@@ -1147,6 +1171,9 @@ OranDataRepositorySqlite::InitStatements(void)
         "(nodeid, cellid, rnti, simulationtime) VALUES (?, ?, ?, ?);";
 
     m_queryStmtsStrings[INSERT_LTE_UE_NODE] = "INSERT OR REPLACE INTO lteue "
+                                              "(nodeid, imsi) VALUES (?, ?);";
+
+    m_queryStmtsStrings[INSERT_NR_UE_NODE] = "INSERT OR REPLACE INTO nrue "
                                               "(nodeid, imsi) VALUES (?, ?);";
 
     m_queryStmtsStrings[INSERT_NODE_ADD] = "INSERT INTO node "

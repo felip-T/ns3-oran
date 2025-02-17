@@ -149,6 +149,7 @@ build_lib(
     model/oran-report-sqlite.cc
     model/oran-report-location-sql.cc
     model/oran-adaptative-sqlite.cc
+    model/oran-e2-node-terminator-nr-ue.cc
     helper/oran-helper.cc
     ${oran_onnxruntime_sources}
     ${oran_torch_sources}
@@ -188,6 +189,7 @@ build_lib(
     model/oran-report-sqlite.h
     model/oran-report-location-sql.h
     model/oran-adaptative-sqlite.h
+    model/oran-e2-node-terminator-nr-ue.h
     helper/oran-helper.h
     ${oran_onnxruntime_headers}
     ${oran_torch_headers}
@@ -195,6 +197,7 @@ build_lib(
     ${libcore}
     ${libnetwork}
     ${liblte}
+    ${libnr}
     ${sqlite_libraries}
     ${torch_libraries}
     ${onnxruntime_libraries}

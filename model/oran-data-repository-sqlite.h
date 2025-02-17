@@ -33,6 +33,7 @@
 #define ORAN_DATA_REPOSITORY_SQLITE_H
 
 #include "oran-data-repository.h"
+#include "oran-e2-node-terminator-nr-ue.h"
 
 #include <ns3/traced-callback.h>
 
@@ -94,6 +95,7 @@ class OranDataRepositorySqlite : public OranDataRepository
     uint64_t RegisterNode(OranNearRtRic::NodeType type, uint64_t id) override;
     uint64_t RegisterNodeLteUe(uint64_t id, uint64_t imsi) override;
     uint64_t RegisterNodeLteEnb(uint64_t id, uint16_t cellId) override;
+    uint64_t RegisterNodeNrUe(uint64_t id, uint64_t imsi);
     uint64_t DeregisterNode(uint64_t e2NodeId) override;
     void SavePosition(uint64_t e2NodeId, Vector pos, Time t) override;
     void SaveLteUeCellInfo(uint64_t e2NodeId, uint16_t cellId, uint16_t rnti, Time t) override;
@@ -146,6 +148,7 @@ class OranDataRepositorySqlite : public OranDataRepository
         INSERT_LTE_ENB_NODE,               //!< Add an LTE eNB E2 node
         INSERT_LTE_UE_CELL,                //!< Add LTE UE cell information for an E2 node
         INSERT_LTE_UE_NODE,                //!< Add an LTE UE E2 node
+        INSERT_NR_UE_NODE,                //!< Add an NR UE E2 node
         INSERT_NODE_ADD,                   //!< Add an E2 node
         INSERT_NODE_UPDATE,                //!< Update an E2 node's information
         INSERT_NODE_LOCATION,              //!< Add an E2 node's location
