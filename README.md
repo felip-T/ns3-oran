@@ -154,7 +154,7 @@ Este artefato constrói em cima de um software disponibilizado pelo NIST, que po
 ## Doxygen
 A documentação das funcionalidades implementadas pode ser gerada com doxygen:
 ```shell
-cd doc
+cd contrib/oran/doc
 doxygen
 ```
 O código acima gerará uma pasta chamada "html", o arquivo "index.html" pode ser aberto com um navegador para acessar a documentação.
@@ -163,7 +163,7 @@ O código acima gerará uma pasta chamada "html", o arquivo "index.html" pode se
 Foram adicionadas informações sobre as adições realizadas no manual do ns3-oran.
 O manual pode ser compilado com:
 ```shell
-cd doc
+cd contrib/oran/doc
 make latexpdf
 ```
-O código acima gerará a documentação em "build/latex".
+O código acima gerará a documentação em "contrib/oran/doc/build/latex".
