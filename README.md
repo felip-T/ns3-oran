@@ -105,6 +105,7 @@ Utilizando o contêiner:
 docker run -it --rm ns3-oran-customizable-db:latest
 ./setupDocker.sh
 ```
+Os últimos comandos irão inicializar o contêiner, compilar o ns-3 e instalar as dependências opcionais para a execução do segundo exemplo.
 
 # Teste mínimo
 
