@@ -43,7 +43,7 @@ git checkout -b ns-3.40 ns-3.40
 Na pasta "ns-3-dev":
 ```shell
 cd contrib
-git clone https://github.com/felip-T/ns3-oran oran
+git clone https://github.com/felip-t/ns3-oran oran
 ```
 
 ## Instalação do ns3-ai (opcional)
@@ -60,11 +60,27 @@ Na pasta "ns-3-dev":
 ./ns3
 ```
 
+## Dockerfile
+Opcionalmente, a ferramenta pode ser utilizada a partir da Dockerfile disponibilizada no diretório "docker".
+```shell
+git clone https://github.com/felip-T/ns3-oran
+cd ns3-oran/docker
+docker build -t ns3-oran-customizable-db .
+```
+
+Utilizando o contêiner:
+```shell
+docker run -it --rm ns3-oran-customizable-db:latest
+./ns3 configure --enable-examples
+./ns3
+```
+
 # Teste mínimo
 
-Esta seção deve apresentar um passo a passo para a execução de um teste mínimo.
-Um teste mínimo de execução permite que os revisores consigam observar algumas funcionalidades do artefato. 
-Este teste é útil para a identificação de problemas durante o processo de instalação.
+O caso de uso 1, citado no artigo, pode ser utilizado como teste mínimo. Para executar o exemplo basta o comando:
+```shell
+./ns3 run "simple-db-example"
+```
 
 # Experimentos
 
@@ -79,6 +95,6 @@ Caso o processo para a reprodução de todos os experimento não seja possível 
 
 # LICENSE
 
-Apresente a licença.
+Este artefato constrói em cima de um software disponibilizado pelo NIST. Detalhes da licença estão disponíveis no arquivo LICENSE.md.
 
 
