@@ -2,6 +2,7 @@ import gymnasium as gym
 import ns3ai_gym_env
 import os
 import time
+import sys
 
 from stable_baselines3 import PPO
 from stable_baselines3.common.callbacks import BaseCallback
@@ -24,8 +25,9 @@ class mycb(BaseCallback):
         for i in self.locals:
             self.model.save(self.save_dir)
 
-save_dir = "/home/saves/save_final3"
-log_dir = "/home/logs/run_final3"
+ns3Path = sys.argv[0]
+save_dir = f"{ns3Path}/save_final3"
+log_dir = f"{ns3Path}/run_final3"
 
 if not os.path.exists(save_dir):
     os.makedirs(save_dir)
@@ -34,7 +36,6 @@ if not os.path.exists(log_dir):
     os.makedirs(log_dir)
 
 target = "rl-handover"
-ns3Path = "/home/"
 env = gym.make("ns3ai_gym_env/Ns3-v0", targetName=target, ns3Path=ns3Path)
 env = Monitor(env, log_dir, allow_early_resets=False)
 

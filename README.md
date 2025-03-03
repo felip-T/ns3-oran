@@ -20,10 +20,15 @@ Descrevendo todo o ambiente de execução, com requisitos de hardware e software
 
 # Dependências
 
+
+
 As dependências do ns-3 e das extensões ns3-oran e ns3-ai podem ser instaladas com o gerenciador de pacote apt com o comando:
 ```shell
+apt-get update
 apt-get install git build-essential libboost-all-dev pybind11-dev cmake sqlite sqlite3 libsqlite3-dev protobuf-compiler python3 python3-pip doxygen sphinx
 ```
+
+
 # Preocupações com segurança
 
 O artefato não apresenta nenhum risco à segurança.
@@ -42,15 +47,19 @@ git checkout -b ns-3.40 ns-3.40
 
 Na pasta "ns-3-dev":
 ```shell
-cd contrib
-git clone https://github.com/felip-t/ns3-oran oran
+git clone https://github.com/felip-t/ns3-oran contrib/oran
 ```
 
 ## Instalação do ns3-ai (opcional)
-
-Na pasta "ns-3-dev/contrib":
+É recomendado um ambiente virtual Python para a instalação do ns3-ai.
+Na pasta "ns-3-dev":
 ```shell
-git clone https://github.com/felip-T/ns3-ai ai
+git clone https://github.com/felip-T/ns3-ai contrib/ai
+./ns3 configure --enable-examples
+./ns3
+pip install stable_baselines3 gymnasium
+pip install -e contrib/ai/python_utils
+pip install -e contrib/ai/model/gym-interface/py
 ```
 
 ## Compilação do ns-3
@@ -95,7 +104,7 @@ Caso o processo para a reprodução de todos os experimento não seja possível 
 
 # LICENSE
 
-Este artefato constrói em cima de um software disponibilizado pelo NIST. Detalhes da licença estão disponíveis no arquivo LICENSE.md.
+Este artefato constrói em cima de um software disponibilizado pelo NIST, que possuí licença própria. Detalhes da licença estão disponíveis no arquivo LICENSE.md.
 
 # Documentação
 
@@ -110,7 +119,7 @@ O código acima gerará uma pasta chamada "html", o arquivo "index.html" pode se
 ## Sphinx
 Foram adicionadas informações sobre as adições realizadas no manual do ns3-oran.
 O manual pode ser compilado com:
-```
+```shell
 cd doc
 make latexpdf
 ```

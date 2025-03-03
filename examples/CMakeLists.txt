@@ -28,6 +28,7 @@
 # employees is not subject to copyright protection within the United States.
 
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/examples-adaptative/simple-db-usage/)
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/examples-adaptative/rl-handover/)
 
 build_lib_example(
   NAME oran-data-repository-example
