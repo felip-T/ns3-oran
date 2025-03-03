@@ -8,6 +8,7 @@
 * [Teste mínimo](#teste-mínimo)
 * [Experimentos](#experimentos)
 * [LICENSE](#license)
+* [Documentação](#documentação)
 
 # Selos Considerados
 
@@ -15,12 +16,14 @@ Os selos considerados são: Disponíveis, Funcionais e Sustentáveis e Reprodut�
 
 # Informações básicas
 
-Esta seção deve apresentar informações básicas de todos os componentes necessários para a execução e replicação dos experimentos. 
-Descrevendo todo o ambiente de execução, com requisitos de hardware e software.
+Os experimentos foram executados em um computador de mesa com o processador AMD Ryzen 5 5700x3D, com 16GB RAM, e em um notebook com um processador Intel i7 de oitava geração, com 12GB RAM.
+
+Recomenda-se ao menos 12GB RAM para a execução dos experimentos.
+Placa de vídeo não é necessária.
+
+Os experimentos foram executados no OS Ubuntu 22.04. Recomenda-se a execução em contêiner por meio da dockerfile disponibilizada. Detalhes sobre a execução do contêiner estão na próxima seção.
 
 # Dependências
-
-
 
 As dependências do ns-3 e das extensões ns3-oran e ns3-ai podem ser instaladas com o gerenciador de pacote apt com o comando:
 ```shell
@@ -28,6 +31,24 @@ apt-get update
 apt-get install git build-essential libboost-all-dev pybind11-dev cmake sqlite sqlite3 libsqlite3-dev protobuf-compiler python3 python3-pip doxygen sphinx
 ```
 
+As versões exatas utlizadas foram:
+
+build-essential=12.9
+libboost-all-dev=1.74.0.3
+pybind11-dev=2.9.1
+cmake=3.22.1
+sqlite=2.8.17
+sqlite3=3.37.2
+libsqlite3-dev=3.37.2
+protobuf-compiler=3.12.4
+python3=3.10.6
+python3-pip=22.0.2
+doxygen=1.9.1
+python3-sphinx=4.3.2
+
+Dependências opcionais (instaladas pelo pip):
+stable_baselines3=2.5.0
+gymnasium=1.0.0
 
 # Preocupações com segurança
 
@@ -35,7 +56,8 @@ O artefato não apresenta nenhum risco à segurança.
 
 # Instalação
 
-## Instalação do ns-3
+## Instalação local
+### Instalação do ns-3
 
 ```shell
 git clone https://gitlab.com/nsnam/ns-3-dev.git
@@ -43,14 +65,14 @@ cd ns-3-dev
 git checkout -b ns-3.40 ns-3.40
 ```
 
-## Instalação do ns3-oran-customizable-db
+### Instalação do ns3-oran-customizable-db
 
 Na pasta "ns-3-dev":
 ```shell
 git clone https://github.com/felip-t/ns3-oran contrib/oran
 ```
 
-## Instalação do ns3-ai (opcional)
+### Instalação do ns3-ai (opcional)
 É recomendado um ambiente virtual Python para a instalação do ns3-ai.
 Na pasta "ns-3-dev":
 ```shell
@@ -62,7 +84,7 @@ pip install -e contrib/ai/python_utils
 pip install -e contrib/ai/model/gym-interface/py
 ```
 
-## Compilação do ns-3
+### Compilação do ns-3
 Na pasta "ns-3-dev":
 ```shell
 ./ns3 configure --enable-examples
@@ -94,8 +116,31 @@ O caso de uso 1, mostrado no artigo, pode ser utilizado como teste mínimo. Para
 
 ## simple-db-example
 
+Este exemplo corresponde ao "caso de uso 1" do artigo.
+Para executar basta:
+```shell
+./ns3 run "simple-db-example"
+```
 
-## Reivindicações #Y
+O exemplo cria um cenário de simulaçao com um relatório personalizado que reporta o IPv4 de um equipamento de usuário periódicamente. O programa imprime na tela as queries sqlite feitas ao banco de dados, é possível ver a criação dinâmica da tabela UeIpv4, semelhante ao evidenciado no artigo. Uma explicação mais detalhada deste exemplo está disponível na documentação Sphinx.
+O tempo de execução esperado é na ordem de poucos segundos.
+
+## rl-handover
+
+Este exemplo corresponde ao "caso de uso 2" do artigo.
+Para fins de revisão de artefatos, este exemplo não pode ser executado em tempo viável, uma vez que o modelo precisou treinado por três dias para a obtenção dos resultados mostrados no artigo.
+
+Porém é possível rodar o experimento para atestar seu funcionamento básico. O experimento é executado atravéz de um arquivo Python, que treina um modelo por aprendizado por reforço com PPO e inicializa um cenário de simulação múltiplas vezes em sequência, coletando observações e tomando ações de controle no cenário.
+
+Foi feito um script para facilitar a execução do experimento, que pode utilizado com:
+```shell
+./run-rl-handover-example.sh
+```
+
+Todas as observações recebidas pelo modelo, bem como sua recompensa e a ação tomada são exibidas na tela.
+O exemplo executa até ser interrompido pelo usuário (Ctrl+C).
+
+Mais informações sobre o exemplo, bem como uma ilustração do cenário simulado estão disponíveis na documentação Sphinx.
 
 # LICENSE
 
