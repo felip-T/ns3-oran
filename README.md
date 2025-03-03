@@ -97,4 +97,21 @@ Caso o processo para a reprodução de todos os experimento não seja possível 
 
 Este artefato constrói em cima de um software disponibilizado pelo NIST. Detalhes da licença estão disponíveis no arquivo LICENSE.md.
 
+# Documentação
 
+## Doxygen
+A documentação das funcionalidades implementadas pode ser gerada com doxygen:
+```shell
+cd doc
+doxygen
+```
+O código acima gerará uma pasta chamada "html", o arquivo "index.html" pode ser aberto com um navegador para acessar a documentação.
+
+## Sphinx
+Foram adicionadas informações sobre as adições realizadas no manual do ns3-oran.
+O manual pode ser compilado com:
+```
+cd doc
+make latexpdf
+```
+O código acima gerará a documentação em "build/latex".
