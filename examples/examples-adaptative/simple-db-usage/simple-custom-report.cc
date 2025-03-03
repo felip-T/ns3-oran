@@ -107,7 +107,7 @@ int main(){
 		Ptr<OranReporterUeIpv4> ipv4Reporter = CreateObject<OranReporterUeIpv4>();
 		ipv4Reporter->SetAttribute("Terminator", PointerValue(lteUeTerminator));
 
-		lteUeTerminator->AddReporter(locationreporter);
+		lteUeTerminator->AddReporter(locationReporter);
 		lteUeTerminator->AddReporter(ipv4Reporter);
 
 		lteUeTerminator->SetAttribute("NearRtRic", PointerValue(nearRtRic));
