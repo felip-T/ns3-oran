@@ -1,7 +1,7 @@
 # ns3-oran-customizable-db
 
 Uma parte essencial no desenvolvimento de aplicações para o controle e
-diagnóstico de uma Rede de Acesso via Rádio (\textit{Radio Access Network} --
+diagnóstico de uma Rede de Acesso via Rádio (Radio Access Network --
 RAN) é a simulação. É imprescindível a avaliação das soluções propostas em um
 cenário simulado próximo à realidade a fim de evitar possíveis falhas na
 implementação. O objetivo deste trabalho é adicionar funcionalidades à extensão "ns3-oran" do
