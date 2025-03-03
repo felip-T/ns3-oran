@@ -25,7 +25,7 @@ class mycb(BaseCallback):
         for i in self.locals:
             self.model.save(self.save_dir)
 
-ns3Path = sys.argv[0]
+ns3Path = sys.argv[1]
 save_dir = f"{ns3Path}/save_final3"
 log_dir = f"{ns3Path}/run_final3"
 

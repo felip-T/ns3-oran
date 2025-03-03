@@ -11,7 +11,7 @@
 
 # Selos Considerados
 
-Os selos considerados são: Disponíveis, Funcionais e Sustentáveis.
+Os selos considerados são: Disponíveis, Funcionais e Sustentáveis e Reprodutíveis.
 
 # Informações básicas
 
@@ -80,25 +80,20 @@ docker build -t ns3-oran-customizable-db .
 Utilizando o contêiner:
 ```shell
 docker run -it --rm ns3-oran-customizable-db:latest
-./ns3 configure --enable-examples
-./ns3
+./setupDocker.sh
 ```
 
 # Teste mínimo
 
-O caso de uso 1, citado no artigo, pode ser utilizado como teste mínimo. Para executar o exemplo basta o comando:
+O caso de uso 1, mostrado no artigo, pode ser utilizado como teste mínimo. Para executar o exemplo basta o comando:
 ```shell
 ./ns3 run "simple-db-example"
 ```
 
 # Experimentos
 
-Esta seção deve descrever um passo a passo para a execução e obtenção dos resultados do artigo. Permitindo que os revisores consigam alcançar as reivindicações apresentadas no artigo. 
-Cada reivindicações deve ser apresentada em uma subseção, com detalhes de arquivos de configurações a serem alterados, comandos a serem executados, flags a serem utilizadas, tempo esperado de execução, expectativa de recursos a serem utilizados como 1GB RAM/Disk e resultado esperado. 
+## simple-db-example
 
-Caso o processo para a reprodução de todos os experimento não seja possível em tempo viável. Os autores devem escolher as principais reivindicações apresentadas no artigo e apresentar o respectivo processo para reprodução.
-
-## Reivindicações #X
 
 ## Reivindicações #Y
 
