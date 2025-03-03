@@ -9,5 +9,3 @@ RUN git clone https://gitlab.com/nsnam/ns-3-dev.git -l /home/ns-3-dev
 RUN git -C /home/ns-3-dev/ checkout -b ns-3.40 ns-3.40
 RUN git clone https://github.com/felip-T/ns3-oran -l /home/ns-3-dev/contrib/oran
 RUN git clone https://github.com/felip-T/ns3-ai -l /home/ns-3-dev/contrib/ai
-RUN /home/ns3 configure --enable-examples
-RUN /home/ns3
