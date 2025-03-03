@@ -1,4 +1,4 @@
-# ns3-o-ran-customizable-db
+# ns3-oran-customizable-db
 
 # Estrutura do readme.md
 * [Selos Considerados](#selos-considerados)
@@ -20,17 +20,45 @@ Descrevendo todo o ambiente de execução, com requisitos de hardware e software
 
 # Dependências
 
-Informações relacionadas a benchmarks utilizados e dependências para a execução devem ser descritas nesta seção. 
-Busque deixar o mais claro possível, apresentando informações como versões de dependências e processos para acessar recursos de terceiros caso necessário.
-
+As dependências do ns-3 e das extensões ns3-oran e ns3-ai podem ser instaladas com o gerenciador de pacote apt com o comando:
+```shell
+apt-get install git build-essential libboost-all-dev pybind11-dev cmake sqlite sqlite3 libsqlite3-dev protobuf-compiler python3 python3-pip doxygen sphinx
+```
 # Preocupações com segurança
 
-Caso a execução do artefato ofereça algum tipo de risco para os avaliadores. Este risco deve ser descrito e o processo adequado para garantir a segurança dos revisores deve ser apresentado.
+O artefato não apresenta nenhum risco à segurança.
 
 # Instalação
 
+## Instalação do ns-3
 
-O processo de baixar e instalar a aplicação deve ser descrito nesta seção. Ao final deste processo já é esperado que a aplicação/benchmark/ferramenta consiga ser executada.
+```shell
+git clone https://gitlab.com/nsnam/ns-3-dev.git
+cd ns-3-dev
+git checkout -b ns-3.40 ns-3.40
+```
+
+## Instalação do ns3-oran-customizable-db
+
+Na pasta "ns-3-dev":
+```shell
+cd contrib
+git clone https://github.com/felip-T/ns3-oran oran
+```
+
+## Instalação do ns3-ai (opcional)
+
+Na pasta "ns-3-dev/contrib":
+```shell
+git clone https://github.com/felip-T/ns3-ai ai
+```
+
+## Compilação do ns-3
+Na pasta "ns-3-dev":
+```shell
+./ns3 configure --enable-examples
+./ns3
+```
 
 # Teste mínimo
 

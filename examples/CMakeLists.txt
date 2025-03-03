@@ -27,6 +27,8 @@
 # cause risk of injury or damage to property. The software developed by NIST
 # employees is not subject to copyright protection within the United States.
 
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/examples-adaptative/simple-db-usage/)
+
 build_lib_example(
   NAME oran-data-repository-example
   SOURCE_FILES oran-data-repository-example.cc

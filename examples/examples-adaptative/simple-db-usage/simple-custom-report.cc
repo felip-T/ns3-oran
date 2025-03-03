@@ -121,10 +121,6 @@ int main(){
 	}
 
 	nearRtRic->Data()->TraceConnectWithoutContext("QueryRc", MakeCallback(&QueryRcSink));
-	auto func = [&]() -> void{
-		std::cout << std::endl << 
-		ueNodes.Get(0)->GetObject<Ipv4>()->GetAddress(1,0).GetLocal() << std::endl << std::endl;};
-	Simulator::Schedule(Seconds(3), func);
 
 	Simulator::Stop(simTime);
 	Simulator::Run();
