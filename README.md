@@ -4,8 +4,8 @@ Uma parte essencial no desenvolvimento de aplicações para o controle e
 diagnóstico de uma Rede de Acesso via Rádio (\textit{Radio Access Network} --
 RAN) é a simulação. É imprescindível a avaliação das soluções propostas em um
 cenário simulado próximo à realidade a fim de evitar possíveis falhas na
-implementação. O objetivo deste trabalho é adicionar funcionalidades à extensão ``ns3-oran'' do
-simulador de redes ``ns-3''. As funcionalidades implementadas dão ao usuário a
+implementação. O objetivo deste trabalho é adicionar funcionalidades à extensão "ns3-oran" do
+simulador de redes "ns-3". As funcionalidades implementadas dão ao usuário a
 liberdade para utilizar a extensão sem restrições de quais dados podem ser
 enviados ao Near-RT RIC. A capacidade de coleta, armazenamento e análise de
 diversos tipos de dados é fundamental no desenvolvimento e implementação de
