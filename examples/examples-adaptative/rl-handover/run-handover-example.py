@@ -60,7 +60,6 @@ while True:
     if i % 50 == 0:
         while not os.path.exists(f"{save_dir}/model_{steps*i}.zip"):
             model.save(f"{save_dir}/model_{steps*i}.zip")
-            print('here')
 
 # episodes = 10
 #

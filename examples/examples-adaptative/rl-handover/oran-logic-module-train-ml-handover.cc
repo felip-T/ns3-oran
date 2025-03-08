@@ -41,7 +41,6 @@
 
 	std::vector<Ptr<OranCommand>> OranLmCustomHandover::Run(void) {
 	  NS_LOG_FUNCTION(this);
-	  // std::cout << "RUNNING" << std::endl;
 
 	  std::vector<Ptr<OranCommand>> commands;
 
@@ -52,23 +51,22 @@
 	    Ptr<OranDataRepository> data = m_nearRtRic->Data();
 	    Ptr<OranAdaptativeSqlite> db = data->GetObject<OranAdaptativeSqlite>();
 	    auto reportt = db->GetLastReport("nodeapploss");
-	    for (auto rep : reportt) {
-	      std::cout << rep.first << " " << rep.second << std::endl;
-	    }
+	    // for (auto rep : reportt) {
+	    //   std::cout << rep.first << " " << rep.second << std::endl;
+	    // }
 	    std::string id = reportt["nodeid"];
 	    if (id.size() != 0) {
-	      std::cout << "HERE: " << id << std::endl;
 	      try {
 		UeInfo ueInfo = GetUeInfos(data, std::stoul(id, nullptr, 0)).at(0);
 		std::vector<UeInfo> ueInfos = GetAllUeInfos(data);
-		std::cout << "INFOS" << std::endl;
-		for (auto ue : ueInfos) {
-		  std::cout << ue.nodeId << std::endl;
-		}
+		// std::cout << "INFOS" << std::endl;
+		// for (auto ue : ueInfos) {
+		//   std::cout << ue.nodeId << std::endl;
+		// }
 		std::vector<EnbInfo> enbInfos = GetEnbInfos(data);
 		commands = GetHandoverCommands(data, ueInfos, enbInfos, ueInfo);
 	      } catch (...) {
-		std::cout << "ERROR: " << id << std::endl;
+					// std::cout << "ERROR: " << id << std::endl;
 	      }
 	    }
 	  }
@@ -175,7 +173,7 @@
 	  double allApploss = 0;
 	  for (size_t i = 0; i < ueInfos.size(); i++) {
 	    allApploss += ueInfos[i].apploss;
-	    std::cout << "allApploss: " << allApploss << std::endl;
+	    // std::cout << "allApploss: " << allApploss << std::endl;
 	    // std::ofstream logger("logs.txt", std::ios::app);
 	    // if (logger.is_open()) {
 	    //   logger << allApploss << '\n';
@@ -183,7 +181,7 @@
 	    // logger.close();
 	  }
 	  allApploss /= ueInfos.size();
-	  std::cout << "allApploss total: " << allApploss << std::endl;
+	  // std::cout << "allApploss total: " << allApploss << std::endl;
 
 	  // double min = DBL_MAX;               // The minimum distance recorded.
 	  uint64_t oldCellNodeId;
@@ -221,7 +219,7 @@
       observation->AddValue(dist / (sqrt(2) * 100));
     }
 
-    std::cout << observation;
+    std::cout << "Model observation: (apploss | log10(SINR)/5 | dist eNB 1 | dist eNB 2):" <<std::endl << observation << std::endl;
     m_model->SetObservation(observation);
     m_model->m_reward = 1 - allApploss;
     m_model->Notify();
@@ -237,8 +235,6 @@
                                     UintegerValue(oldCellNodeId));
       handoverCommand->SetAttribute("TargetRnti", UintegerValue(ueInfo.rnti));
       handoverCommand->SetAttribute("TargetCellId", UintegerValue(newCellId));
-      std::cout << "handover: " << oldCellNodeId << " to " << newCellId
-                << "; ue" << ueInfo.nodeId << std::endl;
       data->LogCommandLm(m_name, handoverCommand);
       commands.push_back(handoverCommand);
     }
@@ -309,7 +305,6 @@ OranLmCustomHandover::GetAllUeInfos(Ptr<OranDataRepository> data) const {
           ueInfo.sinr = sinr;
           ueInfo.position = nodePositions.rbegin()->second;
           ueInfos.push_back(ueInfo);
-					std::cout << sinr << std::endl;
         }
       } else {
         NS_LOG_INFO("Could not find LTE UE location for E2 Node ID = "

@@ -44,7 +44,6 @@ OranReportTriggerApplossThreshold::CheckTriggeredTrace(double oldValue, double n
 {
 	if (newValue > 0.05){
 		if (Simulator::Now().GetSeconds() - m_lastReport.GetSeconds() > 0.2){
-			// std::cout << "HERE:  asd" << m_lastReport << " " << Simulator::Now() << " " << newValue <<  std::endl;
 			TriggerReport();
 			m_lastReport = Simulator::Now();
 		}

@@ -51,7 +51,6 @@ reportAppLoss(Ptr<OranDataRepository> db)
         for (auto id : ids)
         {
             double loss = db->GetAppLoss(id);
-            std::cout << loss << std::endl;
             avg += loss;
         }
         if (ids.size() > 0)
@@ -231,8 +230,8 @@ void
 NotifyHandoverEndOkEnb(std::string context, uint64_t imsi, uint16_t cellid, uint16_t rnti)
 {
     //std::ofstream hoOutFile(s_handoverTraceFile, std::ios_base::app);
-    std::cout << "----->HANDOVER " << Simulator::Now().GetSeconds() << " " << imsi << " " << cellid
-              << " " << rnti << std::endl;
+    std::cout << "HANDOVER ok" << "Time: " << Simulator::Now().GetSeconds() << " IMSI: " << imsi << " CellID: " << cellid
+              << " rnti " << rnti << std::endl;
 }
 
 int

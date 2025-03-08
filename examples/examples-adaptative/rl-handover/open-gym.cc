@@ -29,7 +29,6 @@ Ptr<OpenGymSpace>
 EnvOran::GetObservationSpace()
 {
     NS_LOG_FUNCTION(this);
-    std::cout << "GetObservationSpace: " << m_nEnb<< std::endl;
     std::vector<uint32_t> obs = {m_nEnb+2};
     std::string dtype = ns3::TypeNameGet<double>();
     ns3::Ptr<ns3::OpenGymSpace> observationSpace =
