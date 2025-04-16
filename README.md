@@ -149,7 +149,13 @@ Para fins de revisão de artefatos, este exemplo não pode ser executado em temp
 
 Porém, é possível rodar o experimento para atestar seu funcionamento básico. O experimento é executado atravéz de um arquivo Python, que treina um modelo por aprendizado por reforço com PPO e inicializa um cenário de simulação múltiplas vezes em sequência, coletando observações e tomando ações de controle no cenário.
 
-Foi feito um script para facilitar a execução do experimento, que pode ser utilizado com:
+Foi feito um script para facilitar a execução do experimento, o script deve estar na pasta raiz do ns3. O experimento pode ser executado com:
+```shell
+cp ./contrib/oran/run-rl-handover-example.sh ./
+./run-rl-handover-example.sh
+```
+
+Obs: Para instalações a partir do conteiner Docker, o script já foi copiado para a pasta raiz, bastando apenas ser executado com:
 ```shell
 ./run-rl-handover-example.sh
 ```
@@ -178,6 +184,8 @@ Foram adicionadas informações sobre as adições realizadas no manual do ns3-o
 O manual pode ser compilado com:
 ```shell
 cd contrib/oran/doc
-make latexpdf
+make html
 ```
-O código acima gerará a documentação em "contrib/oran/doc/build/latex".
+O código acima gerará a documentação em "contrib/oran/doc/build/html". A documentação pode ser acessada abrindo o arquivo "index.html" dessa pasta em um navegador.
+
+Uma documentação compilada em PDF também está disponível na pasta "contrib/oran/doc".
