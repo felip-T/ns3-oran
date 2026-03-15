@@ -1,97 +1,38 @@
 # ns3-oran-customizable-db
 
-Uma parte essencial no desenvolvimento de aplicações para o controle e
-diagnóstico de uma Rede de Acesso via Rádio (Radio Access Network --
-RAN) é a simulação. É imprescindível a avaliação das soluções propostas em um
-cenário simulado próximo à realidade a fim de evitar possíveis falhas na
-implementação. O objetivo deste trabalho é adicionar funcionalidades à extensão "ns3-oran" do
-simulador de redes "ns-3". As funcionalidades implementadas dão ao usuário a
-liberdade para utilizar a extensão sem restrições de quais dados podem ser
-enviados ao Near-RT RIC. A capacidade de coleta, armazenamento e análise de
-diversos tipos de dados é fundamental no desenvolvimento e implementação de
-soluções baseadas em aprendizado de máquina. Assim, as ferramentas desenvolvidas
-permitem a criação de cenários de simulações capazes de treinar modelos por
-aprendizado por reforço, utilizando métricas de desempenho que antes
-eram impossíveis de serem manipuladas pelo simulador.
+Simulation is an essential part of developing applications for the control and diagnosis of a Radio Access Network (RAN). Evaluating proposed solutions in a realistic simulated scenario is imperative to avoid potential implementation failures. The objective of this work is to add features to the 'ns3-oran' extension of the 'ns-3' network simulator. The implemented features give users the freedom to utilize the extension without restrictions on what data can be sent to the Near-RT RIC. The ability to collect, store, and analyze various types of data is fundamental in developing and deploying machine learning-based solutions. Consequently, the developed tools enable the creation of simulation scenarios capable of training reinforcement learning models using performance metrics that the simulator previously could not handle.
 
-# Estrutura do readme.md
-* [Selos Considerados](#selos-considerados)
-* [Informações básicas](#informações-básicas)
-* [Preocupações com segurança](#preocupações-com-segurança)
-* [Instalação](#instalação)
-* [Teste mínimo](#teste-mínimo)
-* [Experimentos](#experimentos)
-* [LICENSE](#license)
-* [Documentação](#documentação)
+# Dependencies
 
-# Selos Considerados
-
-Os selos considerados são: Disponíveis, Funcionais e Sustentáveis e Reprodutíveis.
-
-# Informações básicas
-
-Os experimentos foram executados em um computador de mesa com o processador AMD Ryzen 5 5700x3D, com 16 GB RAM, e em um notebook com um processador Intel i7 de oitava geração, com 12 GB RAM.
-
-Recomenda-se ao menos 12GB RAM para a execução dos experimentos.
-Placa de vídeo não é necessária.
-
-Os experimentos foram executados no OS Ubuntu 22.04. Recomenda-se a execução em contêiner por meio da Dockerfile disponibilizada. Detalhes sobre a execução do contêiner estão na próxima seção.
-
-# Dependências
-
-As dependências do ns-3 e das extensões ns3-oran e ns3-ai podem ser instaladas com o gerenciador de pacote apt-get com o comando:
+The dependencies for ns-3 and the ns3-oran and ns3-ai extensions can be installed using the `apt-get` package manager with the following command:
 ```shell
 apt-get update
 apt-get install git build-essential libboost-all-dev pybind11-dev cmake sqlite sqlite3 libsqlite3-dev protobuf-compiler python3 python3-pip doxygen sphinx
 ```
 
-As versões exatas utlizadas foram:
+# Installation
 
-build-essential=12.9\
-libboost-all-dev=1.74.0.3\
-pybind11-dev=2.9.1\
-cmake=3.22.1\
-sqlite=2.8.17\
-sqlite3=3.37.2\
-libsqlite3-dev=3.37.2\
-protobuf-compiler=3.12.4\
-python3=3.10.6\
-python3-pip=22.0.2\
-doxygen=1.9.1\
-python3-sphinx=4.3.2
-
-Dependências opcionais (instaladas pelo pip):
-
-stable_baselines3=2.5.0\
-gymnasium=1.0.0
-
-# Preocupações com segurança
-
-O artefato não apresenta nenhum risco à segurança.
-
-# Instalação
-
-## Instalação local
-### Instalação do ns-3
+## Local Installation
+### ns-3 Installation
 
 ```shell
-git clone https://gitlab.com/nsnam/ns-3-dev.git
+git clone [https://gitlab.com/nsnam/ns-3-dev.git](https://gitlab.com/nsnam/ns-3-dev.git)
 cd ns-3-dev
 git checkout -b ns-3.40 ns-3.40
 ```
 
-### Instalação do ns3-oran-customizable-db
+### ns3-oran-customizable-db Installation
 
-Na pasta "ns-3-dev":
+In the "ns-3-dev" folder:
 ```shell
-git clone https://github.com/felip-t/ns3-oran contrib/oran
+git clone [https://github.com/felip-t/ns3-oran](https://github.com/felip-t/ns3-oran) contrib/oran
 ```
 
-### Instalação do ns3-ai (opcional)
-É recomendado um ambiente virtual Python para a instalação do ns3-ai.
-Na pasta "ns-3-dev":
+### ns3-ai Installation (optional, used in one example)
+A Python virtual environment is recommended for installing ns3-ai.
+In the "ns-3-dev" folder:
 ```shell
-git clone https://github.com/felip-T/ns3-ai contrib/ai
+git clone [https://github.com/felip-T/ns3-ai](https://github.com/felip-T/ns3-ai) contrib/ai
 ./ns3 configure --enable-examples
 ./ns3
 pip install stable_baselines3 gymnasium
@@ -99,93 +40,84 @@ pip install -e contrib/ai/python_utils
 pip install -e contrib/ai/model/gym-interface/py
 ```
 
-### Compilação do ns-3
-Na pasta "ns-3-dev":
+### Compiling ns-3
+In the "ns-3-dev" folder:
 ```shell
 ./ns3 configure --enable-examples
 ./ns3
 ```
 
 ## Dockerfile
-Opcionalmente, a ferramenta pode ser utilizada a partir da Dockerfile disponibilizada no diretório "docker".
+Optionally, the tool can be used via the Dockerfile provided in the "docker" directory.
 ```shell
-git clone https://github.com/felip-T/ns3-oran
+git clone [https://github.com/felip-T/ns3-oran](https://github.com/felip-T/ns3-oran)
 cd ns3-oran/docker
 docker build -t ns3-oran-customizable-db .
 ```
 
-Utilizando o contêiner:
+Using the container:
 ```shell
 docker run -it --rm ns3-oran-customizable-db:latest
 ./setupDocker.sh
 ```
-Os últimos comandos irão inicializar o contêiner, compilar o ns-3 e instalar as dependências opcionais para a execução do segundo exemplo.
+The last commands will initialize the container, compile ns-3, and install the optional dependencies required to run the second example.
 
-# Teste mínimo
-
-O caso de uso 1, mostrado no artigo, pode ser utilizado como teste mínimo. Para executar o exemplo, basta o comando:
-```shell
-./ns3 run "simple-db-example"
-```
-
-# Experimentos
+# Experiments
 
 ## simple-db-example
 
-Este exemplo corresponde ao "caso de uso 1" do artigo.
-Para executar basta:
+To execute, simply run:
 ```shell
 ./ns3 run "simple-db-example"
 ```
 
-O exemplo cria um cenário de simulação com um relatório personalizado que reporta o IPv4 de um equipamento de usuário periodicamente. O programa imprime na tela as queries sqlite feitas ao banco de dados, é possível ver a criação dinâmica da tabela UeIpv4, semelhante ao evidenciado no artigo. Uma explicação mais detalhada deste exemplo está disponível na documentação Sphinx.
+This example creates a simulation scenario with a custom report that periodically reports the IPv4 address of a user equipment (UE). The program prints the SQLite queries made to the database to the screen, where it is possible to see the dynamic creation of the `UeIpv4` table, similar to what is highlighted in the article. A more detailed explanation of this example is available in the Sphinx documentation.
 
-O tempo de execução esperado é na ordem de poucos segundos.
+The expected execution time is on the order of a few seconds.
+
+## sinr-handover
+
+The second example demonstrates how custom reports can be used to control the nodes in the RAN. This example consists of two eNBs initialized at a distance of 1500 meters apart. A single UE is initialized near one eNB and moves towards the other at a constant speed of 50 m/s. This UE periodically sends the standard location report and a custom SINR report to the Near-RT RIC. There is a custom logic module running in the Near-RT RIC that triggers a handover command whenever a SINR report below a threshold is received. To avoid the handover command from being triggered multiple times before the handover is finalized, a timeout of 2 seconds is set between two consecutive handover commands.
 
 ## rl-handover
 
-Este exemplo corresponde ao "caso de uso 2" do artigo.
-Para fins de revisão de artefatos, este exemplo não pode ser executado em tempo viável, uma vez que o modelo precisou ser treinado por três dias para a obtenção dos resultados mostrados no artigo.
+This example trains a reinforcement learning model for handover management. A full training run until convergence takes a long time. However, it is possible to run the experiment to verify its basic functionality. The experiment is executed via a Python script, which trains a reinforcement learning model using PPO and initializes a simulation scenario multiple times in sequence, collecting observations and taking control actions within the scenario.
 
-Porém, é possível rodar o experimento para atestar seu funcionamento básico. O experimento é executado atravéz de um arquivo Python, que treina um modelo por aprendizado por reforço com PPO e inicializa um cenário de simulação múltiplas vezes em sequência, coletando observações e tomando ações de controle no cenário.
-
-Foi feito um script para facilitar a execução do experimento, o script deve estar na pasta raiz do ns3. O experimento pode ser executado com:
+A script was created to facilitate the execution of the experiment; this script must be located in the ns-3 root folder. The experiment can be run with:
 ```shell
 cp ./contrib/oran/run-rl-handover-example.sh ./
 ./run-rl-handover-example.sh
 ```
 
-Obs: Para instalações a partir do conteiner Docker, o script já foi copiado para a pasta raiz, bastando apenas ser executado com:
+**Note:** For installations using the Docker container, the script has already been copied to the root folder, so it only needs to be executed with:
 ```shell
 ./run-rl-handover-example.sh
 ```
 
-Todas as observações recebidas pelo modelo, bem como sua recompensa e a ação tomada, são exibidas na tela.
-O exemplo executa até ser interrompido pelo usuário (Ctrl+C).
+All observations received by the model, as well as its reward and the action taken, are displayed on the screen. 
+The example runs until it is interrupted by the user (Ctrl+C).
 
-Mais informações sobre o exemplo, bem como uma ilustração do cenário simulado, estão disponíveis na documentação Sphinx.
+More information about the example, as well as an illustration of the simulated scenario, are available in the Sphinx documentation.
 
 # LICENSE
 
-Este artefato constrói em cima de um software disponibilizado pelo NIST, que possui licença própria. Detalhes da licença estão disponíveis no arquivo LICENSE.md.
+This repository builds upon software provided by NIST, which has its own license. License details are available in the `LICENSE.md` file.
 
-# Documentação
+# Documentation
 
 ## Doxygen
-A documentação das funcionalidades implementadas pode ser gerada com doxygen:
+The documentation for the implemented features can be generated using Doxygen:
 ```shell
 cd contrib/oran/doc
 doxygen
 ```
-O código acima gerará uma pasta chamada "html", o arquivo "index.html" pode ser aberto com um navegador para acessar a documentação.
+The code above will generate a folder named "html". The `index.html` file can be opened in a web browser to access the documentation.
 
 ## Sphinx
-Foram adicionadas informações sobre as adições realizadas no manual do ns3-oran.
-O manual pode ser compilado com:
+Information regarding the additions made has been included in the ns3-oran manual.
+The manual can be compiled with:
 ```shell
 cd contrib/oran/doc
 make html
 ```
-O código acima gerará a documentação em "contrib/oran/doc/build/html". A documentação pode ser acessada abrindo o arquivo "index.html" dessa pasta em um navegador.
-
-Uma documentação compilada em PDF também está disponível na pasta "contrib/oran/doc".
+The code above will generate the documentation in "contrib/oran/doc/build/html". The documentation can be accessed by opening the `index.html` file from that folder in a web browser.
