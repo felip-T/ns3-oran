@@ -16,7 +16,7 @@ apt-get install git build-essential libboost-all-dev pybind11-dev cmake sqlite s
 ### ns-3 Installation
 
 ```shell
-git clone [https://gitlab.com/nsnam/ns-3-dev.git](https://gitlab.com/nsnam/ns-3-dev.git)
+git clone https://gitlab.com/nsnam/ns-3-dev.git
 cd ns-3-dev
 git checkout -b ns-3.40 ns-3.40
 ```
@@ -25,14 +25,14 @@ git checkout -b ns-3.40 ns-3.40
 
 In the "ns-3-dev" folder:
 ```shell
-git clone [https://github.com/felip-t/ns3-oran](https://github.com/felip-t/ns3-oran) contrib/oran
+git clone https://github.com/felip-t/ns3-oran contrib/oran
 ```
 
 ### ns3-ai Installation (optional, used in one example)
 A Python virtual environment is recommended for installing ns3-ai.
 In the "ns-3-dev" folder:
 ```shell
-git clone [https://github.com/felip-T/ns3-ai](https://github.com/felip-T/ns3-ai) contrib/ai
+git clone https://github.com/felip-T/ns3-ai contrib/ai
 ./ns3 configure --enable-examples
 ./ns3
 pip install stable_baselines3 gymnasium
@@ -50,7 +50,7 @@ In the "ns-3-dev" folder:
 ## Dockerfile
 Optionally, the tool can be used via the Dockerfile provided in the "docker" directory.
 ```shell
-git clone [https://github.com/felip-T/ns3-oran](https://github.com/felip-T/ns3-oran)
+git clone https://github.com/felip-T/ns3-oran
 cd ns3-oran/docker
 docker build -t ns3-oran-customizable-db .
 ```
